@@ -17,7 +17,7 @@
         wadsaek = import ./home.nix;
       };
     };
-
+#allows?
   # Bootloader.
   boot.loader = {
     efi.canTouchEfiVariables = true;
