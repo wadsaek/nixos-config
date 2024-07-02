@@ -175,6 +175,8 @@
     kitty
     rofi-wayland
     blueman
+    kdePackages.dolphin
+    kdePackages.partitionmanager
 
     #rust
     rustup
