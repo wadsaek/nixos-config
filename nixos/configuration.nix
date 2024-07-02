@@ -111,8 +111,6 @@
     description = "Esther Barenboim";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      kdePackages.kate
-    #  thunderbird
     ];
   };
   users.defaultUserShell = pkgs.nushellFull;
