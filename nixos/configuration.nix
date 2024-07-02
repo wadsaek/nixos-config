@@ -285,9 +285,22 @@
     opengl = {
       enable = true;
       extraPackages =  [pkgs.libvdpau-va-gl ];
+      driSupport = true;
+      driSupport32Bit = true;
     };
-    nvidia.modesetting.enable = true;
-    nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+    nvidia= {
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      modesetting.enable = true;
+      prime = {
+        sync.enable = true;
+
+        #intel integrated
+        intelBusId = "PCI:0:2:0";
+
+        #nvidia dedicated
+        nvidiaBusId = "PCI:1:0:0";
+      };
+    };
 };
 
 
