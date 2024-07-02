@@ -152,7 +152,11 @@
     spotify
     openshot-qt
     libreoffice-qt
+    
+    #gaming
     heroic
+    mangohud
+    protonup
 
     tg   
     discord
@@ -275,7 +279,9 @@
     	    enable = true;
     	    remotePlay.openFirewall = true;
     	    dedicatedServer.openFirewall = true;
+          gamescopeSession.enable = true;
   	};
+    gamemode.enable = true;
   	zsh.autosuggestions.enable = true;
   };
 
