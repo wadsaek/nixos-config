@@ -66,6 +66,10 @@
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
+  services.xserver.resolutions = [{
+    x = 1920;
+    y = 1080;
+  }];
   specialisation = {
     KDE.configuration = {
      services.displayManager.sddm.enable = true; 
