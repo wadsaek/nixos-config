@@ -151,6 +151,7 @@
     bat
     fastfetch
     ripgrep
+    kitty
 
     obsidian
     spotify
@@ -176,11 +177,11 @@
     mako
     libnotify
     wpaperd
-    kitty
     rofi-wayland
     blueman
     kdePackages.dolphin
     kdePackages.partitionmanager
+    rose-pine-cursor
 
     #rust
     rustup
