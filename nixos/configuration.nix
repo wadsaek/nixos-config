@@ -268,6 +268,7 @@
   fonts.packages = with pkgs;[
     fira-code
     nerdfonts
+    siji
   ];
   environment.sessionVariables ={
     NIXOS_OZONE_WL = "1";
