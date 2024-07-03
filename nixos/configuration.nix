@@ -204,6 +204,7 @@
 
     #js
     nodejs_22
+    sass
 
     #  wget
     (vscode-with-extensions.override {
