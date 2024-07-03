@@ -74,4 +74,6 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  gtk.cursorTheme = pkgs.rose-pine-cursor
 }
