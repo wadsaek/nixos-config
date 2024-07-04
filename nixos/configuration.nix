@@ -226,6 +226,7 @@
         	#ormulahendry.dotnet
 
         	#rust
+          rust-lang.rust-analyzer
           tamasfe.even-better-toml
           serayuzgur.crates
           haskell.haskell
@@ -244,12 +245,12 @@
             version = "0.6.1";
             sha256 = "a3d8973e1c248a6c6825cd5d2dd689f270722c86894a9197fe72842c2dba8c65";
          }
-         {
-            name = "rust-analyzer";
-            publisher = "rust-lang";
-            version = "0.4.2023";
-            sha256 = "sha256-r5HiN4L2UvCsxLPCf5QTKMZxCY1XGGVkx3JqDOYugxE=";
-         }
+         #{
+         #   name = "rust-analyzer";
+         #   publisher = "rust-lang";
+         #   version = "0.4.2023";
+         #   sha256 = "sha256-r5HiN4L2UvCsxLPCf5QTKMZxCY1XGGVkx3JqDOYugxE=";
+         #}
          {
             name = "errorlens";
             publisher = "usernamehw";
