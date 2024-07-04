@@ -138,6 +138,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    #dependancies
+    glibc
+    libnotify
+
     #nixos
     home-manager
 
@@ -177,7 +181,6 @@
     }))
     mpd
     mako
-    libnotify
     wpaperd
     rofi-wayland
     blueman
@@ -244,7 +247,7 @@
          {
             name = "rust-analyzer";
             publisher = "rust-lang";
-            version = "0.4.1934";
+            version = "0.4.2023";
             sha256 = "sha256-r5HiN4L2UvCsxLPCf5QTKMZxCY1XGGVkx3JqDOYugxE=";
          }
          {
