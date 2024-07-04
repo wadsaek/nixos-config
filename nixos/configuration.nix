@@ -245,7 +245,7 @@
             name = "rust-analyzer";
             publisher = "rust-lang";
             version = "0.4.1934";
-            sha256 = "sha256-hQ1bSJd7JHpvM5VjuNC9k7TDQpxMP7lCHe748Q/rI4A=";
+            sha256 = "sha256-r5HiN4L2UvCsxLPCf5QTKMZxCY1XGGVkx3JqDOYugxE=";
          }
          {
             name = "errorlens";
