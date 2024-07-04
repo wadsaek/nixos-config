@@ -80,6 +80,8 @@
     	    enable = true;
           xwayland.enable = true;
   	  };
+      services.displayManager.sddm.enable = true;
+      services.displayManager.sddm.wayland.enable = true;
       xdg.portal.enable = true;
     };
   };
@@ -182,6 +184,7 @@
     kdePackages.dolphin
     kdePackages.partitionmanager
     rose-pine-cursor
+    networkmanagerapplet
 
     #rust
     rustup
@@ -238,12 +241,12 @@
             version = "0.6.1";
             sha256 = "a3d8973e1c248a6c6825cd5d2dd689f270722c86894a9197fe72842c2dba8c65";
          }
-         #{
-         #   name = "rust-analyzer";
-         #   publisher = "rust-lang";
-         #   version = "0.4.1934";
-         #   sha256 = "sha256-hQ1bSJd7JHpvM5VjuNC9k7TDQpxMP7lCHe748Q/rI4A";
-         #}
+         {
+            name = "rust-analyzer";
+            publisher = "rust-lang";
+            version = "0.4.1934";
+            sha256 = "sha256-hQ1bSJd7JHpvM5VjuNC9k7TDQpxMP7lCHe748Q/rI4A";
+         }
          {
             name = "errorlens";
             publisher = "usernamehw";

@@ -76,4 +76,6 @@
   programs.home-manager.enable = true;
 
   gtk.cursorTheme.package = pkgs.rose-pine-cursor;
+  gtk.cursorTheme.name = "BreezeX Cursor";
+  
 }
