@@ -70,22 +70,10 @@
     x = 1920;
     y = 1080;
   }];
-  specialisation = {
-    KDE.configuration = {
-     services.displayManager.sddm.enable = true; 
-     services.desktopManager.plasma6.enable = true;
-    };
-    hyprland.configuration = {
-      programs.hyprland = {
-          #package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-    	    enable = true;
-          xwayland.enable = true;
-  	  };
-      services.xserver.displayManager.gdm.enable = true;
-      services.xserver.displayManager.gdm.wayland = true;
-      xdg.portal.enable = true;
-    };
-  };
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.gdm.wayland = true;
+  services.desktopManager.plasma6.enable = true;
+  xdg.portal.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
