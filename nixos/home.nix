@@ -84,6 +84,7 @@
 
   wayland.windowManager.hyprland= {
     enable = true;
+    xwayland = true;
     settings ={
       #apps for hyprland shortcuts
       "$terminal" = "alacritty";
