@@ -77,11 +77,12 @@
     };
     hyprland.configuration = {
       programs.hyprland = {
+          #package = inputs.hyprland.packages."${pkgs.system}".hyprland;
     	    enable = true;
           xwayland.enable = true;
   	  };
-      services.displayManager.sddm.enable = true;
-      services.displayManager.sddm.wayland.enable = true;
+      services.xserver.displayManager.gdm.enable = true;
+      services.xserver.displayManager.gdm.wayland = true;
       xdg.portal.enable = true;
     };
   };

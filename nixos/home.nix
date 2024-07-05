@@ -83,6 +83,7 @@
   };
 
   wayland.windowManager.hyprland= {
+    enable = true;
     settings ={
       #apps for hyprland shortcuts
       "$terminal" = "alacritty";
@@ -120,7 +121,7 @@
         drop_shadow = true;
         shadow_range = 4;
         shadow_range_power = 3;
-        col.shadow = "rgba(1a1a1aee)";
+        "col.shadow" = "rgba(1a1a1aee)";
 
         blur = {
           enabled = true;
