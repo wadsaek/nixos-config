@@ -206,6 +206,9 @@
     nodejs_22
     sass
 
+    #python
+    python3
+
     #  wget
     (vscode-with-extensions.override {
       	vscodeExtensions = with vscode-extensions; [
