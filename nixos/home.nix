@@ -104,8 +104,8 @@
         
         border_size = 1;
 
-        col.active_border = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        col.inactive_border = "rgba(595959aa)";
+        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        "col.inactive_border" = "rgba(595959aa)";
 
         resize_on_border = true;
 
@@ -121,7 +121,7 @@
 
         drop_shadow = true;
         shadow_range = 4;
-        shadow_range_power = 3;
+        shadow_render_power = 3;
         "col.shadow" = "rgba(1a1a1aee)";
 
         blur = {
@@ -137,7 +137,7 @@
           "myBezier, 0.05, 0.9, 0.1, 1.05"
         ];
         animation = [
-          "windows, 1, 7, ,myBezier"
+          "windows, 1, 7, myBezier"
           "windowsOut, 1,7, default, popin 80%"
           "border, 1, 10, default"
           "borderangle, 1, 8, default"
@@ -146,7 +146,7 @@
         ];
       };
       dwindle = {
-        pseudotitle = true;
+        pseudotile = true;
         #i probably want this?
         preserve_split = true;
       };
