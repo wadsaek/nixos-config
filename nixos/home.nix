@@ -230,4 +230,10 @@
       monitor = ,1920x1080,auto,auto
     '';
   };
+
+  programs.waybar = {
+    enable = true;
+    settings = {};
+    style = {};
+  };
 }
