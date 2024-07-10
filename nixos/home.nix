@@ -151,7 +151,7 @@
         preserve_split = true;
       };
       master = {
-        new_is_master = true;
+        new_status="master";
       };
       misc = {
         force_default_wallpaper = -2;
@@ -233,7 +233,7 @@
 
   programs.waybar = {
     enable = true;
-    settings = {};
-    style = "";
+    #settings = {};
+    #style = "";
   };
 }

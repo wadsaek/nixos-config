@@ -148,7 +148,9 @@
     ripgrep
     kitty
     starship
-
+    zellij
+    mprocs
+    
     obsidian
     spotify
     openshot-qt
@@ -207,7 +209,8 @@
     sass
 
     #python
-    python3
+    python312
+    python312Packages.requests
 
     #  wget
     (vscode-with-extensions.override {
