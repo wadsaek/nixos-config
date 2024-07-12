@@ -147,7 +147,6 @@
     fastfetch
     ripgrep
     kitty
-    starship
     zellij
     mprocs
     
