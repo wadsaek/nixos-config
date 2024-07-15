@@ -159,7 +159,7 @@
         disable_hyprland_logo = false;
       };
       input = {
-        kb_layout = "us, ua, he";
+        kb_layout = "us, ua, il";
         kb_variant = "";
         kb_model = "";
         kb_options = "grp:alt_shift_toggle";
