@@ -92,7 +92,7 @@
       "$menu" = "rofi -show drun";
 
       #autostart
-      exec-once = "nm-applet & waybar & wpaperd & alacritty -e spotify_player";
+      exec-once = "nm-applet & waybar & alacritty -e spotify_player";
 
       env = [
         "XCURSOR_SIZE,24"
@@ -159,10 +159,10 @@
         disable_hyprland_logo = false;
       };
       input = {
-        kb_layout = "us";
+        kb_layout = "us, ua";
         kb_variant = "";
         kb_model = "";
-        kb_options = "";
+        kb_options = "grp:alt_shift_toggle";
         kb_rules = "";
         
         follow_mouse = 1;

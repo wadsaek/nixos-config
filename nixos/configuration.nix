@@ -261,6 +261,12 @@
           version="0.4.4";
           sha256 = "51030f8103f3fdc77399328804490ff162c2777041f325133c79af4871ed33cf";
          }
+         {
+          name = "hotrice";
+          publisher = "wadsaek";
+          version = "0.1.0";
+          sha256= "ea24fceace36489b20dace157bd221f32ececcf8614655346a7c939b3e18e419";
+         }
      	 ];
     	})
   ];
