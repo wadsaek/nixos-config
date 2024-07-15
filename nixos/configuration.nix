@@ -166,6 +166,7 @@
     whatsapp-for-linux
     telegram-desktop
     obs-studio
+    playerctl
 
     (waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
