@@ -68,8 +68,9 @@
   #  /etc/profiles/per-user/wadsaek/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
+    QT_QPA_PLATFORM = "wayland";
   };
 
   # Let Home Manager install and manage itself.
@@ -237,7 +238,7 @@
     };
     extraConfig = 
     ''
-      monitor = ,1920x1080,auto,auto
+      monitor = eDP-1,1920x1080@60,0x0,1
     '';
   };
 
