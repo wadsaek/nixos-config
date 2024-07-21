@@ -149,6 +149,8 @@
     kitty
     zellij
     mprocs
+    asciiquarium
+    cmatrix
     
     obsidian
     spotify
@@ -227,7 +229,6 @@
         	#rust
           rust-lang.rust-analyzer
           tamasfe.even-better-toml
-          serayuzgur.crates
           haskell.haskell
           esbenp.prettier-vscode
 	        vscodevim.vim
@@ -268,6 +269,18 @@
           version = "0.1.0";
           sha256= "ea24fceace36489b20dace157bd221f32ececcf8614655346a7c939b3e18e419";
          }
+         {
+          name = "todo-tree";
+          publisher = "gruntfuggly";
+          version = "0.0.226";
+          sha256= "sha256-Fj9cw+VJ2jkTGUclB1TLvURhzQsaryFQs/+f2RZOLHs=";
+         }
+	 {
+	   name = "dependi";
+	   publisher = "fill-labs";
+           version = "0.7.4";
+          sha256= "sha256-6nU0bVAe/vwq43ECLwypIkMAG/q5+P2bE1RPAjeTCX4=";
+	 }
      	 ];
     	})
   ];
