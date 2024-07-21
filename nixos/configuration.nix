@@ -167,7 +167,6 @@
     zapzap
     whatsapp-for-linux
     telegram-desktop
-    obs-studio
     playerctl
 
     (waybar.overrideAttrs (oldAttrs: {
