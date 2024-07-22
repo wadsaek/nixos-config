@@ -192,7 +192,7 @@
 
     #general programming
     gccgo14
-    docker27
+    docker_27
 
     #rust
     rustup
