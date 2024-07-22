@@ -164,6 +164,7 @@
     spotify
     openshot-qt
     libreoffice-qt
+    grim
     
     #gaming
     heroic

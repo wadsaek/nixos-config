@@ -91,6 +91,7 @@
       "$terminal" = "alacritty";
       "$fileManager" = "alacritty -e lf";
       "$menu" = "rofi -show drun";
+      "$screenshotCommand" = "grim";
 
       #autostart
       exec-once = "nm-applet & waybar & alacritty -e spotify_player";
@@ -181,10 +182,12 @@
       bind = [
         "$mainMod, Q, exec, $terminal"
         "$mainMod, C, killactive,"
-        "$mainMod, M, exit,"
+        "$mainMod SHIFT, End, exit,"
         "$mainMod, E, exec, $fileManager"
         "$mainMod, V, togglefloating,"
         "$mainMod, R, exec, $menu"
+        "$mainMod SHIFT, S, exec, $screenshotCommand"
+        ",Print, exec, $screenshotCommand"
 
         #dwindle
         "$mainMod, P, pseudo," #something weird idk i might need it sometimes... yk... like haskell
@@ -193,11 +196,11 @@
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
-        "$mainMod, up, movefocus, d"
+        "$mainMod, down, movefocus, d"
 
         #the special workspace
-        "$mainMod, S, togglespecialworkspace, magic"
-        "$mainMod SHIFT, S, movetoworkspace, special:magic"
+        "$mainMod, M, togglespecialworkspace, magic"
+        "$mainMod SHIFT, M, movetoworkspace, special:magic"
 
         "$mainMod, mouse_up, workspace, e-1"
         "$mainMod, mouse_down, workspace, e+1"
