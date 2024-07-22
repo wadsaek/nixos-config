@@ -34,7 +34,7 @@
           rev = "4d9cd37baf56c4f5510cc4ff61be278f11077c81";
           sha256 = "4d9cd37baf56c4f5510cc4ff61be278f11077c81";
         })
-      }/yorha-1920x1080"
+      }/yorha-1920x1080";
     };
   };
 
