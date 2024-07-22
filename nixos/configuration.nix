@@ -135,7 +135,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    #dependancies
+    #dependencies
     glibc
     libnotify
 
@@ -192,6 +192,7 @@
 
     #general programming
     gccgo14
+    docker27
 
     #rust
     rustup
