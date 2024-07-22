@@ -28,7 +28,7 @@
       #useOSProber = true;
       default ="saved";
       theme = "${
-        (pkgs.fetchFromGithub{
+        (pkgs.fetchFromGitHub{
           owner = "OliveThePuffin";
           repo = "yorha-grub-theme";
           rev = "4d9cd37baf56c4f5510cc4ff61be278f11077c81";
