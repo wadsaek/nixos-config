@@ -94,7 +94,7 @@
       "$screenshotCommand" = "grim";
 
       #autostart
-      exec-once = "nm-applet & waybar & alacritty -e spotify_player";
+      exec-once = "wpaperd & nm-applet & waybar & alacritty -e spotify_player";
 
       env = [
         "XCURSOR_SIZE,24"
