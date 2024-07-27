@@ -18,7 +18,7 @@
       };
     };
 #allows?
-  # Bootloader.
+  # Bootloader
   boot.loader = {
     efi.canTouchEfiVariables = true;
     grub = {
