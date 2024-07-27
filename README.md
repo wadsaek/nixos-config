@@ -1,4 +1,6 @@
-## My config for me and now for you too! This might not be the best one there is, but it suits my needs!
+# Description
+
+My config for me and now for you too! This might not be the best one there is, but it suits my needs!
 
 # Important
 
