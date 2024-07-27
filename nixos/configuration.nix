@@ -162,7 +162,8 @@
     
     obsidian
     spotify
-    openshot-qt
+    davinci-resolve
+    gimp
     libreoffice-qt
     grim
     
