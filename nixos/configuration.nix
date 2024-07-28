@@ -166,6 +166,7 @@
     gimp
     libreoffice-qt
     grim
+    opera
     
     #gaming
     heroic
