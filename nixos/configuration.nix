@@ -155,7 +155,6 @@
     bat
     fastfetch
     ripgrep
-    kitty
     zellij
     mprocs
     asciiquarium

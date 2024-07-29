@@ -88,7 +88,7 @@
     xwayland.enable = true;
     settings ={
       #apps for hyprland shortcuts
-      "$terminal" = "alacritty";
+      "$terminal" = "kitty";
       "$fileManager" = "alacritty -e lf";
       "$menu" = "rofi -show drun";
       "$screenshotCommand" = "grim";
@@ -262,5 +262,8 @@
       obs-vaapi
       obs-pipewire-audio-capture
     ];
+  };
+  programs.kitty = {
+
   };
 }
