@@ -147,6 +147,7 @@
     vimPlugins.packer-nvim
 
     #cli
+    yazi
     lf
     spotify-player 
     nushellFull
@@ -328,6 +329,7 @@
   hardware = {
     bluetooth.enable = true;
     bluetooth.powerOnBoot = true;
+    logitech.wireless.enable = true;
     opengl = {
       enable = true;
       extraPackages =  [pkgs.libvdpau-va-gl ];
