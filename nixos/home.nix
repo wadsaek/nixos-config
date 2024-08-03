@@ -94,7 +94,7 @@
       "$screenshotCommand" = "grim";
 
       #autostart
-      exec-once = "wpaperd & nm-applet & waybar & alacritty -e spotify_player";
+      exec-once = "wpaperd & nm-applet & waybar & $terminal spotify_player";
 
       env = [
         "XCURSOR_SIZE,24"
@@ -197,6 +197,11 @@
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
+         
+        "$mainMod SHIFT, left, swapwindow, l" 
+        "$mainMod SHIFT, right, swapwindow, r" 
+        "$mainMod SHIFT, up, swapwindow, u"
+        "$mainMod SHIFT, down, swapwindow, d"
 
         #the special workspace
         "$mainMod, M, togglespecialworkspace, magic"
@@ -251,6 +256,13 @@
     #style = "";
   };
 
+  programs.nushell = {
+    enable = true;
+    shellAliases = {
+      cat = "bat";
+    };
+  };
+
   programs.starship = {
     enable = true;
     enableNushellIntegration = true;
@@ -271,6 +283,8 @@
       size = 12;
     };
     settings = {
+      foreground = "#d4d4d4";
+      background = "#242020"; 
     };
   };
 }

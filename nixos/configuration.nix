@@ -12,6 +12,7 @@
     ];
 
     home-manager = {
+      backupFileExtension = "backup";
       extraSpecialArgs = {inherit inputs;};
       users = {
         wadsaek = import ./home.nix;
@@ -150,7 +151,6 @@
     yazi
     lf
     spotify-player 
-    nushellFull
     alacritty
     bat
     fastfetch
