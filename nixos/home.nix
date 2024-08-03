@@ -284,7 +284,10 @@
     };
     settings = {
       foreground = "#d4d4d4";
-      background = "#242020"; 
+      background = "#242020";
+
+      editor = "nvim";
+      notify_on_cmd_finish = "invisible 15.0";
     };
   };
 }
