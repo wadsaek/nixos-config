@@ -159,6 +159,7 @@
     mprocs
     asciiquarium
     cmatrix
+    fzf
     
     obsidian
     spotify
