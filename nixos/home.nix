@@ -89,7 +89,7 @@
     settings ={
       #apps for hyprland shortcuts
       "$terminal" = "kitty";
-      "$fileManager" = "alacritty -e lf";
+      "$fileManager" = "$terminal --hold yazi";
       "$menu" = "rofi -show drun";
       "$screenshotCommand" = "grim";
 
@@ -264,6 +264,13 @@
     ];
   };
   programs.kitty = {
-
+    enable = true;
+    font = {
+      package = pkgs.nerdfonts;
+      name = "Fira Code";
+      size = 12;
+    };
+    settings = {
+    };
   };
 }
