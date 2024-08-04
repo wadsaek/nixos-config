@@ -236,6 +236,8 @@
 
         	#csharp
         	ms-dotnettools.csdevkit
+          ms-dotnettools.csharp
+          ms-dotnettools.vscode-dotnet-runtime
         	#ormulahendry.dotnet
 
         	#rust
