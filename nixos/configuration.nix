@@ -208,13 +208,13 @@
     ghc
 
     #version control
-    git
+    git-credential-oauth
     github-desktop
 
     #cs
     roslyn
     dotnet-sdk_8
-
+    
     #gamedev
     godot_4
 

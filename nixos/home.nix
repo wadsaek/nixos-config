@@ -68,9 +68,6 @@
   #  /etc/profiles/per-user/wadsaek/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "nvim";
-    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
-    QT_QPA_PLATFORM = "wayland";
   };
 
   # Let Home Manager install and manage itself.
@@ -235,10 +232,10 @@
       	", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
       ];
       bindl = [
-	", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-	", XF86AudioPlay, exec, playerctl play-pause"
-	", XF86AudioPrev, exec, playerctl previous"
-	", XF86AudioNext, exec, playerctl next"
+	      ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+	      ", XF86AudioPlay, exec, playerctl play-pause"
+	      ", XF86AudioPrev, exec, playerctl previous"
+	      ", XF86AudioNext, exec, playerctl next"
       ];
       windowrulev2 = [
         "suppressevent maximize, class:.*"
@@ -250,14 +247,70 @@
     '';
   };
 
+  programs.hyprlock = {
+    enable = true;
+    settings = {
+      background = [
+        {
+          path = "screenshot";
+          blur_passes = 3;
+          blue_size = 8;
+        }
+      ];
+      input-field = [
+        {
+          size = "200, 50";
+          position = "0, -80";
+          fade_on_empty = false;
+        }
+      ];
+    };
+  };
+
+  services.hypridle = {
+    enable = true;
+    settings = {
+      listener = [
+        {
+          timeout = 5;
+          on-timeout = "hyprctl dispatch movefocus r";
+        }
+        {
+          timeout = 900;
+          on-timeout = "hyprlock";
+        }
+        {
+          timeout = 1800;
+          on-timeout = "hyprctl dispatch dpms off";
+          on-resume = "hyprctl dispatch dpms on";
+        }
+      ];
+    };
+  };
+  
   programs.waybar = {
     enable = true;
     #settings = {};
     #style = "";
   };
+  
+  programs.git = {
+    enable = true;
+    extraConfig ={
+      credential = {
+        credentialStore = "secretservice";
+	helper = "oauth";
+      };
+    };
+  };
 
   programs.nushell = {
     enable = true;
+    envFile.text = ''
+	    $env.EDITOR = "nvim";
+    	$env.STEAM_EXTRA_COMPAT_TOOLS_PATHS = "$env.HOME/.steam/root/compatibilitytools.d";
+      $env.QT_QPA_PLATFORM = "wayland";
+      '';
     shellAliases = {
       cat = "bat";
     };
