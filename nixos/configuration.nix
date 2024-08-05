@@ -79,8 +79,6 @@
     x = 1920;
     y = 1080;
   }];
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.displayManager.gdm.wayland = true;
   services.desktopManager.plasma6.enable = true;
   xdg.portal.enable = true;
 
