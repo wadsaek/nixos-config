@@ -294,7 +294,7 @@
     enable = true;
     extraConfig ={
       credential = {
-        credentialStore = "secretservice";
+        credentialStore = "cache --timeout 21600";
 	helper = "oauth";
       };
     };
