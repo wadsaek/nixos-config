@@ -76,7 +76,7 @@
   home.pointerCursor = {
     gtk.enable = true;
     package = pkgs.rose-pine-cursor;
-    name = "BreezeX Cursor";
+    name = "BreezeX-RosePine";
     size = 16;
   };
 
@@ -271,10 +271,6 @@
     enable = true;
     settings = {
       listener = [
-        {
-          timeout = 5;
-          on-timeout = "hyprctl dispatch movefocus r";
-        }
         {
           timeout = 900;
           on-timeout = "hyprlock";
