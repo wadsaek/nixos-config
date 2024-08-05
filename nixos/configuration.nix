@@ -206,8 +206,8 @@
     ghc
 
     #version control
-    git-credential-oauth
     github-desktop
+    gh
 
     #cs
     roslyn

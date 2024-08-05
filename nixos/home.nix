@@ -291,18 +291,18 @@
   };
   
   programs.git = {
+    package = pkgs.gitFull;
     enable = true;
-    extraConfig ={
-      credential = {
-        credentialStore = "cache --timeout 21600";
-	helper = "oauth";
-      };
-    };
   };
 
   programs.nushell = {
     enable = true;
-    envFile.text = ''
+    configFile.text = ''
+      def startssh [] {
+      ^ssh-agent -c | lines | first 2 | parse "setenv {name} {value};" | transpose -r | into record | load-env
+      }
+    '';
+      envFile.text = ''
 	    $env.EDITOR = "nvim";
     	$env.STEAM_EXTRA_COMPAT_TOOLS_PATHS = "$env.HOME/.steam/root/compatibilitytools.d";
       $env.QT_QPA_PLATFORM = "wayland";
