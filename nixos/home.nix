@@ -185,6 +185,7 @@
         "$mainMod, R, exec, $menu"
         "$mainMod SHIFT, S, exec, $screenshotCommand"
         ",Print, exec, $screenshotCommand"
+	      "$mainMod, L, exec, hyprlock"
 
         #dwindle
         "$mainMod, P, pseudo," #something weird idk i might need it sometimes... yk... like haskell
