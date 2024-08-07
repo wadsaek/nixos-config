@@ -198,6 +198,7 @@
     #general programming
     gccgo14
     docker_27
+    sqlcmd
 
     #rust
     rustup
@@ -368,6 +369,9 @@
       X11Forwarding = false;
       PermitRootLogin = "prohibit-password";
     };
+  };
+  virtualisation.docker = {
+    enable = true;
   };
 
   # Open ports in the firewall.
