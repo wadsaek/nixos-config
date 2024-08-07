@@ -91,7 +91,7 @@
       "$screenshotCommand" = "grim";
 
       #autostart
-      exec-once = "wpaperd & nm-applet & waybar & $terminal spotify_player";
+      exec-once = "wpaperd & nm-applet & waybar & $terminal spotify_player & $terminal --hold fastfetch";
 
       env = [
         "XCURSOR_SIZE,24"
@@ -301,6 +301,9 @@
     configFile.text = ''
       def startssh [] {
       ^ssh-agent -c | lines | first 2 | parse "setenv {name} {value};" | transpose -r | into record | load-env
+      }
+      $env.config = {
+   	show_banner: false,
       }
     '';
       envFile.text = ''
