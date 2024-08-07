@@ -343,4 +343,14 @@
       notify_on_cmd_finish = "invisible 15.0";
     };
   };
+  programs.yazi = {
+    enable = true;
+    enableNushellIntegration = true;
+    settings = {
+      manager = {
+        show_hidden = true;
+	sort_dir_first = true;
+      };
+    };
+  };
 }

@@ -149,7 +149,6 @@
     vimPlugins.packer-nvim
 
     #cli
-    yazi
     lf
     spotify-player 
     alacritty
