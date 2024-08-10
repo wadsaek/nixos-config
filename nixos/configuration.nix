@@ -372,6 +372,8 @@
   virtualisation.docker = {
     enable = true;
   };
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = ["wadsaek"];
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 5173 ];
