@@ -80,6 +80,10 @@
     y = 1080;
   }];
   services.desktopManager.plasma6.enable = true;
+  services.xserver.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
   xdg.portal.enable = true;
 
   # Configure keymap in X11
@@ -147,6 +151,11 @@
     #neovim
     neovim
     vimPlugins.packer-nvim
+    
+    #fun
+    lolcat
+    cowsay
+    ani-cli
 
     #cli
     lf
@@ -376,8 +385,8 @@
   users.extraGroups.vboxusers.members = ["wadsaek"];
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 5173 ];
-  networking.firewall.allowedUDPPorts = [ 5173 ];
+  networking.firewall.allowedTCPPorts = [ 22 5173 ];
+  networking.firewall.allowedUDPPorts = [ 22 5173 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
