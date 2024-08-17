@@ -80,7 +80,7 @@
     y = 1080;
   }];
   services.desktopManager.plasma6.enable = true;
-  services.xserver.displayManager.sddm = {
+  services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
   };
