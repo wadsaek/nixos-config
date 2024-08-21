@@ -158,6 +158,7 @@
     
     #fun
     lolcat
+    blahaj
     cowsay
     ani-cli
 
@@ -188,6 +189,7 @@
     protonup
 
     tg   
+    discord
     betterdiscordctl
     zapzap
     whatsapp-for-linux
@@ -235,6 +237,7 @@
     #js
     nodejs_22
     sass
+    nodePackages.pnpm
 
     #python
     python312
@@ -243,32 +246,39 @@
     #  wget
     (vscode-with-extensions.override {
       	vscodeExtensions = with vscode-extensions; [
-        	bbenoist.nix
-        	ms-python.python
-        	ms-azuretools.vscode-docker
-          #github.codespaces
+          bbenoist.nix
+          ms-python.python
+	  ms-azuretools.vscode-docker
+	  #github.codespaces
 
-        	#csharp
-        	ms-dotnettools.csdevkit
+          #csharp
+          ms-dotnettools.csdevkit
           ms-dotnettools.csharp
           ms-dotnettools.vscode-dotnet-runtime
-        	#ormulahendry.dotnet
+          #ormulahendry.dotnet
 
-        	#rust
+          #rust
           rust-lang.rust-analyzer
           tamasfe.even-better-toml
           
 	  justusadam.language-haskell
 	  haskell.haskell
+
           esbenp.prettier-vscode
-	        vscodevim.vim
-	      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-        	{
-          	name = "remote-ssh-edit";
-          	publisher = "ms-vscode-remote";
-    	      version = "0.47.2";
-    	      sha256 = "1hp6gjh4xp2m1xlm1jsdzxw9d8frkiidhph6nvl24d0h8z34w49g";
-     	    }
+	  vscodevim.vim
+	] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+          {
+	    name = "vscode-tidalcycles";
+	    publisher = "tidalcycles";
+	    version = "1.4.1";
+    	    sha256 = "sha256-pT9MwjS4Kn90VuTYfl82mGQuSNtD8tKc3h0jccz+EBI=";
+     	  }
+          {
+            name = "remote-ssh-edit";
+            publisher = "ms-vscode-remote";
+    	    version = "0.47.2";
+    	    sha256 = "1hp6gjh4xp2m1xlm1jsdzxw9d8frkiidhph6nvl24d0h8z34w49g";
+     	  }
           {
             name = "rust-syntax";
             publisher = "dustypomerleau";
@@ -305,16 +315,16 @@
             version = "0.0.226";
             sha256= "sha256-Fj9cw+VJ2jkTGUclB1TLvURhzQsaryFQs/+f2RZOLHs=";
           }
-	        {
-	          name = "dependi";
-	          publisher = "fill-labs";
+	  {
+	    name = "dependi";
+	    publisher = "fill-labs";
             version = "0.7.4";
             sha256= "sha256-6nU0bVAe/vwq43ECLwypIkMAG/q5+P2bE1RPAjeTCX4=";
-	        }
-     	  ];
-    	})
+          }
+     	];
+      })
   ]) ++ (with pkgs.haskellPackages; [
-    #i'll add stuff...
+    tidal
   ]);
 
   fonts.packages = with pkgs;[

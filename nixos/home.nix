@@ -86,12 +86,12 @@
     settings ={
       #apps for hyprland shortcuts
       "$terminal" = "kitty";
-      "$fileManager" = "$terminal --hold yazi";
+      "$fileManager" = "$terminal yazi";
       "$menu" = "rofi -show drun";
       "$screenshotCommand" = "grim";
 
       #autostart
-      exec-once = "wpaperd & nm-applet & waybar & $terminal spotify_player & $terminal --hold fastfetch";
+      exec-once = "wpaperd & nm-applet & blueman-applet & waybar & $terminal --hold spotify_player & $terminal --hold fastfetch";
 
       env = [
         "XCURSOR_SIZE,24"
@@ -302,6 +302,15 @@
       def startssh [] {
       ^ssh-agent -c | lines | first 2 | parse "setenv {name} {value};" | transpose -r | into record | load-env
       }
+      
+      def nixos-boot [] {
+         cd ~/nixos/nixos; nvim configuration.nix; sudo nixos-rebuild boot --flake ../#myConfig
+      }
+
+      def nixos-switch [] {
+         cd ~/nixos/nixos; nvim configuration.nix; sudo nixos-rebuild switch --flake ../#myConfig
+      }
+
       $env.config = {
    	show_banner: false,
       }
