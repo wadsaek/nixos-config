@@ -167,7 +167,6 @@
     spotify-player 
     alacritty
     bat
-    fastfetch
     ripgrep
     zellij
     mprocs
@@ -208,6 +207,7 @@
     kdePackages.partitionmanager
     rose-pine-cursor
     networkmanagerapplet
+    brightnessctl
 
     #general programming
     gccgo14
