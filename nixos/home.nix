@@ -275,6 +275,11 @@
     settings = {
       listener = [
         {
+          timeout = 300;
+          on-timeout = "brightnessctl set 5%";
+          on-resume = "brightnessctl set 50%";
+	}
+        {
           timeout = 900;
           on-timeout = "hyprlock";
         }
@@ -366,8 +371,37 @@
   };
   programs.fastfetch = {
     enable = true;
-    #settings = {
-    #
-    #}
+    settings = {
+      logo = {
+	source = "nixos";
+	padding = {
+	  right = 1;
+	};
+      };
+      display ={
+        size = {
+            binaryPrefix = "si";
+          };
+        color = "blue";
+      };
+      modules = [
+        {
+          type = "datetime";
+          key = "Date";
+          format = "{1}-{3}-{11}";
+        }
+        {
+          type = "datetime";
+          key = "Time";
+          format = "{14}:{17}:{20}";
+        }
+	"datetime"
+	"title"
+	"sepatator"
+        "break"
+        "player"
+        "media"
+      ];
+    };
   };
 }
