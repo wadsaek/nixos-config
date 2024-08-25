@@ -116,7 +116,7 @@
       decoration = {
         rounding = 3;
         active_opacity = 0.95;
-        inactive_opacity = 0.7;
+        inactive_opacity = 0.8;
 
         drop_shadow = true;
         shadow_range = 4;
@@ -125,8 +125,8 @@
 
         blur = {
           enabled = true;
-          size = 3;
-          passes = 1;
+          size = 5;
+          passes = 2;
           vibrancy = 0.1696;
         };
       };
@@ -257,7 +257,7 @@
         {
           path = "screenshot";
           blur_passes = 3;
-          blue_size = 8;
+          blur_size = 8;
         }
       ];
       input-field = [
@@ -303,7 +303,10 @@
     enable = true;
   };
 
-  programs.nushell = {
+  programs.nushell =
+    let 
+      nixvim = "nix run github:wadsaek/nixvim";
+    in{
     enable = true;
     configFile.text = ''
       def startssh [] {
@@ -311,11 +314,11 @@
       }
       
       def nixos-boot [] {
-         cd ~/nixos/nixos; nvim configuration.nix; sudo nixos-rebuild boot --flake ../#myConfig
+         cd ~/nixos/nixos; ${nixvim} configuration.nix; sudo nixos-rebuild boot --flake ../#myConfig
       }
 
       def nixos-switch [] {
-         cd ~/nixos/nixos; nvim configuration.nix; sudo nixos-rebuild switch --flake ../#myConfig
+         cd ~/nixos/nixos; ${nixvim} configuration.nix; sudo nixos-rebuild switch --flake ../#myConfig
       }
 
       $env.config = {
@@ -327,8 +330,13 @@
     	$env.STEAM_EXTRA_COMPAT_TOOLS_PATHS = "$env.HOME/.steam/root/compatibilitytools.d";
       $env.QT_QPA_PLATFORM = "wayland";
       '';
-    shellAliases = {
+    shellAliases ={
       cat = "bat";
+      nvim = nixvim;
+      vi = nixvim;
+      vim = nixvim;
+      "nixvim" = nixvim;
+      nvim-local = "${pkgs.neovim}/bin/nvim";
     };
   };
 
@@ -398,7 +406,6 @@
 	"datetime"
 	"title"
 	"sepatator"
-        "break"
         "player"
         "media"
       ];
