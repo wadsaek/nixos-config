@@ -80,9 +80,6 @@
     name = "BreezeX-RosePine";
     size = 16;
   };
-  gtk = {
-    enable = true;
-  };
 
   wayland.windowManager.hyprland= {
     enable = true;
