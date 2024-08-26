@@ -87,6 +87,18 @@
     enable = true;
     wayland.enable = true;
   };
+  services.xserver.displayManager = {
+    session = [
+      {
+	manage = "desktop";
+	name = "hyprland";
+	start = ''
+	  ${pkgs.hyprland}/bin/Hyprland 
+	  $env.WaitPID=$!
+	'';
+      }
+    ];
+  };
   xdg.portal.enable = true;
 
   # Configure keymap in X11
