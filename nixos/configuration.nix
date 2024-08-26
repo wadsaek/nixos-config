@@ -77,16 +77,17 @@
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
+  #services.xserver.enable = true;
   services.xserver.resolutions = [{
     x = 1920;
     y = 1080;
   }];
   services.desktopManager.plasma6.enable = true;
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
+  #services.displayManager.sddm = {
+  #  enable = true;
+  #  wayland.enable = true;
+  #};
+  #services.xserver.displayManager.startx.enable = false;
   services.xserver.displayManager = {
     session = [
       {
