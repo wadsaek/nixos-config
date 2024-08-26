@@ -75,9 +75,13 @@
 
   home.pointerCursor = {
     gtk.enable = true;
+    x11.enable = true;
     package = pkgs.rose-pine-cursor;
     name = "BreezeX-RosePine";
     size = 16;
+  };
+  gtk = {
+    enable = true;
   };
 
   wayland.windowManager.hyprland= {
