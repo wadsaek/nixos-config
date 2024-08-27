@@ -366,6 +366,7 @@
 
       editor = "nvim";
       notify_on_cmd_finish = "invisible 15.0";
+      confirm_os_window_close = 0;
     };
   };
   programs.yazi = {
