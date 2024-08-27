@@ -338,7 +338,11 @@
       })
   ]) ++ (with pkgs.haskellPackages; [
     tidal
-  ]);
+  ])++[
+    (pkgs.writeShellScriptBin "slackwarebeatch" '' 
+    echo "hello world!"
+    '')
+  ];
 
   fonts.packages = with pkgs;[
     fira-code
