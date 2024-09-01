@@ -1,46 +1,21 @@
-{ inputs, config, pkgs, ... }:
+{ inputs, lib, config, pkgs, ... }:
 
 {
   imports =
     [
-      ./hardware-configuration.nix
+      ./essintials.nix
       inputs.home-manager.nixosModules.home-manager
     ];
-
-    home-manager = {
-      backupFileExtension = "backup";
-      extraSpecialArgs = {inherit inputs;};
-      users = {
-        wadsaek = import ./home.nix;
-      };
+  home-manager = {
+    backupFileExtension = "backup";
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      wadsaek = lib.mkIf config.home.enable import ../home/home.nix; 
     };
+   };
 
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    grub = {
-      enable = true;
-      devices = [ "nodev" ];
-      efiSupport = true;
-      #useOSProber = true;
-      default ="saved";
-      theme = "${
-        (pkgs.fetchFromGitHub{
-          owner = "OliveThePuffin";
-          repo = "yorha-grub-theme";
-          rev = "4d9cd37baf56c4f5510cc4ff61be278f11077c81";
-          sha256 = "sha256-XVzYDwJM7Q9DvdF4ZOqayjiYpasUeMhAWWcXtnhJ0WQ=";
-        })
-      }/yorha-1920x1080";
-    };
-  };
 
   networking.hostName = "Esther"; # Define your hostname.
-  networking.wireless.enable = true;
-
-  networking.networkmanager = {
-    enable = true;
-    unmanaged = ["*" "except:type:wwan" "except:type:gsm"];
-  };
 
   time.timeZone = "Asia/Jerusalem";
   i18n.defaultLocale = "en_IL";
@@ -95,16 +70,6 @@
   };
 
   services.printing.enable = true;
-
-  hardware.pulseaudio.enable = false;
- 
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
 
   users.users.wadsaek = {
     isNormalUser = true;
