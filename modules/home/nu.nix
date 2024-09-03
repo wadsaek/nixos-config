@@ -15,19 +15,29 @@
         }
         
         def nixos-boot [] {
-           cd ~/nixos/nixos; ${nixvim} configuration.nix; sudo nixos-rebuild boot --flake ../#myConfig
+           cd ~/nixos/; ${nixvim} .; sudo nixos-rebuild boot --flake ../#myConfig
         }
 
         def nixos-switch [] {
-           cd ~/nixos/nixos; ${nixvim} configuration.nix; sudo nixos-rebuild switch --flake ../#myConfig
+           cd ~/nixos/; ${nixvim} .; sudo nixos-rebuild switch --flake ../#myConfig
         }
+
+	def nixos-rebuild-full [
+	  command: string
+	  --user (-u): string
+	  --config (-c): string
+	] {
+	  cd ~/nixos/;
+	  sudo nixos-rebuild $command --flake .#$user;
+	  home-manager $command --flake .#$config
+	}
 
         $env.config = {
      	show_banner: false,
         }
       '';
         envFile.text = ''
-              $env.EDITOR = "nvim";
+        $env.EDITOR = "${nixvim}";
       	$env.STEAM_EXTRA_COMPAT_TOOLS_PATHS = "$env.HOME/.steam/root/compatibilitytools.d";
         $env.QT_QPA_PLATFORM = "wayland";
         '';
