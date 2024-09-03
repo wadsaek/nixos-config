@@ -9,9 +9,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
   let 
-    system = "x84_64-linux";
+    system = "x86_64-linux";
     pkgs = import nixpkgs{
       inherit system;
 
@@ -19,14 +19,21 @@
         allowUnfree = true;
       };
     };
-  in{
-
+  in {
     nixosConfigurations = {
-      myConfig = nixpkgs.lib.nixosSystem {
+      g3-128 = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs system;};
         modules = [
-          ./nixos/configuration.nix
+          ./machines/g3-old/configuration.nix
         ];
+      };
+    };
+    homeConfigurations = {
+      wadsaek = home-manager.lib.homeManagerConfiguration {
+	inherit pkgs;
+	modules = [
+	  ./users/wadsaek/home.nix
+	];
       };
     };
   };

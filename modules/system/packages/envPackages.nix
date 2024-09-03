@@ -1,5 +1,5 @@
-{pkgs, ...}:
-(with pkgs; [
+{pkgs, ...}: {
+  environment.systemPackages = with pkgs; [
     #dependencies
     glibc
     libnotify
@@ -16,9 +16,9 @@
     cowsay
     pipes
     ani-cli
+    cbonsai
 
     #cli
-    lf
     spotify-player 
     alacritty
     bat
@@ -63,4 +63,5 @@
     rose-pine-cursor
     networkmanagerapplet
     brightnessctl
-])
+  ];
+}

@@ -3,18 +3,11 @@
 {
   imports =
     [
-      ./essintials.nix
-      inputs.home-manager.nixosModules.home-manager
+      ./packages/envPackages.nix
+      ./nvidia.nix
+      ./essentials/essentials.nix
+      ./general-options.nix
     ];
-  home-manager = {
-    backupFileExtension = "backup";
-    extraSpecialArgs = {inherit inputs;};
-    users = {
-      wadsaek = lib.mkIf config.home.enable import ../home/home.nix; 
-    };
-   };
-
-
   networking.hostName = "Esther"; # Define your hostname.
 
   time.timeZone = "Asia/Jerusalem";
@@ -92,7 +85,6 @@
             ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  environment.systemPackages = import ./envPackages.nix;
   fonts.packages = with pkgs;[
     fira-code
     nerdfonts

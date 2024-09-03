@@ -1,6 +1,4 @@
-{ config, pkgs, ... }:
-
-{
+{ config, pkgs, lib, ... }: {
   imports = [
     ./hypr.nix
     ./nu.nix
@@ -10,8 +8,6 @@
     ./starship.nix
   ];
 
-  home.username = "wadsaek";
-  home.homeDirectory = "/home/wadsaek";
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
@@ -82,4 +78,9 @@
    #   ];
    # };
   };
+
+  home.starship.enable = lib.mkDefault true;
+  home.nu.enable = lib.mkDefault true;
+  home.kitty.enable = lib.mkDefault true;
+  home.yazi.enable = lib.mkDefault true;
 }

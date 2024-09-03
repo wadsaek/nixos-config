@@ -199,17 +199,27 @@
       settings = {
         listener = [
 	  (let
-	    fade_brightness = pkgs.writers.writeBashBin {} /*Nushell*/''
-	      mkdir /tmp/hypr/$USER;
-	      cd /tmp/hypr/$USER;
-	      echo $(brightnessctl get) > brightness;
-	      brightnessctl set 5%;
-	    '';
-	    return_brightness = pkgs.writers.writeBashBin {} ''
-	      cd /tmp/hypr/$USER;
-	      brightnessctl set "$(cat brighness)";
-	      rm brightness;
-	    '';
+	    fade_brightness = pkgs.writeShellApplication {
+	      name = "fade-brightness";
+	      runtimeInputs = [pkgs.brightnessctl];
+
+	      text = ''
+	        mkdir "/tmp/hypr/$USER";
+	        cd "/tmp/hypr/$USER";
+	        brightnessctl get > brightness;
+	        brightnessctl set 5%;
+	      '';
+	    };
+	    return_brightness = pkgs.writeShellApplication {
+	      name = "return_brightness";
+	      runtimeInputs = [pkgs.brightnessctl pkgs.bat];
+	      
+	      text = ''
+	        cd "/tmp/hypr/$USER";
+	        brightnessctl set "$(bat brighness)";
+	        rm brightness;
+	      '';
+	    };
 	  in {
             timeout = 300;
             on-timeout = "${fade_brightness}";
@@ -227,5 +237,6 @@
         ];
       };
     };
+    home.waybar.enable = lib.mkDefault true;
   };
 }
