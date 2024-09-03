@@ -200,11 +200,11 @@
         listener = [
 	  (let
 	    fade_brightness = pkgs.writeShellApplication {
-	      name = "fade-brightness";
+	      name = "fade_brightness";
 	      runtimeInputs = [pkgs.brightnessctl];
 
 	      text = ''
-	        mkdir "/tmp/hypr/$USER";
+	        mkdir -p "/tmp/hypr/$USER";
 	        cd "/tmp/hypr/$USER";
 	        brightnessctl get > brightness;
 	        brightnessctl set 5%;
@@ -216,14 +216,14 @@
 	      
 	      text = ''
 	        cd "/tmp/hypr/$USER";
-	        brightnessctl set "$(bat brighness)";
+	        brightnessctl set "$(bat brightness)";
 	        rm brightness;
 	      '';
 	    };
 	  in {
             timeout = 300;
-            on-timeout = "${fade_brightness}";
-            on-resume = "${return_brightness}";
+            on-timeout = "${fade_brightness}/bin/fade_brightness";
+            on-resume = "${return_brightness}/bin/return_brightness";
           })
           {
             timeout = 900;
