@@ -1,6 +1,5 @@
 {pkgs,...}:
-
-(with pkgs; [
+ {environment.systemPackages = (with pkgs; [
     #general programming
     gccgo14
     docker_27
@@ -120,4 +119,5 @@
   (pkgs.writeShellScriptBin "slackwarebeatch" '' 
     echo "hello world!"
   '')
-]
+];
+}

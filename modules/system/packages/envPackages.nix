@@ -1,4 +1,8 @@
 {pkgs, ...}: {
+  imports = [
+    ./programming.nix
+  ];
+
   environment.systemPackages = with pkgs; [
     #dependencies
     glibc
