@@ -27,6 +27,12 @@
           ./machines/g3-old/configuration.nix
         ];
       };
+      g3-1t = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs system;};
+ 	modules = [
+	  ./machines/g3/configuration.nix
+	];
+      };
     };
     homeConfigurations = {
       wadsaek = home-manager.lib.homeManagerConfiguration {
