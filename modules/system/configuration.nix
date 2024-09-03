@@ -59,7 +59,7 @@
   services.xserver = {
     xkb.layout = "us";
     xkb.variant = "";
-    videoDrivers = ["nvidia"];
+    # videoDrivers = ["nvidia"];
   };
 
   services.printing.enable = true;
@@ -86,7 +86,6 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   fonts.packages = with pkgs;[
-    fira-code
     nerdfonts
     siji
   ];

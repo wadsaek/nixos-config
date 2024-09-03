@@ -1,8 +1,8 @@
 {config, lib, ...}:{
-    options = {
+  options = {
     graphics.nvidia.enable = lib.mkEnableOption "nvidia configuration";
     graphics.nvidia.prime.enable = lib.mkEnableOption "prime for nvidia";
-      graphics.buses = 
+    graphics.buses = 
       let
         busIDType = lib.types.strMatching "([[:print:]]+[\:\@][0-9]{1,3}\:[0-9]{1,2}\:[0-9])?";
       in {
@@ -26,7 +26,7 @@
           '';
         };
 
-	amd = lib.mkOption {
+        amd = lib.mkOption {
           type = busIDType;
           default = "";
           example = "PCI:4:0:0";
@@ -48,7 +48,7 @@
 
           nvidiaBusId = nvidia;
 
-	  amdgpuBusId = amd;
+	      amdgpuBusId = amd;
         });
       };
     };
