@@ -38,9 +38,14 @@
       };
     };
     config = lib.mkIf config.graphics.nvidia.enable {
-      hardware.nvidia= {
+      services.xserver.videoDrivers = ["nvidia"];
+      hardware.nvidia = {
+        open = false;
+	powerManagement.enable = false;
+	powerManagement.finegrained = false;
         package = config.boot.kernelPackages.nvidiaPackages.stable;
         modesetting.enable = true;
+	nvidiaSettings = true;
         prime = lib.mkIf config.graphics.nvidia.prime.enable (with config.graphics.buses;{
           sync.enable = true;
 

@@ -8,7 +8,7 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" "rtsx_usb_sdmmc" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "sd_mod" "rtsx_usb_sdmmc" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
@@ -29,13 +29,7 @@
       fsType = "ext4";
     };
 
-  fileSystems."/mnt" =
-    { device = "/dev/disk/by-uuid/590D-C724";
-      fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
-    };
-
-  fileSystems."/home/wadsaek/Games" =
+  fileSystems."/home/wadsaek/.local/share/Steam" =
     { device = "/dev/disk/by-uuid/8679b943-c8f3-43a4-acba-b64bfcd6c36a";
       fsType = "ext4";
     };
