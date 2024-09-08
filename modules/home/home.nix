@@ -1,5 +1,6 @@
 { config, pkgs, lib, ... }: {
   imports = [
+    ./commandLine
     ./hypr.nix
     ./nu.nix
     ./yazi.nix
