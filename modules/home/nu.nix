@@ -1,6 +1,5 @@
 {pkgs, lib, config, ...}: {
   options= {
-    home.nu.enableTheFuckIntegration = lib.mkEnableOption "thefuck integration";
     home.nu.enable = lib.mkEnableOption "NuShell";
   };
 
@@ -51,10 +50,5 @@
         nvim-local = "${pkgs.neovim}/bin/nvim";
       };
     };
-    programs.thefuck = lib.mkIf config.home.nu.enableTheFuckIntegration {
-      enable = lib.mkDefault true;
-      enableNushellIntegration = true;
-    };
-    home.nu.enableTheFuckIntegration = lib.mkDefault true;
   };
 }
