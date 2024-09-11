@@ -21,13 +21,7 @@
     };
   in {
     nixosConfigurations = {
-      g3-128 = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs system;};
-        modules = [
-          ./machines/g3-old/configuration.nix
-        ];
-      };
-      g3-1t = nixpkgs.lib.nixosSystem {
+      Esther-g3 = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs system;};
  	modules = [
 	  ./machines/g3/configuration.nix

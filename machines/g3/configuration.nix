@@ -3,7 +3,7 @@
     ./hardware-configuration.nix
     ./../../modules/system/configuration.nix
   ];
-
+  hostName = "Esther-g3";
   resolution = {
     vertical = 1080;
     horizontal = 1920;

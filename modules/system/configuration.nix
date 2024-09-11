@@ -7,8 +7,9 @@
       ./nvidia.nix
       ./essentials/essentials.nix
       ./general-options.nix
+      ./qoa
     ];
-  networking.hostName = "Esther"; # Define your hostname.
+  networking.hostName = config.hostName;
 
   time.timeZone = "Asia/Jerusalem";
   i18n.defaultLocale = "en_IL";
