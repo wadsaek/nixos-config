@@ -8,8 +8,12 @@
       url = "github:nix-community/home-manager/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixvim = {
+      url = "github:wadsaek/nixvim/";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixvim, ... }@inputs:
   let 
     system = "x86_64-linux";
     pkgs = import nixpkgs{
@@ -31,6 +35,7 @@
     homeConfigurations = {
       wadsaek = home-manager.lib.homeManagerConfiguration {
 	inherit pkgs;
+	extraSpecialArgs = {inherit nixvim;};
 	modules = [
 	  ./users/wadsaek/home.nix
 	];
