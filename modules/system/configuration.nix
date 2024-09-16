@@ -136,8 +136,8 @@
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = ["wadsaek"];
 
-  networking.firewall.allowedTCPPorts = [ 22 5173 ];
-  networking.firewall.allowedUDPPorts = [ 22 5173 ];
+  networking.firewall.allowedTCPPorts = [ 22 5173 8081];
+  networking.firewall.allowedUDPPorts = [ 22 5173 8081];
 
   system.stateVersion = "24.05";
 }
