@@ -73,6 +73,7 @@
     ];
     openssh.authorizedKeys.keys = [
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDJARJLouxL6ZT9OHKcroCPp/2mdTQkYHFL3ARSYvQyWemWrEKQp/gJr0WpCMIBi5bRUSCO5l7NptWZKKdfmV5a9RSJZjZCpduTIOXWItEJrtAVleo1Zz7MKczhO78LYBQzJoLozpDQjIDJVXuFoF8WxZgOxvjtKBPu0Ff7BDqaUeW9Kpp4lhsWHa9UfY+wuzf0mk6ehyGmf9ee2YuZNwHj0mpsq4YoFdoqOiiHATjz0vpqba0ofNDiGf0FaQAUgIz3uCLOcFQs2w5/ovfM4n24gym3L9943x4CAgMB2EQqqaW+0uKg5mBDtRlPCAq8QlHOKj2EuT3P6UINwHeSv4y5UOgfU3qQXG0p8vz7kyJjlkmcEpanT69J3tx3rJOk22CzSosCbPq19N0qxmAlcabXeh0zCNLzRWPI/BrhDAaqyYmGjPFdTBVeoUrqzUxKkPXOiQSiWAqqT1ZquerAXeyB4aP+eIEL0f88G3m2RWSFXWEnv/23JhncKjYwCrpqozFA6XOfciaaCiaOuvb2b66aFwOnq2YYIrdeCt1p/SYoBIV5J7CnSLlAf3kNwpP9hNdKn1sxN2bwQ7BeKRVSOW94sAdFMfv7aPOoUSpviIyeBkvHFG8zcQkFTHpbWUoWkoQu2EjQJI9t9m8eEoi28BBtIjy5IyIlas3/aQWHkO6NBw== wadsaek"
+      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCaXeIqPrDpj3WJMlqGVxxG8a6puAErL0bwOAJG+P70nhaMBHodKKqwfpmbD0ZDnr4RV/umjTElC0QBjBsMJKc2ghQMIkVSVCPNE1jF6suMAG2HKFA1bcpToGag8ZzurNCEhxE1ChzTa+USrWObxSVe7do0KgFgxgedUUoKF2M870psJWDu+dhtCNUNK3lMx1Gx4xK1BYt2vKLxQ/tjEMULjDGeo92KYzYoPBpSV1PXF7M8R/Pjc+FP4ej4DVhJAV2S5ED68RO+eT87paihUhCYvjreXq5HiaPXVzb9MufsykK2xMiBekwM8ndSFuZGUaADaCW+gtJaC2Hq41oWOhnx2t45L//6OCaPoDNeGpQ1z5y8lbdQ9KaGTmWGfV1H2g8XrloFs6W7ENQfCnepVPGSqqxlKNBdOeoUsqOnx/rw6QnZ2FL5w4K4UMFXdtNk+jiazCFcaLg2gDZBwsY+R/OPokF58L1pUGmMaBM5LIIXb2zLnQEFWnEANNCq9W8RxvhDbQB+HbV5l1Rhvco4ZJwT/vz+mS3zVcwNpouipkSKF6AlKOcVd0MVNbx+Oo9ytM/AgY8DUK3BsN740jwdQbiWMaUzZ3C/YCzOQE/VeS4XuO6B5aQGc3hiOYt9nygFjyQFbPgQLJU1RFmsbrMeClZ3AWLqaD93u/AO6eDdTNpeww== wadsaek"
     ];
   };
   users.defaultUserShell = pkgs.nushell;
@@ -136,8 +137,8 @@
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = ["wadsaek"];
 
-  networking.firewall.allowedTCPPorts = [ 22 5173 ];
-  networking.firewall.allowedUDPPorts = [ 22 5173 ];
+  networking.firewall.allowedTCPPorts = [ 22 5173 8081];
+  networking.firewall.allowedUDPPorts = [ 22 5173 8081];
 
   system.stateVersion = "24.05";
 }
