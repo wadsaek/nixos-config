@@ -6,7 +6,12 @@
     programs.waybar = {
       enable = true;
       #settings = {};
-      #style = "";
+      style = /*css*/''
+      * {
+        border: none;
+	border-radius: 0;
+      }
+      '';
     };
   }; 
 }

@@ -2,6 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ./../../modules/system/configuration.nix
+    ./../../modules/stylix/nixos.nix
   ];
   hostName = "Esther-g3";
   resolution = {

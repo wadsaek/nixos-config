@@ -1,6 +1,7 @@
 {...}:{
   imports = [
     ./../../modules/home/home.nix
+    ./../../modules/stylix/homeManager.nix
   ];
   
   home.hypr.enable = true;

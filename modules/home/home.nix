@@ -23,13 +23,13 @@
 
   programs.home-manager.enable = true;
 
-  home.pointerCursor = {
-    gtk.enable = true;
-    x11.enable = true;
-    package = pkgs.rose-pine-cursor;
-    name = "BreezeX-RosePine";
-    size = 16;
-  };
+  #home.pointerCursor = {
+  #  gtk.enable = true;
+  #  x11.enable = true;
+  #  package = pkgs.rose-pine-cursor;
+  #  name = "BreezeX-RosePine";
+  #  size = 16;
+  #};
   
   programs.git = {
     package = pkgs.gitFull;
