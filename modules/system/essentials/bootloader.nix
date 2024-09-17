@@ -7,7 +7,7 @@
       efiSupport = true;
       #useOSProber = true;
       default ="saved";
-      theme = "${
+      theme = lib.mkForce "${
         (pkgs.fetchFromGitHub{
           owner = "OliveThePuffin";
           repo = "yorha-grub-theme";

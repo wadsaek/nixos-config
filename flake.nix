@@ -12,8 +12,9 @@
       url = "github:wadsaek/nixvim/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix.url = "github:danth/stylix";
   };
-  outputs = { self, nixpkgs, home-manager, nixvim, ... }@inputs:
+  outputs = {nixpkgs, home-manager, ... }@inputs:
   let 
     system = "x86_64-linux";
     pkgs = import nixpkgs{
@@ -29,14 +30,16 @@
         specialArgs = {inherit inputs system;};
  	modules = [
 	  ./machines/g3/configuration.nix
+	  inputs.stylix.nixosModules.stylix
 	];
       };
     };
     homeConfigurations = {
       wadsaek = home-manager.lib.homeManagerConfiguration {
 	inherit pkgs;
-	extraSpecialArgs = {inherit nixvim;};
+	extraSpecialArgs = {inherit (inputs) nixvim;};
 	modules = [
+	  inputs.stylix.homeManagerModules.stylix
 	  ./users/wadsaek/home.nix
 	];
       };
