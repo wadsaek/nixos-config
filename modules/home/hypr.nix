@@ -12,7 +12,7 @@
         "$terminal" = "kitty";
         "$fileManager" = "$terminal ${pkgs.yazi}/bin/yazi";
         "$menu" = "${pkgs.rofi-wayland}/bin/rofi -show drun";
-        "$screenshotCommand" = "${pkgs.grim}/bin/grim";
+        "$screenshotCommand" = ''${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp -w 0)" - | ${pkgs.wl-clipboard}/bin/wl-copy '';
 
         #autostart
         exec-once = "wpaperd & nm-applet & blueman-applet & waybar & $terminal --hold spotify_player & $terminal --hold fastfetch";
