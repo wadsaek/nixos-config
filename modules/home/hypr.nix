@@ -15,7 +15,7 @@
         "$screenshotCommand" = ''${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp -w 0)" - | ${pkgs.wl-clipboard}/bin/wl-copy '';
 
         #autostart
-        exec-once = "wpaperd & nm-applet & blueman-applet & waybar & $terminal --hold spotify_player & $terminal --hold fastfetch";
+        exec-once = "nm-applet & blueman-applet & waybar & $terminal --hold spotify_player & $terminal --hold fastfetch";
 
         env = [
           "XCURSOR_SIZE,24"
