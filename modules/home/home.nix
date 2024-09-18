@@ -84,4 +84,5 @@
   home.nu.enable = lib.mkDefault true;
   home.kitty.enable = lib.mkDefault true;
   home.yazi.enable = lib.mkDefault true;
+  home.wl-clipboard.enable = lib.mkDefault true;
 }
