@@ -1,18 +1,52 @@
 { config, pkgs, lib, ... }: {
   imports = [
-    ./commandLine
+    ./commandLine 
+    ./entertainment
+
     ./hypr.nix
     ./nu.nix
     ./yazi.nix
     ./kitty.nix
     ./waybar.nix
     ./starship.nix
+
+    ./mako.nix
+    ./rofi.nix
   ];
 
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
-  home.packages = [
+  home.packages = with pkgs; [
+    ddgr
+
+    #fun
+    lolcat
+    blahaj
+    cowsay
+    pipes
+    ani-cli
+    cbonsai
+
+    #cli
+    ripgrep
+    mprocs
+    asciiquarium
+    cmatrix
+
+    obsidian
+    spotify
+    davinci-resolve
+    gimp
+    grim
+    opera
+
+    tg   
+    discord
+    betterdiscordctl
+    zapzap
+    whatsapp-for-linux
+    telegram-desktop
   ];
 
   home.file = {
@@ -85,4 +119,11 @@
   home.kitty.enable = lib.mkDefault true;
   home.yazi.enable = lib.mkDefault true;
   home.wl-clipboard.enable = lib.mkDefault true;
+  home.spotify-player.enable = lib.mkDefault true;
+  home.mako.enable = lib.mkDefault true;
+  home.alacritty.enable = lib.mkDefault true;
+  home.bat.enable = lib.mkDefault true;
+  home.fzf.enable = lib.mkDefault true;
+  home.zellij.enable = lib.mkDefault true;
+  home.rofi.enable = lib.mkDefault true;
 }
