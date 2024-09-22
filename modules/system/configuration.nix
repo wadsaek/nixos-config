@@ -3,6 +3,7 @@
 {
   imports =
     [
+      ./services
       ./packages/envPackages.nix
       ./nvidia.nix
       ./essentials/essentials.nix
