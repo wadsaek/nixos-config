@@ -18,7 +18,10 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
-    ddgr
+    nix-output-monitor
+    porsmo
+
+    walker
 
     #fun
     lolcat
@@ -36,10 +39,13 @@
 
     obsidian
     spotify
+
     davinci-resolve
     gimp
+
     grim
     opera
+    ddgr
 
     tg   
     discord
