@@ -18,4 +18,6 @@
     intel = "PCI:0:2:0";
     nvidia = "PCI:1:0:0";
   };
+
+  postgres.enable = true;
 }
