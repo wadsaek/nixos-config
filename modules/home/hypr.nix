@@ -11,7 +11,7 @@
         #apps for hyprland shortcuts
         "$terminal" = "kitty";
         "$fileManager" = "$terminal ${pkgs.yazi}/bin/yazi";
-        "$menu" = "${pkgs.rofi-wayland}/bin/rofi -show drun";
+        "$menu" = "${pkgs.walker}/bin/walker";
         "$screenshotCommand" = ''${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp -w 0)" - | ${pkgs.wl-clipboard}/bin/wl-copy '';
 
         #autostart
