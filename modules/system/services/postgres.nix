@@ -15,5 +15,23 @@
     };
 
     enableJIT = true;
+
+    ensureDatabases = ["wadsaek"];
+
+    ensureUsers = [
+      {
+        name = "wadsaek";
+        ensureDBOwnership = true;
+      }
+    ];
+    identMap = ''
+       # ArbitraryMapName systemUser DBUser
+       superuser_map      root      postgres
+       superuser_map      postgres  postgres
+       # Let other names login as themselves
+       superuser_map      /^(.*)$   \1
+    '';
+
   };
+  config.networking.firewall.allowedTCPPorts = lib.mkIf config.postgres.enable [5432];
 }
