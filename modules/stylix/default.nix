@@ -1,4 +1,4 @@
-{pkgs,...}:{
+{pkgs,inputs, ...}:{
   stylix = {
     enable = true;
 
@@ -26,8 +26,9 @@
     polarity = "dark";
 
     cursor = {
-      package = pkgs.rose-pine-cursor;
-      name = "BreezeX RosePine";
+      size = 64;
+      package = inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default;
+      name = "rose-pine-hyprcursor";
     };
 
     fonts = {

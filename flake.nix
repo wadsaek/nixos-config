@@ -12,7 +12,9 @@
       url = "github:wadsaek/nixvim/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     stylix.url = "github:danth/stylix";
+    rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
   };
   outputs = {nixpkgs, home-manager, ... }@inputs:
   let 
@@ -37,7 +39,7 @@
     homeConfigurations = {
       wadsaek = home-manager.lib.homeManagerConfiguration {
 	inherit pkgs;
-	extraSpecialArgs = {inherit (inputs) nixvim;};
+	extraSpecialArgs = {inherit (inputs) nixvim;inherit inputs;};
 	modules = [
 	  inputs.stylix.homeManagerModules.stylix
 	  ./users/wadsaek/home.nix

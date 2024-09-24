@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }: {
+{ config, pkgs, lib, inputs,... }: {
   imports = [
     ./commandLine 
     ./entertainment
@@ -53,6 +53,8 @@
     zapzap
     whatsapp-for-linux
     telegram-desktop
+
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
 
   home.file = {
