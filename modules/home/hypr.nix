@@ -13,14 +13,12 @@
         "$fileManager" = "$terminal ${pkgs.yazi}/bin/yazi";
         "$menu" = "${pkgs.walker}/bin/walker";
         "$screenshotCommand" = ''${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp -w 0)" - | ${pkgs.wl-clipboard}/bin/wl-copy '';
+        "$screenshotScreen" = ''${pkgs.grim}/bin/grim - | ${pkgs.wl-clipboard}/bin/wl-copy '';
 
         #autostart
         exec-once = "nm-applet & blueman-applet & waybar & $terminal --hold spotify_player & $terminal --hold fastfetch";
 
-        env = [
-          "XCURSOR_SIZE,24"
-          "HYPRCURSOR_SIZE,24"
-        ];
+        env = [];
         general = {
           gaps_in = 2;
           gaps_out = 10;
@@ -101,7 +99,7 @@
         
         "$mainMod" = "SUPER";
         bind = [
-	  "$mainMod, F, fullscreen,"
+	        "$mainMod, F, fullscreen,"
           "$mainMod, Q, exec, $terminal"
           "$mainMod, C, killactive,"
           "$mainMod SHIFT, End, exit,"
@@ -109,8 +107,8 @@
           "$mainMod, V, togglefloating,"
           "$mainMod, R, exec, $menu"
           "$mainMod SHIFT, S, exec, $screenshotCommand"
-          ",Print, exec, $screenshotCommand"
-                "$mainMod, L, exec, hyprlock"
+          ",Print, exec, $screenshotScreen"
+          "$mainMod, L, exec, hyprlock"
 
           #dwindle
           "$mainMod, P, pseudo," #something weird idk i might need it sometimes... yk... like haskell
