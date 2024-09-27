@@ -21,7 +21,6 @@
     
     #gaming
     heroic
-    mangohud
     protonup
 
     playerctl
