@@ -33,6 +33,7 @@
 
       config = {
         allowUnfree = true;
+	trusted-users = ["root" "wadsaek"];
       };
     };
   in {
