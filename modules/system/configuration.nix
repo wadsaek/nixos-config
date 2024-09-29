@@ -3,6 +3,7 @@
 {
   imports =
     [
+      ./cachix/cachix.nix
       ./services
       ./packages/envPackages.nix
       ./nvidia.nix
