@@ -1,6 +1,6 @@
 {
   imports = [
     ./postgres.nix
-    ./cachix.nix
+    #./cachix.nix
   ];
 }
