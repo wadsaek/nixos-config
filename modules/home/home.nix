@@ -39,6 +39,7 @@
 
     obsidian
     spotify
+    musescore
 
     davinci-resolve
     gimp
