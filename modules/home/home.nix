@@ -4,11 +4,9 @@
     ./entertainment
 
     ./hypr.nix
-    ./nu.nix
     ./yazi.nix
     ./kitty.nix
     ./waybar.nix
-    ./starship.nix
 
     ./mako.nix
     ./rofi.nix
