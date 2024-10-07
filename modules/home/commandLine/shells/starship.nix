@@ -7,6 +7,8 @@
     programs.starship = {
       enable = true;
       enableNushellIntegration = lib.mkIf config.home.nu.enable (lib.mkDefault true);
+      enableZshIntegration = lib.mkIf config.home.zsh.enable (lib.mkDefault true);
+      
     };
   };
 }
