@@ -2,7 +2,7 @@
   stylix = {
     enable = true;
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/da-one-ocean.yaml";
     #{
     #  base00 = "242020";
     #  base01 = "302828";
@@ -26,7 +26,7 @@
     polarity = "dark";
 
     cursor = {
-      size = 64;
+      size = 32;
       package = inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default;
       name = "rose-pine-hyprcursor";
     };
