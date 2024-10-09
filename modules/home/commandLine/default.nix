@@ -7,5 +7,6 @@
     ./bat.nix
     ./fzf.nix
     ./zellij.nix
+    ./tmux.nix
   ];
 }
