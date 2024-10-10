@@ -37,7 +37,6 @@
         name = "FiraCode Nerd Font";
       };
     };
-
     
   };
 }
