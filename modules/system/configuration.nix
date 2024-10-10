@@ -10,6 +10,7 @@
       ./essentials/essentials.nix
       ./general-options.nix
       ./qoa
+      ./display
     ];
   networking.hostName = config.hostName;
 

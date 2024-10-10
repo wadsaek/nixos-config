@@ -19,6 +19,12 @@
     nvidia = "PCI:1:0:0";
   };
 
+  display = {
+    sddm.enable = true;
+    plasma.enable = true;
+    hyprland.enable = true;
+  };
+
   postgres.enable = true;
   virtualisation.waydroid.enable = true;
 }
