@@ -7,10 +7,12 @@
   config = lib.mkIf config.home.zsh.enable {
     programs.zsh = {
       enable = true;
-      
+
       autocd = true;
       defaultKeymap = "viins";
-
+      autosuggestion.enable = true;
+      autosuggestion.highlight = "fg=#aaaaaa";
+      syntaxHighlighting.enable = true;
       dirHashes = {
         dev = "$HOME/Developing";
       };

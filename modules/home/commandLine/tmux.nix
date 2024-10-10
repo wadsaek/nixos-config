@@ -7,6 +7,5 @@
     enable = true;
     clock24 = true;
     keyMode = "vi";
-    terminal = "tmux-kitty";
   };
 }
