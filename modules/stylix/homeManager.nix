@@ -1,4 +1,4 @@
 {
   imports = [./.];
-  stylix.targets.kitty.enable = false;
+  #stylix.targets.kitty.enable = false;
 }
