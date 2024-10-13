@@ -136,4 +136,5 @@
   home.zellij.enable = lib.mkDefault true;
   home.rofi.enable = lib.mkDefault true;
   home.tmux.enable = lib.mkDefault true;
+  home.direnv.enable = lib.mkDefault true;
 }

@@ -8,5 +8,6 @@
     ./fzf.nix
     ./zellij.nix
     ./tmux.nix
+    ./direnv.nix
   ];
 }
