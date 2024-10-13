@@ -6,6 +6,7 @@
     programs.yazi = {
       enable = true;
       enableNushellIntegration = lib.mkIf config.home.nu.enable true;
+      enableZshIntegration = lib.mkIf config.home.zsh.enable true;
       settings = {
         manager = {
           show_hidden = true;
