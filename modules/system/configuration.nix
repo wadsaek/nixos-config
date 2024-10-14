@@ -15,7 +15,7 @@
   networking.hostName = config.hostName;
 
   time.timeZone = "Asia/Jerusalem";
-  i18n.defaultLocale = "en_IL";
+  i18n.defaultLocale = "en_IL.UTF-8";
   i18n.supportedLocales = [
     "he_IL.UTF-8/UTF-8"
     "uk_UA.UTF-8/UTF-8"
