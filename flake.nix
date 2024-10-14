@@ -21,6 +21,10 @@
       url = "github:wadsaek/nixvim/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    cosmos = {
+      url = "git+http://codeberg.org/ext0l/cosmos.git";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     stylix.url = "github:danth/stylix";
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
@@ -43,6 +47,7 @@
  	modules = [
 	  ./machines/g3/configuration.nix
 	  inputs.stylix.nixosModules.stylix
+	  inputs.cosmos.nixosModules.default
 	];
       };
     };

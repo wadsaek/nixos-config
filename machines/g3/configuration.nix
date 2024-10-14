@@ -27,4 +27,5 @@
 
   postgres.enable = true;
   virtualisation.waydroid.enable = true;
+  services.cosmos.enable = true;
 }
