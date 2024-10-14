@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, inputs, ...}: {
   imports = [
     ./programming.nix
   ];
@@ -37,5 +37,6 @@
     rose-pine-cursor
     networkmanagerapplet
     brightnessctl
+    inputs.cosmos.packages.${pkgs.system}.default
   ];
 }
