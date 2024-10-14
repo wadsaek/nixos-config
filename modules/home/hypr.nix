@@ -81,11 +81,10 @@
         };
         input = {
           kb_layout = "us, ua, il";
+          kb_options = "caps:swapescape, grp:alt_shift_toggle" ;
+
           kb_variant = "";
           kb_model = "";
-          kb_options = [
-            "caps:swapescape, grp:alt_shift_toggle"
-          ];
           kb_rules = "";
           
           follow_mouse = 1;
@@ -101,7 +100,7 @@
         
         "$mainMod" = "SUPER";
         bind = [
-	        "$mainMod, F, fullscreen,"
+          "$mainMod, F, fullscreen,"
           "$mainMod, Q, exec, $terminal"
           "$mainMod, C, killactive,"
           "$mainMod SHIFT, End, exit,"
