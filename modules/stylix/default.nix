@@ -27,8 +27,8 @@
 
     cursor = {
       size = 32;
-      package = inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default;
-      name = "rose-pine-hyprcursor";
+      package = pkgs.rose-pine-cursor;
+      name = "BreezeX-RosePine-Linux";
     };
 
     fonts = {
