@@ -36,6 +36,14 @@
         package = pkgs.nerdfonts;
         name = "FiraCode Nerd Font";
       };
+      sansSerif = {
+        package = pkgs.aileron;
+        name = "Aileron SemiBold";
+      };
+      serif = {
+        package = pkgs.inriafonts;
+        name = "Inria Serif";
+      };
     };
     
   };
