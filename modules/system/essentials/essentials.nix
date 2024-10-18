@@ -4,5 +4,6 @@
     ./sound/sound.nix
     ./network/network.nix
     ./kernel.nix
+    ./fwupd.nix
   ];
 }
