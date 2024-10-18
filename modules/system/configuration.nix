@@ -22,15 +22,15 @@
     "en_IL/UTF-8"
   ];
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = "he_IL.UTF-8";
-    LC_IDENTIFICATION = "he_IL.UTF-8";
-    LC_MEASUREMENT = "he_IL.UTF-8";
-    LC_MONETARY = "he_IL.UTF-8";
-    LC_NAME = "he_IL.UTF-8";
-    LC_NUMERIC = "he_IL.UTF-8";
-    LC_PAPER = "he_IL.UTF-8";
-    LC_TELEPHONE = "he_IL.UTF-8";
-    LC_TIME = "he_IL.UTF-8";
+    LC_ADDRESS = "en_IL.UTF-8";
+    LC_IDENTIFICATION = "en_IL.UTF-8";
+    LC_MEASUREMENT = "en_IL.UTF-8";
+    LC_MONETARY = "en_IL.UTF-8";
+    LC_NAME = "en_IL.UTF-8";
+    LC_NUMERIC = "en_IL.UTF-8";
+    LC_PAPER = "en_IL.UTF-8";
+    LC_TELEPHONE = "en_IL.UTF-8";
+    LC_TIME = "en_IL.UTF-8";
   };
 
   #services.xserver.enable = true;
