@@ -131,7 +131,11 @@
 
           "$mainMod, mouse_up, workspace, e-1"
           "$mainMod, mouse_down, workspace, e+1"
-        ] 
+          
+        ] ++
+        (if config.programs.eww.enable then [
+          "$mainMod SHIFT, delete, exec, eww close-all"
+        ] else [])
         ++ (
           # workspaces
           # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
