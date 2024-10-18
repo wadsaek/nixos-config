@@ -6,6 +6,7 @@
     ./hypr.nix
     ./waybar.nix
     ./eww
+    ./cosmosConfig.nix
 
     ./yazi.nix
     ./kitty.nix
