@@ -128,6 +128,7 @@
           #the special workspace
           "$mainMod, M, togglespecialworkspace, magic"
           "$mainMod SHIFT, M, movetoworkspace, special:magic"
+          "$mainMod SHIFT, P, exec, eww open powermenu"
 
           "$mainMod, mouse_up, workspace, e-1"
           "$mainMod, mouse_down, workspace, e+1"
