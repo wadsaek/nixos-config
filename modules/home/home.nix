@@ -46,6 +46,9 @@
     gimp
 
     grim
+    oculante
+    mpv
+
     opera
     ddgr
 
