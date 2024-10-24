@@ -1,6 +1,13 @@
-{ config, pkgs, lib, inputs,... }: {
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
+{
   imports = [
-    ./commandLine 
+    ./commandLine
     ./entertainment
 
     ./hypr.nix
@@ -14,7 +21,6 @@
     ./mako.nix
     ./rofi.nix
   ];
-
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
@@ -52,7 +58,7 @@
     opera
     ddgr
 
-    tg   
+    tg
     discord
     betterdiscordctl
     zapzap
@@ -62,8 +68,9 @@
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
 
-  home.file = {
-  };
+  home.file =
+    {
+    };
 
   home.sessionVariables = {
     FLAKE = "git+ssh://git@github.com:wadsaek/nixos-config.git";
@@ -78,12 +85,11 @@
   #  name = "BreezeX-RosePine";
   #  size = 16;
   #};
-  
+
   programs.git = {
     package = pkgs.gitFull;
     enable = true;
   };
-
 
   programs.obs-studio = {
     enable = true;
@@ -95,37 +101,37 @@
   };
   programs.fastfetch = {
     enable = true;
-   # settings = {
-   #   logo = {
-   #     source = "nixos";
-   #     padding = {
-   #       right = 1;
-   #     };
-   #   };
-   #   display ={
-   #     size = {
-   #         binaryPrefix = "si";
-   #       };
-   #     color = "blue";
-   #   };
-   #   modules = [
-   #     {
-   #       type = "datetime";
-   #       key = "Date";
-   #       format = "{1}-{3}-{11}";
-   #     }
-   #     {
-   #       type = "datetime";
-   #       key = "Time";
-   #       format = "{14}:{17}:{20}";
-   #     }
-   #     "datetime"
-   #     "title"
-   #     "sepatator"
-   #     "player"
-   #     "media"
-   #   ];
-   # };
+    # settings = {
+    #   logo = {
+    #     source = "nixos";
+    #     padding = {
+    #       right = 1;
+    #     };
+    #   };
+    #   display ={
+    #     size = {
+    #         binaryPrefix = "si";
+    #       };
+    #     color = "blue";
+    #   };
+    #   modules = [
+    #     {
+    #       type = "datetime";
+    #       key = "Date";
+    #       format = "{1}-{3}-{11}";
+    #     }
+    #     {
+    #       type = "datetime";
+    #       key = "Time";
+    #       format = "{14}:{17}:{20}";
+    #     }
+    #     "datetime"
+    #     "title"
+    #     "sepatator"
+    #     "player"
+    #     "media"
+    #   ];
+    # };
   };
 
   home.starship.enable = lib.mkDefault true;

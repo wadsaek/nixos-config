@@ -1,4 +1,5 @@
-{config, lib, ...}:{
+{ config, lib, ... }:
+{
   options.home.mako.enable = lib.mkEnableOption "mako for notifications";
 
   config.services.mako = lib.mkIf config.home.mako.enable {

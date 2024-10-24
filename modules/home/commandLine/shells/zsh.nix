@@ -1,4 +1,5 @@
-{lib,config,...}:{
+{ lib, config, ... }:
+{
   options.home.zsh = {
     enable = lib.mkEnableOption "zsh";
     nuUtils = lib.mkEnableOption "utils from Nushell like `http`, `ls` and lots of others";

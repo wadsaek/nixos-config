@@ -1,11 +1,16 @@
-{lib, ...}: {
+{ lib, ... }:
+{
   imports = [
     ./pipewire.nix
     ./pulseaudio.nix
   ];
   options = {
     audio = lib.mkOption {
-      type = lib.types.enum ["pipewire" "pulseaudio" null];
+      type = lib.types.enum [
+        "pipewire"
+        "pulseaudio"
+        null
+      ];
       default = "pipewire";
       description = "Which audio provider to enable";
     };

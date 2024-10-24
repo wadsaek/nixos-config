@@ -1,4 +1,5 @@
-{...}:{
+{ ... }:
+{
   imports = [
     ./nu.nix
     ./zsh.nix

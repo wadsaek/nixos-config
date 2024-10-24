@@ -1,4 +1,5 @@
-{lib, config, ...}:{
+{ lib, config, ... }:
+{
   options.display.plasma = {
     enable = lib.mkEnableOption "plasma";
   };

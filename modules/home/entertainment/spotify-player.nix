@@ -1,4 +1,5 @@
-{lib, config,...}:{
+{ lib, config, ... }:
+{
   options = {
     home.spotify-player.enable = lib.mkEnableOption "spotify player";
   };

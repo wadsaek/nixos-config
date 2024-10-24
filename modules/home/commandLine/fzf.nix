@@ -1,4 +1,5 @@
-{lib,config, ...}:{
+{ lib, config, ... }:
+{
   options = {
     home.fzf.enable = lib.mkEnableOption "fzf";
   };

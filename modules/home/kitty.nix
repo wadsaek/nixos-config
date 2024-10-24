@@ -1,8 +1,14 @@
-{pkgs, lib, config, ...}:{
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+{
   options = {
     home.kitty.enable = lib.mkEnableOption "kitty";
   };
-  config = lib.mkIf config.home.kitty.enable{
+  config = lib.mkIf config.home.kitty.enable {
     programs.kitty = {
       enable = true;
       #font = {
@@ -13,11 +19,11 @@
       settings = {
         #foreground = "#d4d4d4";
         #background = "#242020";
-  
+
         editor = "nix run github:wadsaek/nixvim";
         notify_on_cmd_finish = "invisible 15.0";
         confirm_os_window_close = 0;
-	font_features = "FiraCodeNF-Reg +ss05 +ss03 cv30=1 +ss09";
+        font_features = "FiraCodeNF-Reg +ss05 +ss03 cv30=1 +ss09";
       };
     };
   };

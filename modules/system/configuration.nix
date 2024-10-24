@@ -1,17 +1,22 @@
-{ inputs, lib, config, pkgs, ... }:
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [
-      ./cachix/cachix.nix
-      ./services
-      ./packages/envPackages.nix
-      ./nvidia.nix
-      ./essentials/essentials.nix
-      ./general-options.nix
-      ./qoa
-      ./display
-    ];
+  imports = [
+    ./cachix/cachix.nix
+    ./services
+    ./packages/envPackages.nix
+    ./nvidia.nix
+    ./essentials/essentials.nix
+    ./general-options.nix
+    ./qoa
+    ./display
+  ];
   networking.hostName = config.hostName;
 
   time.timeZone = "Asia/Jerusalem";
@@ -34,11 +39,13 @@
   };
 
   #services.xserver.enable = true;
-  
-  services.xserver.resolutions = [{
-    x = 1920;
-    y = 1080;
-  }];
+
+  services.xserver.resolutions = [
+    {
+      x = 1920;
+      y = 1080;
+    }
+  ];
   services.desktopManager.plasma6.enable = true;
   #services.displayManager.sddm = {
   #  enable = true;
@@ -48,12 +55,12 @@
   services.xserver.displayManager = {
     session = [
       {
-	manage = "desktop";
-	name = "hyprland";
-	start = ''
-	  ${pkgs.hyprland}/bin/Hyprland 
-	  $env.WaitPID=$!
-	'';
+        manage = "desktop";
+        name = "hyprland";
+        start = ''
+            ${pkgs.hyprland}/bin/Hyprland 
+            $env.WaitPID=$!
+        '';
       }
     ];
   };
@@ -71,7 +78,10 @@
   users.users.wadsaek = {
     isNormalUser = true;
     description = "Esther Barenboim";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       zsh
@@ -89,12 +99,15 @@
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
-            "electron-25.9.0"
-            ];
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+    "electron-25.9.0"
+  ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
-  fonts.packages = with pkgs;[
+  fonts.packages = with pkgs; [
     nerdfonts
     siji
     inriafonts
@@ -125,22 +138,22 @@
     hyperscrypt-font
   ];
 
-  environment.sessionVariables ={
+  environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
 
   programs = {
-  	steam = {
-    	    enable = true;
-    	    remotePlay.openFirewall = true;
-    	    dedicatedServer.openFirewall = true;
-	    gamescopeSession.enable = true;
-  	};
-	gamemode.enable = true;
-	gamescope = {
-	  enable = true;
-	  capSysNice = true;
-	};
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+      gamescopeSession.enable = true;
+    };
+    gamemode.enable = true;
+    gamescope = {
+      enable = true;
+      capSysNice = true;
+    };
   };
 
   hardware = {
@@ -149,18 +162,17 @@
     logitech.wireless.enable = true;
     graphics = {
       enable = true;
-      extraPackages =  [pkgs.libvdpau-va-gl ];
+      extraPackages = [ pkgs.libvdpau-va-gl ];
       enable32Bit = true;
     };
-};
-
+  };
 
   services.openssh = {
     enable = true;
-    ports = [22];
+    ports = [ 22 ];
     settings = {
       PasswordAuthentication = false;
-      AllowUsers = ["wadsaek"];
+      AllowUsers = [ "wadsaek" ];
       UseDns = false;
       X11Forwarding = false;
       PermitRootLogin = "prohibit-password";
@@ -171,10 +183,23 @@
     enable = true;
   };
   virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = ["wadsaek"];
+  users.extraGroups.vboxusers.members = [ "wadsaek" ];
 
-  networking.firewall.allowedTCPPorts = [ 22 5173 8081 7062 5298 3000];
-  networking.firewall.allowedUDPPorts = [ 22 5173 8081 7062 5298];
+  networking.firewall.allowedTCPPorts = [
+    22
+    5173
+    8081
+    7062
+    5298
+    3000
+  ];
+  networking.firewall.allowedUDPPorts = [
+    22
+    5173
+    8081
+    7062
+    5298
+  ];
 
   system.stateVersion = "24.05";
 }

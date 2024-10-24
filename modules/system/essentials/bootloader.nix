@@ -1,4 +1,10 @@
-{pkgs, lib, config, ... }:{
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+{
   boot.loader = {
     efi.canTouchEfiVariables = true;
     grub = {
@@ -6,9 +12,9 @@
       devices = [ "nodev" ];
       efiSupport = true;
       #useOSProber = true;
-      default ="saved";
+      default = "saved";
       theme = lib.mkForce "${
-        (pkgs.fetchFromGitHub{
+        (pkgs.fetchFromGitHub {
           owner = "OliveThePuffin";
           repo = "yorha-grub-theme";
           rev = "4d9cd37baf56c4f5510cc4ff61be278f11077c81";

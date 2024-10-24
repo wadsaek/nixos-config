@@ -1,4 +1,5 @@
-{lib,config,...}:{
+{ lib, config, ... }:
+{
   options.home.tmux = {
     enable = lib.mkEnableOption "tmux";
   };

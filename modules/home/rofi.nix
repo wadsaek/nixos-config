@@ -1,4 +1,10 @@
-{lib,config, pkgs, ...}:{
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   options = {
     home.rofi.enable = lib.mkEnableOption "rofi";
   };

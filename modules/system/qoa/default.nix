@@ -1,4 +1,5 @@
-{lib,...}:{
- imports = [./nh.nix];
- nh.enable = lib.mkDefault true;
+{ lib, ... }:
+{
+  imports = [ ./nh.nix ];
+  nh.enable = lib.mkDefault true;
 }

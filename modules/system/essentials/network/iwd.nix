@@ -1,4 +1,5 @@
-{lib, config,...}:{
+{ lib, config, ... }:
+{
   options = {
     network.iwd.enable = lib.mkEnableOption "iwd";
   };

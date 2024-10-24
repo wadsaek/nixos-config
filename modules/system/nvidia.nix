@@ -1,11 +1,13 @@
-{config, lib, ...}:{
+{ config, lib, ... }:
+{
   options = {
     graphics.nvidia.enable = lib.mkEnableOption "nvidia configuration";
     graphics.nvidia.prime.enable = lib.mkEnableOption "prime for nvidia";
-    graphics.buses = 
+    graphics.buses =
       let
         busIDType = lib.types.strMatching "([[:print:]]+[\:\@][0-9]{1,3}\:[0-9]{1,2}\:[0-9])?";
-      in {
+      in
+      {
         nvidia = lib.mkOption {
           type = busIDType;
           default = "";
@@ -36,25 +38,28 @@
           '';
         };
       };
-    };
-    config = lib.mkIf config.graphics.nvidia.enable {
-      services.xserver.videoDrivers = ["nvidia"];
-      hardware.nvidia = {
-        open = false;
-	powerManagement.enable = false;
-	powerManagement.finegrained = false;
-        package = config.boot.kernelPackages.nvidiaPackages.stable;
-        modesetting.enable = true;
-	nvidiaSettings = true;
-        prime = lib.mkIf config.graphics.nvidia.prime.enable (with config.graphics.buses;{
+  };
+  config = lib.mkIf config.graphics.nvidia.enable {
+    services.xserver.videoDrivers = [ "nvidia" ];
+    hardware.nvidia = {
+      open = false;
+      powerManagement.enable = false;
+      powerManagement.finegrained = false;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      modesetting.enable = true;
+      nvidiaSettings = true;
+      prime = lib.mkIf config.graphics.nvidia.prime.enable (
+        with config.graphics.buses;
+        {
           sync.enable = true;
 
           intelBusId = intel;
 
           nvidiaBusId = nvidia;
 
-	      amdgpuBusId = amd;
-        });
-      };
+          amdgpuBusId = amd;
+        }
+      );
     };
+  };
 }

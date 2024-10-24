@@ -1,4 +1,5 @@
-{pkgs, lib, ... }@inputs: {
+{ pkgs, lib, ... }@inputs:
+{
   imports = [
     ./hardware-configuration.nix
     ./../../modules/system/configuration.nix

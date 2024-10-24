@@ -1,6 +1,6 @@
 {
   description = "System managing flake";
-  
+
   nixConfig = {
     extra-substituters = [
       "https://nix-community.cachix.org"
@@ -29,38 +29,48 @@
     stylix.url = "github:danth/stylix";
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
   };
-  outputs = {nixpkgs, home-manager, ... }@inputs:
-  let 
-    system = "x86_64-linux";
-    pkgs = import nixpkgs{
-      inherit system;
+  outputs =
+    { nixpkgs, home-manager, ... }@inputs:
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
+        inherit system;
 
-      config = {
-        allowUnfree = true;
-	trusted-users = ["root" "wadsaek"];
+        config = {
+          allowUnfree = true;
+          trusted-users = [
+            "root"
+            "wadsaek"
+          ];
+        };
+      };
+    in
+    {
+      nixosConfigurations = {
+        Esther-g3 = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs system;
+          };
+          modules = [
+            ./machines/g3/configuration.nix
+            inputs.stylix.nixosModules.stylix
+            inputs.cosmos.nixosModules.default
+          ];
+        };
+      };
+      homeConfigurations = {
+        wadsaek = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = {
+            inherit (inputs) nixvim;
+            inherit inputs;
+          };
+          modules = [
+            inputs.stylix.homeManagerModules.stylix
+            ./users/wadsaek/home.nix
+          ];
+        };
       };
     };
-  in {
-    nixosConfigurations = {
-      Esther-g3 = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs system;};
- 	modules = [
-	  ./machines/g3/configuration.nix
-	  inputs.stylix.nixosModules.stylix
-	  inputs.cosmos.nixosModules.default
-	];
-      };
-    };
-    homeConfigurations = {
-      wadsaek = home-manager.lib.homeManagerConfiguration {
-	inherit pkgs;
-	extraSpecialArgs = {inherit (inputs) nixvim;inherit inputs;};
-	modules = [
-	  inputs.stylix.homeManagerModules.stylix
-	  ./users/wadsaek/home.nix
-	];
-      };
-    };
-  };
-  
+
 }

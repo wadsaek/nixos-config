@@ -1,4 +1,5 @@
-{lib,config, ...}:{
+{ lib, config, ... }:
+{
   options = {
     home.zellij.enable = lib.mkEnableOption "zellij";
   };

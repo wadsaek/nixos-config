@@ -1,4 +1,5 @@
-{pkgs, inputs, ...}: {
+{ pkgs, inputs, ... }:
+{
   imports = [
     ./programming.nix
   ];
@@ -14,11 +15,10 @@
     #neovim
     neovim
 
-    
     alacritty
 
     libreoffice-qt
-    
+
     #gaming
     heroic
     protonup
@@ -26,7 +26,7 @@
     playerctl
 
     (waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
+      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     }))
     mpd
     #mako

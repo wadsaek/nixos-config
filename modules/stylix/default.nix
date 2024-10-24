@@ -1,4 +1,5 @@
-{pkgs,inputs, ...}:{
+{ pkgs, inputs, ... }:
+{
   stylix = {
     enable = true;
 
@@ -45,6 +46,6 @@
         name = "Inria Serif";
       };
     };
-    
+
   };
 }

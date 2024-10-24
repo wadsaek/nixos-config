@@ -1,4 +1,11 @@
-{config,lib,nixvim, pkgs,  ...}:{
+{
+  config,
+  lib,
+  nixvim,
+  pkgs,
+  ...
+}:
+{
   options = {
     nixvim.enable = lib.mkEnableOption "my nixvim config";
   };

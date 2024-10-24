@@ -1,7 +1,8 @@
-{lib,config, ...}:{
+{ lib, config, ... }:
+{
   options = {
     postgres.enable = lib.mkEnableOption "PostgreSQL";
-    postgres.port = lib.mkOption{
+    postgres.port = lib.mkOption {
       type = lib.types.port;
       default = 5432;
       description = "Port for PostgreSQL";
@@ -16,7 +17,7 @@
 
     enableJIT = true;
 
-    ensureDatabases = ["wadsaek"];
+    ensureDatabases = [ "wadsaek" ];
 
     ensureUsers = [
       {
@@ -25,13 +26,13 @@
       }
     ];
     identMap = ''
-       # ArbitraryMapName systemUser DBUser
-       superuser_map      root      postgres
-       superuser_map      postgres  postgres
-       # Let other names login as themselves
-       superuser_map      /^(.*)$   \1
+      # ArbitraryMapName systemUser DBUser
+      superuser_map      root      postgres
+      superuser_map      postgres  postgres
+      # Let other names login as themselves
+      superuser_map      /^(.*)$   \1
     '';
 
   };
-  config.networking.firewall.allowedTCPPorts = lib.mkIf config.postgres.enable [5432];
+  config.networking.firewall.allowedTCPPorts = lib.mkIf config.postgres.enable [ 5432 ];
 }
