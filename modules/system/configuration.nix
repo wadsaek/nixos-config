@@ -92,6 +92,7 @@
             "electron-25.9.0"
             ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
   fonts.packages = with pkgs;[
     nerdfonts
