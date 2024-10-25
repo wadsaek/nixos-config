@@ -89,6 +89,10 @@
   programs.git = {
     package = pkgs.gitFull;
     enable = true;
+    ignores = [
+      ".envrc"
+      ".env"
+    ];
   };
 
   programs.obs-studio = {
