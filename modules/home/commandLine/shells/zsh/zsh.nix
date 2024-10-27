@@ -8,6 +8,7 @@
   config = lib.mkIf config.home.zsh.enable {
     programs.zsh = {
       enable = true;
+      initExtra = (builtins.readFile ./.zshrc);
 
       autocd = true;
       defaultKeymap = "viins";

@@ -2,7 +2,7 @@
 {
   imports = [
     ./nu.nix
-    ./zsh.nix
+    ./zsh
     ./envvars.nix
     ./starship.nix
   ];
