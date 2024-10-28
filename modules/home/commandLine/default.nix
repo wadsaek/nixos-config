@@ -9,5 +9,6 @@
     ./zellij.nix
     ./tmux.nix
     ./direnv.nix
+    ./thefuck.nix
   ];
 }
