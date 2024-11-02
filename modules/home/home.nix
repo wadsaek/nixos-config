@@ -9,6 +9,7 @@
   imports = [
     ./commandLine
     ./entertainment
+    ./services
 
     ./hypr.nix
     ./waybar.nix
@@ -154,4 +155,5 @@
   home.rofi.enable = lib.mkDefault true;
   home.tmux.enable = lib.mkDefault true;
   home.direnv.enable = lib.mkDefault true;
+  services.xremap.enable = lib.mkDefault false;
 }

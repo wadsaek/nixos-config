@@ -28,6 +28,7 @@
 
     stylix.url = "github:danth/stylix";
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
+    xremap-flake.url = "github:xremap/nix-flake";
   };
   outputs =
     { nixpkgs, home-manager, ... }@inputs:
