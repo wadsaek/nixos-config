@@ -87,7 +87,7 @@
         };
         input = {
           kb_layout = "us, ua, il";
-          kb_options = "caps:swapescape, grp:alt_shift_toggle";
+          kb_options = "grp:alt_shift_toggle";
 
           kb_variant = "";
           kb_model = "";
