@@ -1,3 +1,5 @@
+unsetopt beep
+
 _dotnet_zsh_complete()
 {
   local completions=("$(dotnet complete "$words")")
