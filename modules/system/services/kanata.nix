@@ -1,5 +1,5 @@
 {
-  services.kanata = {
+  config.services.kanata = {
     enable = true;
     keyboards = {
       internalKeyboard = {
@@ -25,10 +25,24 @@
           )
 
           (deflayer base
-           @caps @a  @s  @d  @f  @j  @k  @l  @;
+            @caps @a  @s  @d  @f  @j  @k  @l  @;
           )
         '';
       };
+      #escCaps = {
+      #  extraDefCfg = "process-unmapped-keys yes";
+      #  config = /*lisp*/ ''
+      #    (defsrc
+      #      caps
+      #    )
+      #    (defalias
+      #     caps (tap-hold 300 300 esc lctl)
+      #    )
+      #    (deflayer base 
+      #      @caps
+      #    )
+      #  '';
+      #};
     };
   };
 }
