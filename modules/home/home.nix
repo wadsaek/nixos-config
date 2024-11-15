@@ -56,7 +56,9 @@
     oculante
     mpv
 
-    opera
+    (opera.override {
+      proprietaryCodecs = true;
+    })
     ddgr
 
     tg
@@ -93,6 +95,8 @@
     ignores = [
       ".envrc"
       ".env"
+      "_start.sh" # custom startScripts
+      ".direnv"
     ];
   };
 
