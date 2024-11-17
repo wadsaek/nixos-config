@@ -46,9 +46,9 @@
           active_opacity = 0.95;
           inactive_opacity = 0.8;
 
-          drop_shadow = true;
-          shadow_range = 4;
-          shadow_render_power = 3;
+          shadow.enabled = true;
+          shadow.range = 4;
+          shadow.render_power = 3;
           #"col.shadow" = "rgba(1a1a1aee)";
 
           blur = {
@@ -197,20 +197,20 @@
     programs.hyprlock = {
       enable = true;
       settings = {
-        background = [
+        background = lib.mkForce [
           {
             path = "screenshot";
             blur_passes = 3;
             blur_size = 8;
           }
         ];
-        input-field = [
-          {
-            size = "200, 50";
-            position = "0, -80";
-            fade_on_empty = false;
-          }
-        ];
+        #input-field = [
+        #  {
+        #    size = "200, 50";
+        #    position = "0, -80";
+        #    fade_on_empty = false;
+        #  }
+        #];
       };
     };
 
