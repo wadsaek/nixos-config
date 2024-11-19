@@ -9,6 +9,7 @@
   imports = [
     ./commandLine
     ./entertainment
+    ./qoa
     ./services
 
     ./hypr.nix
@@ -181,5 +182,6 @@
   home.rofi.enable = lib.mkDefault true;
   home.tmux.enable = lib.mkDefault true;
   home.direnv.enable = lib.mkDefault true;
+  services.dropbox.enable = lib.mkDefault true;
   services.xremap.enable = lib.mkDefault false;
 }
