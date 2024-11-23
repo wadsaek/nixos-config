@@ -218,10 +218,10 @@
                 runtimeInputs = [ pkgs.brightnessctl ];
 
                 text = ''
-                    mkdir -p "/tmp/hypr/$USER";
-                    cd "/tmp/hypr/$USER";
-                    brightnessctl get > brightness;
-                    brightnessctl set 5%;
+                  mkdir -p "/tmp/hypr/$USER";
+                  cd "/tmp/hypr/$USER";
+                  brightnessctl get > brightness;
+                  brightnessctl set 5%;
                 '';
               };
               return_brightness = pkgs.writeShellApplication {
@@ -232,9 +232,9 @@
                 ];
 
                 text = ''
-                    cd "/tmp/hypr/$USER";
-                    brightnessctl set "$(bat brightness)";
-                    rm brightness;
+                  cd "/tmp/hypr/$USER";
+                  brightnessctl set "$(bat brightness)";
+                  rm brightness;
                 '';
               };
             in
