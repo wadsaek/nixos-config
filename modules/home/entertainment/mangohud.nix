@@ -4,7 +4,6 @@
 
   config.programs.mangohud = lib.mkIf config.mangohud.enable {
     enable = true;
-    enableSessionWide = true;
     settings = {
       fps_limit = "60,30";
       toggle_fps_limit = "F1";
