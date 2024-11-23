@@ -116,21 +116,10 @@
             "$mainMod, R, exec, $menu"
             "$mainMod SHIFT, S, exec, $screenshotCommand"
             ",Print, exec, $screenshotScreen"
-            "$mainMod, L, exec, hyprlock"
+            "$mainMod, backspace, exec, hyprlock"
 
             #dwindle
-            "$mainMod, P, pseudo," # something weird idk i might need it sometimes... yk... like haskell
-            "$mainMod, J, togglesplit,"
-
-            "$mainMod, left, movefocus, l"
-            "$mainMod, right, movefocus, r"
-            "$mainMod, up, movefocus, u"
-            "$mainMod, down, movefocus, d"
-
-            "$mainMod SHIFT, left, swapwindow, l"
-            "$mainMod SHIFT, right, swapwindow, r"
-            "$mainMod SHIFT, up, swapwindow, u"
-            "$mainMod SHIFT, down, swapwindow, d"
+            "$mainMod, P, togglesplit,"
 
             #the special workspace
             "$mainMod, M, togglespecialworkspace, magic"
@@ -161,6 +150,25 @@
                 ]
               ) 10
             )
+          )
+          ++ (
+          lib.pipe {
+            H = "l";
+            left = "l";
+            J = "d";
+            down = "d";
+            K = "u";
+            up = "u";
+            L = "r";
+            right = "r";
+          } [
+            (lib.attrsets.mapAttrsToList ( name: value: {inherit name value;} ))
+            (builtins.map ({name,value}: [
+              "$mainMod, ${name}, movefocus, ${value}"  
+              "$mainMod SHIFT, ${name}, swapwindow, ${value}"
+            ]))
+            builtins.concatLists
+          ]
           );
         bindm = [
           "$mainMod, mouse:272, movewindow"
