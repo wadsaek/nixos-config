@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ./nu.nix
+    ./nu
     ./zsh
     ./envvars.nix
     ./starship.nix
