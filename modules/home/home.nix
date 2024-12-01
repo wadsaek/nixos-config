@@ -61,6 +61,7 @@
     pipes
     ani-cli
     cbonsai
+    (callPackage ./donut.nix {})
 
     #cli
     ripgrep
