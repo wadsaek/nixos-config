@@ -25,9 +25,7 @@
 
     playerctl
 
-    (waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-    }))
+    waybar
     mpd
     #mako
     #rofi-wayland

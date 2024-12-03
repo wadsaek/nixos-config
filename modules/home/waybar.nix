@@ -11,41 +11,6 @@
   config = lib.mkIf config.home.waybar.enable {
     programs.waybar = {
       enable = true;
-      # settings =  
-      # let
-      #   weatherScript = pkgs.writers.writePython3Bin "waybar-weather" { } /*python*/''
-      #   print("hello world")
-      #   a = 5
-      #   '';
-      # in {
-      # mainBar= {
-      #   layer = "top";
-      #   position = "top";
-      #   mode = "dock";
-      #   exclusive = true;
-      #   passthrough = false;
-      #   gtk-layer-shell = true;
-      #   height = 0;
-      #   modules-left = [
-      #     "clock"
-      #     "custom/weather"
-      #     "hyprland/workspaces"
-      #   ];
-      #   modules-center = [
-      #     "hyprland/window"
-      #   ];
-      #   modules-right = [
-      #     "tray"
-      #     "custom/walker"
-      #     "custom/language"
-      #     "battery"
-      #     "backlight"
-      #     "pulseaudio"
-      #     "pulseaudio#microphone"
-      #   ];
-      # };
-      # backlight = { device = "intel_backlight"; format = "{icon} {percent}%"; format-icons = [ "󰃞" "󰃟" "󰃠" ]; min-length = 6; on-scroll-down = "brightnessctl set 1%-"; on-scroll-up = "brightnessctl set 1%+"; }; battery = { format = "{icon} {capacity}%"; format-alt = "{time} {icon}"; format-charging = " {capacity}%"; format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ]; format-plugged = " {capacity}%"; states = { critical = 20; good = 95; warning = 30; }; }; clock = { format = "{:%H:%M}"; tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"; }; "custom/walker" = { format = "󰐊"; on-click = "walker"; }; "custom/weather" = { exec = "${weatherScript}/bin/waybar-weather"; format = "{}"; interval = 30; return-type = "json"; tooltip = true; }; "hyprland/window" = { format = "{}"; }; "hyprland/workspaces" = { all-outputs = true; disable-scroll = true; on-click = "activate"; persistent-workspaces = { "1" = [ ]; "10" = [ ]; "2" = [ ]; "3" = [ ]; "4" = [ ]; "5" = [ ]; "6" = [ ]; "7" = [ ]; "8" = [ ]; "9" = [ ]; }; }; pulseaudio = { format = "{icon} {volume}%"; format-icons = { car = ""; default = [ "" "" "" ]; hands-free = ""; headphone = ""; headset = ""; phone = ""; portable = ""; }; format-muted = " Muted"; on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; on-scroll-down = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"; on-scroll-up = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"; scroll-step = 5; tooltip = false; }; "pulseaudio#microphone" = { format = "{format_source}"; format-source = "󰍬 {volume}%"; format-source-muted = "󰍭 Muted"; on-click = "pamixer --default-source -t"; on-scroll-down = "pamixer --default-source -d 5"; on-scroll-up = "pamixer --default-source -i 5"; scroll-step = 5; }; tray = { icon-size = 13; spacing = 10; };
-      # };
       style =
         let
           inherit (config.lib.stylix.colors.withHashtag)

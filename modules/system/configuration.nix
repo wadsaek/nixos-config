@@ -112,36 +112,38 @@
   ];
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
-  fonts.packages = with pkgs; [
-    nerdfonts
-    siji
-    inriafonts
-    roboto
-    inter
-    minecraftia
-    cherry
-    dotcolon-fonts
-    junicode
-    icomoon-feather
-    eunomia
-    culmus
-    noto-fonts
-    noto-fonts-extra
-    noto-fonts-emoji
-    noto-fonts-color-emoji
-    noto-fonts-emoji-blob-bin
-    junction-font
-    aileron
-    comic-relief
-    times-newer-roman
-    alegreya
-    manrope
-    tenderness
-    fira-math
-    linja-sike
-    weather-icons
-    hyperscrypt-font
-  ];
+  fonts.packages =
+    with pkgs;
+    [
+      siji
+      inriafonts
+      roboto
+      inter
+      minecraftia
+      cherry
+      dotcolon-fonts
+      junicode
+      icomoon-feather
+      eunomia
+      culmus
+      noto-fonts
+      noto-fonts-extra
+      noto-fonts-emoji
+      noto-fonts-color-emoji
+      noto-fonts-emoji-blob-bin
+      junction-font
+      aileron
+      comic-relief
+      times-newer-roman
+      alegreya
+      manrope
+      tenderness
+      fira-math
+      linja-sike
+      weather-icons
+      hyperscrypt-font
+    ]
+    ++ (lib.lists.filter lib.isDerivation (pkgs.lib.attrValues pkgs.nerd-fonts));
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";

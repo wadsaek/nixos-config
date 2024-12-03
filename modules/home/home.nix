@@ -30,33 +30,11 @@
     nix-output-monitor
     porsmo
 
-    (walker.overrideAttrs (
-      let
-        version = "0.8.11";
-      in
-      {
-        inherit version;
-        src = fetchFromGitHub {
-          owner = "abenz1267";
-          repo = "walker";
-          rev = "v${version}";
-          hash = "sha256-C0E20D7wgzNjP1pg+kEDZba8MTeAVRz8uz4AC5lqwLk=";
-        };
-        vendorHash = "sha256-nc/WKBhUxhs1aNUg/GM7vhrKd7FrUdl2uKp7MX2VCdE=";
-      }
-    ))
+    walker
 
     #fun
     lolcat
-    (blahaj.overrideAttrs {
-      version = "17.11.2024-main";
-      src = fetchFromGitHub {
-        owner = "GeopJr";
-        repo = "BLAHAJ";
-        rev = "6e5ba24f471b31080ca35cabcf7bb16a0d56e846";
-        hash = "sha256-8AM2yVqLx3JmDyyu+46hy7d9pD9hC/0aeqqmtpYhbB0=";
-      };
-    })
+    blahaj
     cowsay
     pipes
     ani-cli
@@ -80,9 +58,7 @@
     oculante
     mpv
 
-    (opera.override {
-      proprietaryCodecs = true;
-    })
+    opera
     ddgr
 
     tg
