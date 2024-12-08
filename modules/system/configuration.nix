@@ -57,8 +57,8 @@
         manage = "desktop";
         name = "hyprland";
         start = ''
-            ${pkgs.hyprland}/bin/Hyprland 
-            $env.WaitPID=$!
+          ${pkgs.hyprland}/bin/Hyprland 
+          $env.WaitPID=$!
         '';
       }
     ];
@@ -91,8 +91,8 @@
   };
 
   users.groups = {
-    uinput.members = ["wadsaek"];
-    input.members = ["wadsaek"];
+    uinput.members = [ "wadsaek" ];
+    input.members = [ "wadsaek" ];
   };
 
   programs.zsh.enable = true;
