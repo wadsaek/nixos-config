@@ -6,13 +6,13 @@
 }:
 stdenv.mkDerivation {
   pname = "literallySpinningDonut";
-  version = "1.0.0";
+  version = "optimized-through-the-roof";
 
   src = fetchFromGitHub{
     owner = "blueburb";
     repo = "literallySpinningDonut";
-    rev = "11c3812a9504d19bd756396f9d86ab9b5f00d829";
-    hash = "sha256-fOfENSLAyzbKeoOsmqEwVhIW5+gCU+vo+6h9nf9Wz3o=";
+    rev = "6cad9a6d33107c3ce7ceac648edaf97c23e5a102";
+    hash = "sha256-QSdqOUvXBsuV+Sj6qEc6VU5PZjesRZH6IUjHQ7PG2xM=";
   };
   buildPhase = ''
     gcc main.cpp -lstdc++ -lm -o donut
@@ -26,12 +26,12 @@ stdenv.mkDerivation {
     eigen
   ];
 
-  meta = with lib;{
+  meta = {
     description = "blue_birb's rendition of donut.c coded in c++";
     branch = "main";
     homepage = "https://github.com/blueburb/literallySpinningDonut";
-    license = licenses.gpl3;
+    license = lib.licenses.gpl3;
     mainProgram = "donut";
-    platforms = platforms.all;
+    platforms = lib.platforms.all;
   };
 }
