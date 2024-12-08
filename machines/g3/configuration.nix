@@ -29,4 +29,5 @@
   postgres.enable = true;
   virtualisation.waydroid.enable = true;
   services.cosmos.enable = true;
+  kmscon.enable = true;
 }
