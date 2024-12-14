@@ -13,6 +13,7 @@
 
       #version control
       github-desktop
+      lazygit
       gh
 
       #gamedev

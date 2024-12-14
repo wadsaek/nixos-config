@@ -52,6 +52,7 @@
     musescore
 
     davinci-resolve
+    inkscape
     gimp
 
     grim

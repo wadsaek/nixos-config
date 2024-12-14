@@ -35,6 +35,7 @@
     rose-pine-cursor
     networkmanagerapplet
     brightnessctl
+    htop-vim
     inputs.cosmos.packages.${pkgs.system}.default
   ];
 }
