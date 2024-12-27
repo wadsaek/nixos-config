@@ -22,8 +22,8 @@ import nixpkgs (
   // {
     overlays =
       let
-        nixos-unstable-small = import nixos-unstable-small nixpkgs_options;
-        nixos-unstable-pinned = import nixos-unstable-pinned nixpkgs_options;
+        unstable-small = import nixos-unstable-small nixpkgs_options;
+        unstable-pinned = import nixos-unstable-pinned nixpkgs_options;
       in
       [
         (final: prev: {
@@ -37,8 +37,8 @@ import nixpkgs (
             hash = "sha256-8AM2yVqLx3JmDyyu+46hy7d9pD9hC/0aeqqmtpYhbB0=";
           };
 
-          inherit (nixos-unstable-small) omnisharp-roslyn;
-          inherit (nixos-unstable-pinned) libreoffice-qt davinci-resolve;
+          inherit (unstable-small) omnisharp-roslyn;
+          inherit (unstable-pinned) libreoffice-qt davinci-resolve;
         })
       ];
   }
