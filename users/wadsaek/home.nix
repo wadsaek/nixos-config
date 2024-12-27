@@ -9,7 +9,7 @@
   nixvim.enable = true;
   mangohud.enable = true;
   services.xremap = {
-    enable = false; #wow this actually sucks so much wtf
+    enable = false; # wow this actually sucks so much wtf
     homeRowMods.enable = true;
   };
 
