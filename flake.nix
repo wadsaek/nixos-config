@@ -47,14 +47,12 @@
     flake-utils.lib.eachDefaultSystemPassThrough (
       system:
       let
-        pkgs = import ./nixpkgs.nix {
-          inherit (inputs)
-            nixpkgs
-            nixos-unstable-pinned
-            nixos-unstable-small
-            ;
-          inherit system;
-        };
+        pkgs = import nixpkgs (
+          import ./nixpkgs.nix {
+            inherit inputs system;
+          }
+        );
+
         mkNixosConfiguration =
           modules:
           nixpkgs.lib.nixosSystem {

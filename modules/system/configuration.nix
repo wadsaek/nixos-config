@@ -1,4 +1,5 @@
 {
+  system,
   inputs,
   config,
   pkgs,
@@ -103,10 +104,8 @@
   # Install firefox.
   programs.firefox.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0"
-  ];
+  nixpkgs = import ../../nixpkgs.nix { inherit inputs system; };
+
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
