@@ -3,7 +3,7 @@
   stylix = {
     enable = true;
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/da-one-ocean.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
 
     image = ./wallpaper.jpg;
     polarity = "dark";
