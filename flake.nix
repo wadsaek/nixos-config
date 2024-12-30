@@ -55,19 +55,22 @@
             ;
           inherit system;
         };
-      in
-      {
-        nixosConfigurations = {
-          Esther-g3 = nixpkgs.lib.nixosSystem {
+        mkNixosConfiguration =
+          modules:
+          nixpkgs.lib.nixosSystem {
             specialArgs = {
               inherit inputs system;
             };
-            modules = [
-              ./machines/g3/configuration.nix
+            modules = modules ++ [
               inputs.stylix.nixosModules.stylix
               inputs.cosmos.nixosModules.default
             ];
           };
+      in
+      {
+        nixosConfigurations = {
+          Esther-g3 = mkNixosConfiguration [ ./machines/g3/configuration.nix ];
+          Esther-tuf = mkNixosConfiguration [ ./machines/tuf/configuration.nix ];
         };
         homeConfigurations = {
           wadsaek = home-manager.lib.homeManagerConfiguration {
