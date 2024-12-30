@@ -28,6 +28,20 @@ nixpkgs_options
     in
     [
       (final: prev: {
+        electron_31 = final.electron;
+        harper = final.rustPlatform.buildRustPackage {
+          pname = "harper";
+          version = "master";
+
+          src = final.fetchFromGitHub {
+            owner = "Automattic";
+            repo = "harper";
+            rev = "9a95810310086788d0da39d97fc0aa4453ffaf98";
+            hash = "sha256-ceFh64e3Odb5Wj7JwGgRYwcOgZnCtnPZaTuQ6XmccUo=";
+          };
+
+          cargoHash = "sha256-e9hWRxiO34JxpG2KppZxarBC3YiqHZbdfy5jYq0Wqwk=";
+        };
         opera = prev.opera.override {
           proprietaryCodecs = true;
         };
