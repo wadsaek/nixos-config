@@ -2,18 +2,22 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./nvidia.nix
     ./../../modules/system/configuration.nix
     ./../../modules/stylix/nixos.nix
   ];
-  hostName = "Esther-g3";
+
+  # workaround
+  services.logrotate.checkConfig = false;
+
+  hostName = "Esther-tuf";
   resolution = {
     vertical = 1080;
     horizontal = 1920;
   };
 
-  graphics.nvidia = {
-    enable = true;
-    prime.enable = true;
+  hardware.nvidia = lib.mkForce {
+    powerManagement.enable = true;
   };
 
   display = {
@@ -25,5 +29,5 @@
   postgres.enable = true;
   virtualisation.waydroid.enable = true;
   services.cosmos.enable = true;
-  kmscon.enable = true;
+  # kmscon.enable = true;
 }

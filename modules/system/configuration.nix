@@ -11,7 +11,6 @@
     ./cachix/cachix.nix
     ./services
     ./packages/envPackages.nix
-    ./nvidia.nix
     ./essentials/essentials.nix
     ./general-options.nix
     ./qoa

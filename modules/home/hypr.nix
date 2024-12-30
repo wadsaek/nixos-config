@@ -14,17 +14,22 @@
       enable = true;
       xwayland.enable = true;
       settings = {
+        debug.disable_logs = false;
         #apps for hyprland shortcuts
         "$terminal" = "kitty";
         "$fileManager" = "$terminal ${pkgs.yazi}/bin/yazi";
         "$menu" = "${pkgs.walker}/bin/walker";
-        "$screenshotCommand" = ''${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp -w 0)" - | ${pkgs.wl-clipboard}/bin/wl-copy '';
+        "$screenshotCommand" =
+          ''${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp -w 0)" - | ${pkgs.wl-clipboard}/bin/wl-copy '';
         "$screenshotScreen" = ''${pkgs.grim}/bin/grim - | ${pkgs.wl-clipboard}/bin/wl-copy '';
 
         #autostart
         exec-once = "nm-applet & blueman-applet & waybar & $terminal --hold spotify_player & $terminal --hold fastfetch";
 
-        env = [ ];
+        env = [
+          "LIBVA_DRIVER_NAME,nvidia"
+          "__GLX_VENDOR_LIBRARY_NAME,nvidia"
+        ];
         general = {
           gaps_in = 2;
           gaps_out = 10;
@@ -151,24 +156,28 @@
               ) 10
             )
           )
-          ++ (
-          lib.pipe {
-            H = "l";
-            left = "l";
-            J = "d";
-            down = "d";
-            K = "u";
-            up = "u";
-            L = "r";
-            right = "r";
-          } [
-            (lib.attrsets.mapAttrsToList ( name: value: {inherit name value;} ))
-            (builtins.map ({name,value}: [
-              "$mainMod, ${name}, movefocus, ${value}"  
-              "$mainMod SHIFT, ${name}, swapwindow, ${value}"
-            ]))
-            builtins.concatLists
-          ]
+          ++ (lib.pipe
+            {
+              H = "l";
+              left = "l";
+              J = "d";
+              down = "d";
+              K = "u";
+              up = "u";
+              L = "r";
+              right = "r";
+            }
+            [
+              (lib.attrsets.mapAttrsToList (name: value: { inherit name value; }))
+              (builtins.map (
+                { name, value }:
+                [
+                  "$mainMod, ${name}, movefocus, ${value}"
+                  "$mainMod SHIFT, ${name}, swapwindow, ${value}"
+                ]
+              ))
+              builtins.concatLists
+            ]
           );
         bindm = [
           "$mainMod, mouse:272, movewindow"
