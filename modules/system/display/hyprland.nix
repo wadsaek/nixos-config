@@ -5,6 +5,7 @@
   };
 
   config.programs.hyprland = lib.mkIf config.display.hyprland.enable {
+    withUWSM = true;
     enable = true;
   };
 }

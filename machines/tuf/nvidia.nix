@@ -1,17 +1,25 @@
 { config, lib, ... }:
 {
 
+  boot.extraModprobeConfig = ''
+    options nvidia_drm modeset=1 fbdev=1
+  '';
+  boot.initrd.availableKernelModules = [
+    "nvidia"
+    "nvidia_modeset"
+    "nvidia_uvm"
+    "nvidia_drm"
+  ];
+
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
-    open = true;
+    open = false;
     powerManagement.enable = true;
-    powerManagement.finegrained = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     modesetting.enable = true;
     nvidiaSettings = true;
     prime = {
-      offload.enable = true;
-      offload.enableOffloadCmd = true;
+      sync.enable = true;
       nvidiaBusId = "PCI:100:00:0";
       amdgpuBusId = "PCI:101:00:0";
     };

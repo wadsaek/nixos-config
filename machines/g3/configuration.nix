@@ -1,6 +1,7 @@
 { pkgs, lib, ... }@inputs:
 {
   imports = [
+    ./nvidia.nix
     ./hardware-configuration.nix
     ./../../modules/system/configuration.nix
     ./../../modules/stylix/nixos.nix
