@@ -91,6 +91,8 @@
   #};
 
   programs.git = {
+    userEmail = "wadsaek@gmail.com";
+    userName = "wadsaek";
     package = pkgs.gitFull;
     enable = true;
     ignores = [
@@ -98,6 +100,7 @@
       ".env"
       "_start.sh" # custom startScripts
       ".direnv"
+      "tmux-session.nu" # tmux scripts
     ];
   };
 
