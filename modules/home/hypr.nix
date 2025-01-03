@@ -200,8 +200,7 @@
         ];
       };
       extraConfig = ''
-        monitor = eDP-1,1920x1080@60Hz,0x0,1
-        monitor = auto, 3840x2160@30Hz, auto, auto
+        source = /etc/hyprland/monitorSettings
       '';
     };
 

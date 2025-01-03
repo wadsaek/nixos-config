@@ -31,4 +31,8 @@
   virtualisation.waydroid.enable = true;
   services.cosmos.enable = true;
   kmscon.enable = true;
+
+  environment.etc."hyprland/monitorConfiguration".text = ''
+    eDP-1, 1920x1080@60,auto, 1
+  '';
 }

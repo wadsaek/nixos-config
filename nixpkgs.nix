@@ -55,16 +55,5 @@ nixpkgs_options
         inherit (unstable-pinned) libreoffice-qt davinci-resolve ;
       })
 
-      #hyprland
-      (final: prev: {
-        aquamarine = prev.aquamarine.overrideAttrs {
-          src = final.fetchFromGitHub{
-            owner = "hyprwm";
-            repo = "aquamarine";
-            rev = "eecb74dc79bb6752a2a507e6edee3042390a6091";
-            hash = "sha256-6OWluVE2A8xi+8V3jN9KA72RCgJjYdyyuLBUjxZ2q2U=";
-          };
-        };
-      })
     ];
 }

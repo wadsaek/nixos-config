@@ -10,14 +10,16 @@
   # workaround
   services.logrotate.checkConfig = false;
 
+  services.supergfxd.enable = true;
+  services.asusd = {
+    enable = true;
+    enableUserService = true;
+  };
+
   hostName = "Esther-tuf";
   resolution = {
     vertical = 1080;
     horizontal = 1920;
-  };
-
-  hardware.nvidia = lib.mkForce {
-    powerManagement.enable = true;
   };
 
   display = {
@@ -30,4 +32,8 @@
   virtualisation.waydroid.enable = true;
   services.cosmos.enable = true;
   # kmscon.enable = true;
+
+  environment.etc."hyprland/monitorSettings".text = ''
+    monitor = eDP-1,1920x1200@144,auto,1
+  '';
 }
