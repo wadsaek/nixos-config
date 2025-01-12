@@ -39,7 +39,7 @@
     pipes
     ani-cli
     cbonsai
-    (callPackage ./donut.nix {})
+    (callPackage ./donut.nix { })
 
     #cli
     ripgrep
@@ -72,9 +72,8 @@
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
 
-  home.file =
-    {
-    };
+  home.file = {
+  };
 
   home.sessionVariables = {
     FLAKE = "git+ssh://git@github.com:wadsaek/nixos-config.git";
@@ -97,6 +96,7 @@
     enable = true;
     extraConfig = {
       gpg = {
+        ssh.allowedSignersFile = "${config.home.homeDirectory}/.config/git/allowed_signers";
         format = "ssh";
       };
       user.signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMmFXfWeAY+Nh5z6HKW8BwMhDS0oucpFSN824RiX/7o2 wadsaek@gmail.com";
