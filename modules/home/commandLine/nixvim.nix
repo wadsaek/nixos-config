@@ -2,7 +2,6 @@
   config,
   lib,
   nixvim,
-  pkgs,
   ...
 }:
 {
@@ -11,7 +10,7 @@
   };
   config = lib.mkIf config.nixvim.enable {
     home.packages = [
-      nixvim.packages.${pkgs.system}.full
+      nixvim
     ];
   };
 }

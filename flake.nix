@@ -64,6 +64,10 @@
               inputs.cosmos.nixosModules.default
             ];
           };
+
+          nixvim = inputs.nixvim.packages.${system}.full.extend {
+            nixpkgs.pkgs = pkgs;
+          };
       in
       {
         nixosConfigurations = {
@@ -74,8 +78,7 @@
           wadsaek = home-manager.lib.homeManagerConfiguration {
             inherit pkgs;
             extraSpecialArgs = {
-              inherit (inputs) nixvim;
-              inherit inputs;
+              inherit inputs nixvim;
             };
             modules = [
               inputs.stylix.homeManagerModules.stylix
