@@ -1,4 +1,4 @@
 { lib, config, ... }:
 {
-  hardware.pulseaudio.enable = lib.mkIf (config.audio == "pulseaudio") true;
+  services.pulseaudio.enable = config.audio == "pulseaudio";
 }
