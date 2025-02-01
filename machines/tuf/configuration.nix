@@ -11,6 +11,7 @@
   services.logrotate.checkConfig = false;
 
   services.supergfxd.enable = true;
+  systemd.services.supergfxd.path = [ pkgs.pciutils ];
   services.asusd = {
     enable = true;
     enableUserService = true;
@@ -31,7 +32,8 @@
   postgres.enable = true;
   virtualisation.waydroid.enable = true;
   services.cosmos.enable = true;
-  # kmscon.enable = true;
+
+  services.hardware.openrgb.enable = true;
 
   fonts.full = true;
   environment.etc."hyprland/monitorSettings".text = ''
