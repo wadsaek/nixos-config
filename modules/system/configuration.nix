@@ -118,6 +118,8 @@
     NIXOS_OZONE_WL = "1";
   };
 
+  documentation.dev.enable = true;
+
   programs = {
     steam = {
       enable = true;
@@ -169,6 +171,7 @@
     7062
     5298
     3000
+    22000
   ];
   networking.firewall.allowedUDPPorts = [
     22
@@ -176,6 +179,8 @@
     8081
     7062
     5298
+    21027
+    22000
   ];
 
   system.stateVersion = "24.05";
