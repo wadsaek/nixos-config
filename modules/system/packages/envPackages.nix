@@ -4,38 +4,37 @@
     ./programming.nix
   ];
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = [
     #dependencies
-    glibc
-    libnotify
+    pkgs.glibc
+    pkgs.libnotify
 
     #nixos
-    home-manager
+    pkgs.home-manager
 
     #neovim
-    neovim
+    pkgs.neovim
 
-    alacritty
+    pkgs.alacritty
 
-    libreoffice-qt
+    pkgs.libreoffice-qt
 
     #gaming
-    heroic
-    protonup
+    pkgs.heroic
+    pkgs.protonup
 
-    playerctl
+    pkgs.playerctl
 
-    waybar
-    mpd
-    #mako
-    #rofi-wayland
-    blueman
-    kdePackages.dolphin
-    kdePackages.partitionmanager
-    rose-pine-cursor
-    networkmanagerapplet
-    brightnessctl
-    htop-vim
+    pkgs.waybar
+    pkgs.mpd
+    pkgs.blueman
+    pkgs.kdePackages.dolphin
+    pkgs.kdePackages.partitionmanager
+    pkgs.rose-pine-cursor
+    pkgs.networkmanagerapplet
+    pkgs.brightnessctl
+    pkgs.htop-vim
+    pkgs.btop
     inputs.cosmos.packages.${pkgs.system}.default
   ];
 }
