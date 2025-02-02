@@ -39,7 +39,7 @@ nixpkgs_options
           hash = "sha256-8AM2yVqLx3JmDyyu+46hy7d9pD9hC/0aeqqmtpYhbB0=";
         };
         inherit (unstable-small) ghostty;
-        inherit (unstable-pinned) libreoffice-qt davinci-resolve ;
+        inherit (unstable-pinned) libreoffice-qt davinci-resolve;
       })
 
     ];

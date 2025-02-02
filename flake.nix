@@ -13,7 +13,7 @@
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.follows = "nixos-unstable-small";
     nixos-unstable-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
     nixos-unstable-pinned.url = "github:nixos/nixpkgs/ac35b104800bff9028425fec3b6e8a41de2bbfff";
 
