@@ -113,6 +113,9 @@
   ];
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
+  programs.nix-ld = {
+    enable = true;
+  };
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
