@@ -67,11 +67,9 @@
   };
   xdg.portal.enable = true;
 
-  # Configure keymap in X11
   services.xserver = {
     xkb.layout = "us";
     xkb.variant = "";
-    # videoDrivers = ["nvidia"];
   };
 
   services.printing.enable = true;
@@ -102,7 +100,6 @@
   programs.zsh.autosuggestions.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
-  # Install firefox.
   programs.firefox.enable = true;
 
   nixpkgs = import ../../nixpkgs.nix { inherit inputs system; };
@@ -112,7 +109,6 @@
     "flakes"
   ];
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
-
   programs.nix-ld = {
     enable = true;
   };
