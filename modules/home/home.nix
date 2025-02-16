@@ -94,17 +94,17 @@
     userName = "wadsaek";
     package = pkgs.gitFull;
     enable = true;
+    signing.format = "ssh";
+    signing.key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMmFXfWeAY+Nh5z6HKW8BwMhDS0oucpFSN824RiX/7o2 wadsaek@gmail.com";
     extraConfig = {
       gpg = {
         ssh.allowedSignersFile = "${config.home.homeDirectory}/.config/git/allowed_signers";
-        format = "ssh";
       };
-      user.signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMmFXfWeAY+Nh5z6HKW8BwMhDS0oucpFSN824RiX/7o2 wadsaek@gmail.com";
     };
     ignores = [
       ".envrc"
       ".env"
-      "_start.sh" # custom startScripts
+      "_start.sh" # custom start-scripts
       ".direnv"
       "tmux-session.nu" # tmux scripts
     ];

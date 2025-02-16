@@ -5,6 +5,9 @@
   };
 
   config = lib.mkIf config.home.zellij.enable {
-    programs.zellij.enable = true;
+    programs.zellij = {
+      enable = true;
+      enableZshIntegration = false;
+    };
   };
 }
