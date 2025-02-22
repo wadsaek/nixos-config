@@ -129,13 +129,15 @@
             #the special workspace
             "$mainMod, M, togglespecialworkspace, magic"
             "$mainMod SHIFT, M, movetoworkspace, special:magic"
-            "$mainMod SHIFT, P, exec, eww open powermenu"
 
             "$mainMod, mouse_up, workspace, e-1"
             "$mainMod, mouse_down, workspace, e+1"
 
           ]
-          ++ lib.optional config.programs.eww.enable "$mainMod SHIFT, delete, exec, eww close-all"
+          ++ lib.optionals config.programs.eww.enable [
+            "$mainMod SHIFT, delete, exec, eww close-all"
+            "$mainMod SHIFT, P, exec, eww open powermenu"
+          ]
           ++ (
             # workspaces
             # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
