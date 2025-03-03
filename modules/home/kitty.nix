@@ -12,7 +12,7 @@
       enable = true;
       settings =
         let
-          colors = config.lib.stylix.scheme.withHashtag;
+          colors = config.lib.stylix.colors.withHashtag;
         in
         {
           editor = "nix run github:wadsaek/nixvim";
