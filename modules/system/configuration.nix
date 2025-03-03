@@ -80,6 +80,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "gamemode"
     ];
     shell = pkgs.zsh;
     packages = with pkgs; [
