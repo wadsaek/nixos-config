@@ -71,7 +71,7 @@
       in
       {
         nixosConfigurations = {
-          Esther-g3 = mkNixosConfiguration [ ./machines/g3/configuration.nix ];
+          Esther-g3 = mkNixosConfiguration [ ./machines/g3-old/configuration.nix ];
           Esther-tuf = mkNixosConfiguration [ ./machines/tuf/configuration.nix ];
         };
         homeConfigurations = {
