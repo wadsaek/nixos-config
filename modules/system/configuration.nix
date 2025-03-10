@@ -3,6 +3,7 @@
   inputs,
   config,
   pkgs,
+  lib,
   ...
 }:
 
@@ -15,7 +16,7 @@
     ./general-options.nix
     ./qoa
     ./display
-
+    ./steam.nix
     ./fonts.nix
   ];
   networking.hostName = config.hostName;
@@ -39,32 +40,12 @@
     LC_TIME = "en_IL.UTF-8";
   };
 
-  #services.xserver.enable = true;
-
   services.xserver.resolutions = [
     {
       x = 1920;
       y = 1080;
     }
   ];
-  services.desktopManager.plasma6.enable = true;
-  #services.displayManager.sddm = {
-  #  enable = true;
-  #  wayland.enable = true;
-  #};
-  #services.xserver.displayManager.startx.enable = false;
-  services.xserver.displayManager = {
-    session = [
-      {
-        manage = "desktop";
-        name = "hyprland";
-        start = ''
-          ${pkgs.hyprland}/bin/Hyprland 
-          $env.WaitPID=$!
-        '';
-      }
-    ];
-  };
   xdg.portal.enable = true;
 
   services.xserver = {
@@ -80,8 +61,8 @@
     extraGroups = [
       "networkmanager"
       "wheel"
-      "gamemode"
-    ];
+    ] ++ lib.optional config.steam.enable "gamemode";
+
     shell = pkgs.zsh;
     packages = with pkgs; [
       zsh
@@ -101,8 +82,6 @@
   programs.zsh.autosuggestions.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
-  programs.firefox.enable = true;
-
   nixpkgs = import ../../nixpkgs.nix { inherit inputs system; };
 
   nix.settings.experimental-features = [
@@ -119,20 +98,6 @@
   };
 
   documentation.dev.enable = true;
-
-  programs = {
-    steam = {
-      enable = true;
-      remotePlay.openFirewall = true;
-      dedicatedServer.openFirewall = true;
-      gamescopeSession.enable = true;
-    };
-    gamemode.enable = true;
-    gamescope = {
-      enable = true;
-      capSysNice = true;
-    };
-  };
 
   hardware = {
     bluetooth.enable = true;

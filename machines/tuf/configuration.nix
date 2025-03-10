@@ -34,6 +34,7 @@
   services.cosmos.enable = true;
 
   services.hardware.openrgb.enable = true;
+  steam.enable = true;
 
   fonts.full = true;
   environment.etc."hyprland/monitorSettings".text = ''
