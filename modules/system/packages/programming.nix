@@ -17,7 +17,7 @@
       gh
 
       #gamedev
-      godot_4
+      godot_4-mono
     ])
     ++ [
       (pkgs.vscode-with-extensions.override {
