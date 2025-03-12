@@ -5,10 +5,8 @@
       #general programming
       gccgo14
       docker_27
-      sqlcmd
 
       #rust
-      trunk
       sccache
 
       #version control
@@ -25,7 +23,7 @@
           with pkgs.vscode-extensions;
           [
             bbenoist.nix
-            ms-python.python
+            # ms-python.python
 
             #csharp
             ms-dotnettools.csdevkit
