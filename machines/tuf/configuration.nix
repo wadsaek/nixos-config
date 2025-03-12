@@ -16,6 +16,38 @@
     enable = true;
     enableUserService = true;
   };
+  boot.kernelModules = [
+    "asus-wmi"
+    "asus-armoury"
+  ];
+  # boot.kernelPatches =
+  #   let
+  #     patchRepo = pkgs.fetchFromGitHub {
+  #       owner = "uejji";
+  #       repo = "asus-armoury";
+  #       rev = "f55509ee18bb1195eb7cbd93b40331901d230de6";
+  #       hash = "sha256-/csCSdZ6JH68Prr0JpED4SRrirS3xyXupuigfVil6nE=";
+  #     };
+  #     patchDir = "${patchRepo}/patch";
+  #   in
+  #   [
+  #     {
+  #       name = "move existsing tunings to a";
+  #       patch = "${patchDir}/01-platform-x86-asus-armoury-move-existing-tunings-to-a.patch";
+  #     }
+  #     {
+  #       name = "add-dgpu-tgp-control";
+  #       patch = "${patchDir}/02-platform-x86-asus-armoury-add-dgpu-tgp-control.patch";
+  #     }
+  #     {
+  #       name = "add-apu-mem-control-suppor";
+  #       patch = "${patchDir}/03-platform-x86-asus-armoury-add-apu-mem-control-suppor.patch";
+  #     }
+  #     {
+  #       name = "add-core-count-control";
+  #       patch = "${patchDir}/04-platform-x86-asus-armoury-add-core-count-control.patch";
+  #     }
+  #   ];
 
   hostName = "Esther-tuf";
   resolution = {
