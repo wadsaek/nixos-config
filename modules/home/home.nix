@@ -13,7 +13,7 @@
     ./services
 
     ./hypr.nix
-    ./waybar.nix
+    ./waybar
     ./eww
     ./cosmosConfig.nix
 

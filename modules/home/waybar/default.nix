@@ -4,11 +4,23 @@
   config,
   ...
 }:
+let
+  waybar-wttr-text = builtins.readFile ./waybar-wttr.py;
+  waybar-wttr-py = toString (
+    pkgs.writers.writePython3 "waybar-wttr-py" {
+      libraries = [ pkgs.python3Packages.requests ];
+    } waybar-wttr-text
+  );
+  cfg = builtins.replaceStrings [ "~/.config/waybar/scripts/waybar-wttr.py" ] [ waybar-wttr-py ] (
+    builtins.readFile ./config.jsonc
+  );
+in
 {
   options = {
     home.waybar.enable = lib.mkEnableOption "waybar";
   };
   config = lib.mkIf config.home.waybar.enable {
+    home.file.".config/waybar/config.jsonc".text = cfg;
     programs.waybar = {
       enable = true;
       style =
@@ -126,6 +138,7 @@
                 }
 
                 #pulseaudio {
+                  background: ${base00};
                   color: ${base0E};
                   border-left: 0px;
                   border-right: 0px;
@@ -137,6 +150,13 @@
                   border-left: 0px;
                   border-right: 0px;
                   margin-right: 5px;
+                  padding-right: 10px;
+                }
+
+                #backlight {
+                  border-left:0px;
+                  border-radius: 10px 0px 0px 10px;
+                  border-right: 0px;
                 }
 
                 #battery {
