@@ -34,5 +34,7 @@
     '';
 
   };
-  config.networking.firewall.allowedTCPPorts = lib.mkIf config.postgres.enable [ config.postgres.port ];
+  config.networking.firewall.allowedTCPPorts = lib.mkIf config.postgres.enable [
+    config.postgres.port
+  ];
 }

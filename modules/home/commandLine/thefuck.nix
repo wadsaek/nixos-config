@@ -1,5 +1,6 @@
-{config,lib,...}:{
-  
+{ config, lib, ... }:
+{
+
   config = {
     programs.thefuck = {
       enable = lib.mkDefault true;

@@ -71,18 +71,20 @@ in
               ) (lib.attrsets.mapAttrsToList lib.attrsets.nameValuePair cfg.homeRowMods.keybinds)
             )
           );
-          remap = lib.mkMerge (lib.lists.flatten (
-            builtins.map (
-              finger:
-              (builtins.map (key: {
-                ${key} = {
-                  alone = key;
-                  held = fingerToMod.${finger};
-                  alone_timeout_milis = 20;
-                };
-              }) fingerToKeys.${finger})
-            ) fingers
-          ));
+          remap = lib.mkMerge (
+            lib.lists.flatten (
+              builtins.map (
+                finger:
+                (builtins.map (key: {
+                  ${key} = {
+                    alone = key;
+                    held = fingerToMod.${finger};
+                    alone_timeout_milis = 20;
+                  };
+                }) fingerToKeys.${finger})
+              ) fingers
+            )
+          );
         in
         remap;
       uniqueness =

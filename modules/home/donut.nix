@@ -2,13 +2,13 @@
   fetchFromGitHub,
   stdenv,
   eigen,
-  lib
+  lib,
 }:
 stdenv.mkDerivation {
   pname = "literallySpinningDonut";
   version = "optimized-through-the-roof";
 
-  src = fetchFromGitHub{
+  src = fetchFromGitHub {
     owner = "blueburb";
     repo = "literallySpinningDonut";
     rev = "6cad9a6d33107c3ce7ceac648edaf97c23e5a102";

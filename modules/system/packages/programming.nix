@@ -8,22 +8,19 @@
   options.packages.programming = lib.mkEnableOption "programming packages";
   config.packages.programming = lib.mkDefault config.packages.full;
 
-  config.environment.systemPackages =
-    lib.optionals config.packages.programming ((
-      with pkgs;
-      [
-        #general programming
-        gccgo14
-        docker_27
+  config.environment.systemPackages = lib.optionals config.packages.programming (
+    (with pkgs; [
+      #general programming
+      gccgo14
+      docker_27
 
-        #rust
-        sccache
+      #rust
+      sccache
 
-        #version control
-        lazygit
-        gh
-      ]
-    )
+      #version control
+      lazygit
+      gh
+    ])
     ++ lib.optionals config.packages.graphical [
       pkgs.github-desktop
       pkgs.godot_4-mono
@@ -51,5 +48,6 @@
       (pkgs.writeShellScriptBin "slackwarebeatch" ''
         echo "hello world!"
       '')
-    ]);
+    ]
+  );
 }
