@@ -15,6 +15,7 @@
   display = {
     hyprland.enable = true;
   };
+  packages.graphical = true;
 
   postgres.enable = true;
 

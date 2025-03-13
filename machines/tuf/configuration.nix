@@ -67,6 +67,7 @@
 
   services.hardware.openrgb.enable = true;
   steam.enable = true;
+  packages.full = true;
 
   fonts.full = true;
   environment.etc."hyprland/monitorSettings".text = ''
