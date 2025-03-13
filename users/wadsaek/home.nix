@@ -32,5 +32,6 @@
   home.rofi.enable = true;
   home.tmux.enable = true;
   home.direnv.enable = true;
+  home.mediaEditing.enable = true;
   services.dropbox.enable = true;
 }

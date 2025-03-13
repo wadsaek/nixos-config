@@ -11,6 +11,7 @@
     ./entertainment
     ./qoa
     ./services
+    ./options.nix
 
     ./hypr.nix
     ./waybar
@@ -26,51 +27,54 @@
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
-  home.packages = with pkgs; [
-    nix-output-monitor
-    porsmo
+  home.packages =
+    with pkgs;
+    [
+      nix-output-monitor
+      porsmo
 
-    walker
+      walker
 
-    #fun
-    lolcat
-    blahaj
-    cowsay
-    pipes
-    ani-cli
-    cbonsai
-    (callPackage ./donut.nix { })
+      #fun
+      lolcat
+      blahaj
+      cowsay
+      pipes
+      ani-cli
+      cbonsai
+      (callPackage ./donut.nix { })
 
-    #cli
-    ripgrep
-    mprocs
-    asciiquarium
-    cmatrix
+      #cli
+      ripgrep
+      mprocs
+      asciiquarium
+      cmatrix
 
-    obsidian
-    spotify
-    musescore
+      obsidian
+      spotify
+      musescore
 
-    davinci-resolve
-    inkscape
-    gimp
+      grim
+      oculante
+      mpv
 
-    grim
-    oculante
-    mpv
+      opera
+      ddgr
 
-    opera
-    ddgr
+      tg
+      discord
+      betterdiscordctl
+      zapzap
+      whatsapp-for-linux
+      telegram-desktop
 
-    tg
-    discord
-    betterdiscordctl
-    zapzap
-    whatsapp-for-linux
-    telegram-desktop
-
-    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
-  ];
+      inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    ]
+    ++ lib.optionals config.home.mediaEditing.enable [
+      davinci-resolve
+      inkscape
+      gimp
+    ];
 
   home.file = {
   };
@@ -152,4 +156,5 @@
     #   ];
     # };
   };
+  services.xremap.enable = lib.mkDefault false;
 }
