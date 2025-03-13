@@ -65,8 +65,19 @@
             ];
           };
 
-          nixvim = inputs.nixvim.packages.${system}.full.extend {
-            nixpkgs.pkgs = pkgs;
+        nixvim = inputs.nixvim.packages.${system}.full.extend {
+          nixpkgs.pkgs = pkgs;
+        };
+        mkHomeConfiguration =
+          modules:
+          home-manager.lib.homeManagerConfiguration {
+            inherit pkgs;
+            extraSpecialArgs = {
+              inherit inputs nixvim;
+            };
+            modules = modules ++ [
+              inputs.stylix.homeManagerModules.stylix
+            ];
           };
       in
       {
@@ -75,16 +86,8 @@
           Esther-tuf = mkNixosConfiguration [ ./machines/tuf/configuration.nix ];
         };
         homeConfigurations = {
-          wadsaek = home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
-            extraSpecialArgs = {
-              inherit inputs nixvim;
-            };
-            modules = [
-              inputs.stylix.homeManagerModules.stylix
-              ./users/wadsaek/home.nix
-            ];
-          };
+          wadsaek = mkHomeConfiguration [ ./users/wadsaek/home.nix ];
+          wadsaek-little = mkHomeConfiguration [ ./users/wadsaek-little/home.nix ];
         };
 
         formatter.${system} = pkgs.nixfmt-rfc-style;
