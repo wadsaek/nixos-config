@@ -1,9 +1,18 @@
-{ ... }:
+{ inputs, pkgs, ... }:
 {
   imports = [
     ./../../modules/home/home.nix
     ./../../modules/stylix/homeManager.nix
   ];
+
+  home.packages =
+    let
+      nixvim = inputs.nixvim.packages.${pkgs.system}.minimal.extend {
+        nixpkgs.pkgs = pkgs;
+        nix.enable = true;
+      };
+    in
+    [ nixvim ];
 
   home.hypr.enable = true;
   home.kitty.enable = true;
