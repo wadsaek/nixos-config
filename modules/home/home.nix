@@ -152,23 +152,4 @@
     #   ];
     # };
   };
-
-  home.starship.enable = lib.mkDefault true;
-  home.nu.enable = lib.mkDefault true;
-  home.zsh.enable = lib.mkDefault true;
-  home.zsh.theFuck = lib.mkDefault true;
-  home.kitty.enable = lib.mkDefault true;
-  home.yazi.enable = lib.mkDefault true;
-  home.wl-clipboard.enable = lib.mkDefault true;
-  home.spotify-player.enable = lib.mkDefault true;
-  home.mako.enable = lib.mkDefault true;
-  home.alacritty.enable = lib.mkDefault true;
-  home.bat.enable = lib.mkDefault true;
-  home.fzf.enable = lib.mkDefault true;
-  home.zellij.enable = lib.mkDefault true;
-  home.rofi.enable = lib.mkDefault true;
-  home.tmux.enable = lib.mkDefault true;
-  home.direnv.enable = lib.mkDefault true;
-  services.dropbox.enable = lib.mkDefault true;
-  services.xremap.enable = lib.mkDefault false;
 }
