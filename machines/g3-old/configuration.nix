@@ -19,7 +19,8 @@
 
   postgres.enable = true;
 
-  environment.etc."hyprland/monitorConfiguration".text = ''
-    eDP-1, 1920x1080@60,auto, 1
+  services.logind.lidSwitch = "ignore";
+  environment.etc."hyprland/monitorSettings".text = ''
+    monitor = eDP-1, 1920x1080@60,auto, 1
   '';
 }
