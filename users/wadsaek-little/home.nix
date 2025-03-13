@@ -10,6 +10,7 @@
   home.wl-clipboard.enable = true;
   home.fzf.enable = true;
   home.tmux.enable = true;
+  home.zsh.enable = true;
 
   home.username = "wadsaek";
   home.homeDirectory = "/home/wadsaek";
