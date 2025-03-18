@@ -32,6 +32,7 @@
     [
       nix-output-monitor
       porsmo
+      drawio
 
       walker
 
