@@ -20,7 +20,13 @@
         "$screenshotScreen" = ''${pkgs.grim}/bin/grim - | ${pkgs.wl-clipboard}/bin/wl-copy '';
 
         #autostart
-        exec-once = "nm-applet & blueman-applet & waybar & $terminal --hold spotify_player & $terminal --hold fastfetch";
+        exec-once =
+          let
+            applets = "nm-applet & blueman-applet";
+            spotify_player = "$terminal --hold spotify_player";
+            fastfetch = "$terminal --hold fastfetch";
+          in
+          "${applets} & waybar & ${spotify_player} & ${fastfetch}";
 
         env = [
           "LIBVA_DRIVER_NAME,nvidia"
