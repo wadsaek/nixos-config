@@ -7,5 +7,6 @@
     ./hyprland
     ./hypridle.nix
     ./hyprlock.nix
+    ./hyprpolkitagent.nix
   ];
 }
