@@ -113,7 +113,7 @@
         };
 
         "$mainMod" = "SUPER";
-        windowrulev2 = [
+        windowrule = [
           "suppressevent maximize, class:.*"
         ];
       } // import ./keybinds.nix { inherit pkgs config lib; };
