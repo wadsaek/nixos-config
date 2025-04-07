@@ -53,7 +53,28 @@
 
       obsidian
       spotify
-      musescore
+      (callPackage (
+        { appimageTools, fetchurl }:
+        let
+          pname = "musescore-appimage";
+          version = "4.5.1";
+          src = fetchurl {
+            url = "https://cdn.jsdelivr.net/musescore/v${version}/MuseScore-Studio-${version}.250800846-x86_64.AppImage";
+            sha256 = "a986c2b15ecf2bbe397117a3c4addf56a9b08c88f6e9cecfceacfbc0ec404799";
+          };
+          appimageContents = appimageTools.extractType2 { inherit pname version src; };
+        in
+        appimageTools.wrapType2 {
+          inherit pname version src;
+
+          extraInstallCommands = ''
+            install -Dm444 ${appimageContents}/share/applications/org.musescore.MuseScore4portable.desktop -t $out/share/applications
+            substituteInPlace $out/share/applications/org.musescore.MuseScore4portable.desktop \
+              --replace-fail 'Exec=mscore4portable %U' 'Exec=${pname}'
+            cp -r ${appimageContents}/share/icons $out/share
+          '';
+        }
+      ) { })
 
       grim
       oculante
