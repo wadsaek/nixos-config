@@ -107,6 +107,8 @@
 
   programs.home-manager.enable = true;
 
+  xdg.enable = true;
+
   #home.pointerCursor = {
   #  gtk.enable = true;
   #  x11.enable = true;
