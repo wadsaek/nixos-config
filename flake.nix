@@ -28,7 +28,7 @@
     };
 
     cosmos = {
-      url = "git+http://codeberg.org/ext0l/cosmos.git";
+      url = "git+https://codeberg.org/ext0l/cosmos.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

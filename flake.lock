@@ -120,11 +120,11 @@
         "rev": "f764939269a3c8a5610beb25924593b9a8e6e19a",
         "revCount": 75,
         "type": "git",
-        "url": "http://codeberg.org/ext0l/cosmos.git"
+        "url": "https://codeberg.org/ext0l/cosmos.git"
       },
       "original": {
         "type": "git",
-        "url": "http://codeberg.org/ext0l/cosmos.git"
+        "url": "https://codeberg.org/ext0l/cosmos.git"
       }
     },
     "crane": {
