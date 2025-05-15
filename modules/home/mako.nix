@@ -4,7 +4,9 @@
 
   config.services.mako = lib.mkIf config.home.mako.enable {
     enable = true;
-    defaultTimeout = 5000;
-    borderRadius = 4;
+    settings = {
+      defaultTimeout = 5000;
+      borderRadius = 4;
+    };
   };
 }
