@@ -14,12 +14,12 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/b15e517c-0763-4a06-b78f-7f3ac9de000f";
+    { device = "/dev/disk/by-uuid/79a3ec23-7ea4-40e4-9349-553e42448c4e";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/246A-0E5D";
+    { device = "/dev/disk/by-uuid/36E8-592A";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
@@ -30,12 +30,12 @@
     };
 
   fileSystems."/home/wadsaek/.local/share/Steam" =
-    { device = "/dev/disk/by-uuid/83b59cf1-c500-47f2-87c5-709bc2248067";
+    { device = "/dev/disk/by-uuid/47c10336-0cb0-45c4-a23c-6c3838cb86d9";
       fsType = "ext4";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/c0704072-c240-49e9-bb98-8adc851d02c1"; }
+    [ { device = "/dev/disk/by-uuid/bd734727-8e9e-4921-ba97-0b362f55a366"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
