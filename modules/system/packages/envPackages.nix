@@ -29,6 +29,9 @@
 
       #neovim
       pkgs.neovim
+
+      pkgs.file
+      pkgs.speedtest-rs
     ]
     ++ lib.optionals config.steam.enable [
       pkgs.heroic
