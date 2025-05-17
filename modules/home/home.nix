@@ -123,7 +123,7 @@
     package = pkgs.gitFull;
     enable = true;
     signing.format = "ssh";
-    signing.key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMmFXfWeAY+Nh5z6HKW8BwMhDS0oucpFSN824RiX/7o2 wadsaek@gmail.com";
+    signing.key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID3zJ6C52f/ykyhNC65t590I/AwNbHIIXCWlVoX2ORp4 wadsaek@gmail.com";
     extraConfig = {
       gpg = {
         ssh.allowedSignersFile = "${config.home.homeDirectory}/.config/git/allowed_signers";
