@@ -76,6 +76,7 @@
   users.groups = {
     uinput.members = [ "wadsaek" ];
     input.members = [ "wadsaek" ];
+    plugdev.members = [ "wadsaek" ];
   };
 
   programs.zsh.enable = true;
