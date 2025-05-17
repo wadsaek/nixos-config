@@ -20,6 +20,7 @@
     "asus-wmi"
     "asus-armoury"
   ];
+  boot.kernelPackages = lib.mkForce (import ./kernel.nix { inherit pkgs; });
 
   hostName = "Esther-tuf";
   resolution = {
