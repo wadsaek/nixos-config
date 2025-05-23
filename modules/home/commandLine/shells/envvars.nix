@@ -21,5 +21,5 @@
       mapsValues = lib.attrVals mapsKeys maps;
     in
     builtins.replaceStrings mapsKeys mapsValues value
-  ) config.home.sessionVariables;
+  ) (lib.attrsets.filterAttrs (n: v: n != "XDG_CONFIG_DIRS") config.home.sessionVariables);
 }
