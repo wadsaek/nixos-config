@@ -45,5 +45,6 @@
   fonts.full = true;
   environment.etc."hyprland/monitorSettings".text = ''
     monitor = eDP-1,1920x1200@144,auto,1
+    monitor = eDP-2,1920x1200@144,auto,1
   '';
 }
