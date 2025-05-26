@@ -32,6 +32,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     stylix.url = "github:danth/stylix";
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
     xremap-flake.url = "github:xremap/nix-flake";
@@ -76,6 +80,7 @@
               inherit inputs nixvim;
             };
             modules = modules ++ [
+              inputs.spicetify-nix.homeManagerModules.spicetify
               inputs.stylix.homeManagerModules.stylix
             ];
           };
