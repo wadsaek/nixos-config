@@ -19,7 +19,7 @@
   home.starship.enable = true;
   home.nu.enable = true;
   home.zsh.enable = true;
-  home.zsh.theFuck = true;
+  home.zsh.pay-respects = true;
   home.kitty.enable = true;
   home.yazi.enable = true;
   home.wl-clipboard.enable = true;

@@ -3,7 +3,7 @@
   options.home.zsh = {
     enable = lib.mkEnableOption "zsh";
     nuUtils = lib.mkEnableOption "utils from Nushell like `http`, `ls` and lots of others";
-    theFuck = lib.mkEnableOption "the fuck";
+    pay-respects = lib.mkEnableOption "pay respects";
   };
 
   config = lib.mkIf config.home.zsh.enable {
