@@ -5,7 +5,7 @@
     settings = {
       background = lib.mkForce [
         {
-          path = toString ../stylix/wallpaper.jpg;
+          path = "screenshot";
           blur_passes = 3;
           blur_size = 8;
         }
