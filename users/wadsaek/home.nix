@@ -24,6 +24,7 @@
   home.yazi.enable = true;
   home.wl-clipboard.enable = true;
   home.spotify-player.enable = true;
+  programs.spicetify.enable = true;
   home.mako.enable = true;
   home.alacritty.enable = true;
   home.bat.enable = true;

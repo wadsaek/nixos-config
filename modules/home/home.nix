@@ -52,7 +52,6 @@
       cmatrix
 
       obsidian
-      spotify
       (callPackage (
         { appimageTools, fetchurl }:
         let
