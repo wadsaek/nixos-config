@@ -81,7 +81,7 @@
             };
             modules = modules ++ [
               inputs.spicetify-nix.homeManagerModules.spicetify
-              inputs.stylix.homeManagerModules.stylix
+              inputs.stylix.homeModules.stylix
             ];
           };
       in
