@@ -79,7 +79,7 @@
       oculante
       mpv
 
-      opera
+      firefox
       ddgr
 
       tg

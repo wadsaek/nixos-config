@@ -29,9 +29,6 @@ nixpkgs_options
     [
       (final: prev: {
         electron_31 = final.electron;
-        opera = prev.opera.override {
-          proprietaryCodecs = true;
-        };
         blahaj = prev.blahaj.overrideAttrs {
           owner = "GeopJr";
           repo = "BLAHAJ";
