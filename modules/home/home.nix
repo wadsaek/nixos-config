@@ -92,6 +92,7 @@
       inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     ]
     ++ lib.optionals config.home.mediaEditing.enable [
+      blender
       davinci-resolve
       inkscape
       gimp
