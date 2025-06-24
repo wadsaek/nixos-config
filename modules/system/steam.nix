@@ -1,9 +1,10 @@
 { config, lib, ... }:
 {
   options.steam.enable = lib.mkEnableOption "steam";
-  config = {
+  config = lib.mkIf config.steam.enable {
+    services.flatpak.enable = true;
     programs = {
-      steam = lib.mkIf config.steam.enable {
+      steam = {
         enable = true;
         remotePlay.openFirewall = true;
         dedicatedServer.openFirewall = true;
