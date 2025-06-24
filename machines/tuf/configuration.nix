@@ -20,6 +20,10 @@
     "asus-wmi"
     "asus-armoury"
   ];
+  boot.blacklistedKernelModules = [
+    "kvm"
+    "kvm_amd"
+  ];
   boot.kernelPackages = lib.mkForce (import ./kernel.nix { inherit pkgs; });
 
   hostName = "Esther-tuf";
