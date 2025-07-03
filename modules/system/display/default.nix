@@ -4,6 +4,6 @@
     ./sddm.nix
     ./plasma.nix
     ./hyprland.nix
-    ./cosmos.nix
+    # ./cosmos.nix
   ];
 }

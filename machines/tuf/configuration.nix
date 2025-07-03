@@ -40,7 +40,7 @@
 
   postgres.enable = true;
   virtualisation.waydroid.enable = true;
-  services.cosmos.enable = true;
+  # services.cosmos.enable = false;
 
   services.hardware.openrgb.enable = true;
   steam.enable = true;

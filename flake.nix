@@ -65,7 +65,7 @@
             };
             modules = modules ++ [
               inputs.stylix.nixosModules.stylix
-              inputs.cosmos.nixosModules.default
+              # inputs.cosmos.nixosModules.default
             ];
           };
 

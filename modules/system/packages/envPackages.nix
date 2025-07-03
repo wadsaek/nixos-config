@@ -55,6 +55,6 @@
     ++ lib.optionals (with config.packages; (graphical && full)) [
       pkgs.libreoffice-qt
       pkgs.alacritty
-      inputs.cosmos.packages.${pkgs.system}.default
+      # inputs.cosmos.packages.${pkgs.system}.default
     ];
 }
