@@ -11,7 +11,6 @@
   config.environment.systemPackages = lib.optionals config.packages.programming (
     (with pkgs; [
       #general programming
-      gccgo14
       docker_27
 
       #rust
