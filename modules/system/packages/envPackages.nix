@@ -34,7 +34,6 @@
       pkgs.speedtest-rs
     ]
     ++ lib.optionals config.steam.enable [
-      pkgs.heroic
       pkgs.protonup
     ]
     ++ lib.optionals config.packages.full [
