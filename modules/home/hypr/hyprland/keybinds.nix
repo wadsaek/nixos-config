@@ -3,6 +3,13 @@
   config,
   lib,
 }:
+let
+  switchKanataText = builtins.readFile ./scripts/kanata.py;
+  switchKanata = toString (
+    pkgs.writers.writePython3 "waybar-wttr-py" {
+    } switchKanataText
+  );
+in
 {
   bind =
     [
@@ -16,6 +23,7 @@
       "$mainMod SHIFT, S, exec, $screenshotCommand"
       ",Print, exec, $screenshotScreen"
       "$mainMod, backspace, exec, hyprlock"
+      "$mainMod SHIFT, K, exec, ${switchKanata}"
 
       #dwindle
       "$mainMod, P, togglesplit,"

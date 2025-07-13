@@ -1,8 +1,11 @@
+let
+  serviceName = "internalKeyboard";
+in
 {
   config.services.kanata = {
     enable = true;
     keyboards = {
-      internalKeyboard = {
+      ${serviceName} = {
         extraDefCfg = "process-unmapped-keys yes";
         config = # lisp
           ''
@@ -46,4 +49,15 @@
       #};
     };
   };
+  # let wadsaek manage kanata
+  config.security.polkit.extraConfig = # js
+    ''
+      polkit.addRule(function(action, subject) {
+          if (action.id == "org.freedesktop.systemd1.manage-units" &&
+              action.lookup("unit") == "kanata-${serviceName}.service" &&
+              subject.user == "wadsaek") {
+              return polkit.Result.YES;
+          }
+      });
+    '';
 }
