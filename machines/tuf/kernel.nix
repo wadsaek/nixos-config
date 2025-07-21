@@ -11,22 +11,22 @@ let
     buildLinux (
       args
       // rec {
-        version = "6.14.6-arch1";
+        version = "6.15.6-arch1";
         modDirVersion = version;
         kernalPatchRev = "5f7c2f39a153be2ca29057e0a2d6c5651edecddb";
 
         # Fetch the Arch kernel source
         src = fetchzip {
           url = "https://github.com/archlinux/linux/archive/refs/tags/v${version}.tar.gz";
-          hash = "sha256-TsOK1RwVshK/avtHHyLG4EltA7cAtvY56TDBmAwyZGI=";
+          hash = "sha256-DY+eNMwD+19ZweBECKUdkZxCp4ttH04LFfrjrVXpYRU=";
         };
 
         # Fetch the patches and sort them from [A-Z] then [0-9]
         # This should place 'asus-patch-series.patch' first
         patchDir = fetchgit {
           url = "https://aur.archlinux.org/linux-g14.git";
-          rev = "052871fc82939866547f28542235fe6956bdcf86";
-          hash = "sha256-Ty3QzJr/0neJOF3nrTPMHuG9PHDZycVLXThyhV1ETYI=";
+          rev = "8e1dfce7277a5a75e375155d6a6bc5f35e233a56";
+          hash = "sha256-VuvZSk+Rsy/2/t281332BVSU5IZEREZhNgni2Gforx0=";
         };
 
         kernelPatches =
