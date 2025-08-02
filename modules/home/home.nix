@@ -89,6 +89,8 @@
       whatsapp-for-linux
       telegram-desktop
 
+      qbittorrent
+
       inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     ]
     ++ lib.optionals config.home.mediaEditing.enable [
