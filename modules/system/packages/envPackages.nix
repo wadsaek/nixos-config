@@ -43,6 +43,7 @@
       pkgs.brightnessctl
       pkgs.htop-vim
       pkgs.btop
+      pkgs.wineWow64Packages.stagingFull
     ]
     ++ lib.optionals config.packages.graphical [
       pkgs.waybar
