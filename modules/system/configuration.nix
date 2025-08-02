@@ -18,6 +18,7 @@
     ./display
     ./steam.nix
     ./fonts.nix
+    ./documentation.nix
   ];
   networking.hostName = config.hostName;
 
@@ -99,7 +100,6 @@
     EDITOR = "nvim";
   };
 
-  documentation.dev.enable = true;
 
   hardware = {
     bluetooth.enable = true;
