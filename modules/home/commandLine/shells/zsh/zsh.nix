@@ -20,6 +20,9 @@
         dev = "$HOME/Developing";
       };
       shellAliases = {
+        cd = "z";
+        vi = "nvim";
+        vim = "nvim";
         cat = lib.mkIf config.home.bat.enable "bat";
         nixvim = "nix run github:wadsaek/nixvim";
       };
