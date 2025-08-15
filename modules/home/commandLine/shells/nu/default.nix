@@ -15,7 +15,7 @@
       configFile.source = ./config.nu;
       envFile.source = ./env.nu;
       shellAliases = {
-        cat = "bat";
+        cat = lib.mkIf config.home.bat.enable "bat";
         vi = "nvim";
         vim = "nvim";
         nvim-local = "${pkgs.neovim}/bin/nvim";
