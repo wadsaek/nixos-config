@@ -36,4 +36,5 @@
   home.mediaEditing.enable = true;
   services.dropbox.enable = true;
   programs.zoxide.enable = true;
+  programs.eza.enable = true;
 }
