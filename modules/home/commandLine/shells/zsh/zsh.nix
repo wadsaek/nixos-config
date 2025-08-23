@@ -20,7 +20,7 @@
         dev = "$HOME/Developing";
       };
       shellAliases = {
-        cd = "z";
+        cd = lib.mkIf config.programs.zoxide.enable "z";
         vi = "nvim";
         vim = "nvim";
         cat = lib.mkIf config.home.bat.enable "bat";
