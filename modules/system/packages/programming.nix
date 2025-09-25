@@ -10,9 +10,6 @@
 
   config.environment.systemPackages = lib.optionals config.packages.programming (
     (with pkgs; [
-      #general programming
-      docker_28
-
       #rust
       sccache
 

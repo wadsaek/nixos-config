@@ -100,7 +100,6 @@
     EDITOR = "nvim";
   };
 
-
   hardware = {
     bluetooth.enable = true;
     bluetooth.powerOnBoot = true;
@@ -127,6 +126,10 @@
 
   virtualisation.docker = {
     enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
   };
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "wadsaek" ];
