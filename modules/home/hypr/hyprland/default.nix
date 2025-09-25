@@ -26,7 +26,13 @@
             spotify_player = "$terminal --hold spotify_player";
             fastfetch = "$terminal --hold fastfetch";
           in
-          "${applets} & waybar & ${spotify_player} & ${fastfetch}";
+          [
+          applets
+          "waybar"
+          spotify_player
+          fastfetch
+          "${pkgs.hyprland-per-window-layout}/bin/hyprland-per-window-layout"
+          ];
 
         env = [
           "LIBVA_DRIVER_NAME,nvidia"
