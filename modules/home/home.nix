@@ -94,6 +94,8 @@
       inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     ]
     ++ lib.optionals config.home.mediaEditing.enable [
+      krita
+      xournalpp
       blender
       davinci-resolve
       inkscape
