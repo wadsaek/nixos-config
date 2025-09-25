@@ -62,7 +62,8 @@
     extraGroups = [
       "networkmanager"
       "wheel"
-    ] ++ lib.optional config.steam.enable "gamemode";
+    ]
+    ++ lib.optional config.steam.enable "gamemode";
 
     shell = pkgs.zsh;
     packages = with pkgs; [
