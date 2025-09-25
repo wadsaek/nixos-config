@@ -97,6 +97,7 @@
   };
 
   environment.sessionVariables = {
+    GSK_RENDERER = "ngl";
     NIXOS_OZONE_WL = "1";
     EDITOR = "nvim";
   };
