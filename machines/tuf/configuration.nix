@@ -24,7 +24,7 @@
     "kvm"
     "kvm_amd"
   ];
-  boot.kernelPackages = lib.mkForce (import ./kernel.nix { inherit pkgs; });
+  boot.kernelPackages = lib.mkForce (import ./kernel.nix inputs);
 
   hostName = "Esther-tuf";
   resolution = {
