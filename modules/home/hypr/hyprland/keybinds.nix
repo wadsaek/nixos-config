@@ -14,10 +14,9 @@ in
   bind =
     [
       "$mainMod, F, fullscreen,"
-      "$mainMod, Q, exec, $terminal"
+      "$mainMod, Q, exec, kitty --hold fastfetch"
       "$mainMod, C, killactive,"
       "$mainMod SHIFT, End, exit,"
-      "$mainMod, E, exec, $fileManager"
       "$mainMod, V, togglefloating,"
       "$mainMod, R, exec, $menu"
       "$mainMod SHIFT, S, exec, $screenshotCommand"

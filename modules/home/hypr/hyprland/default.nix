@@ -12,8 +12,6 @@
       settings = {
         debug.disable_logs = false;
         #apps for hyprland shortcuts
-        "$terminal" = "kitty";
-        "$fileManager" = "$terminal ${pkgs.yazi}/bin/yazi";
         "$menu" = "${pkgs.walker}/bin/walker";
         "$screenshotCommand" =
           ''${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp -w 0)" - | ${pkgs.wl-clipboard}/bin/wl-copy '';
@@ -23,8 +21,8 @@
         exec-once =
           let
             applets = "nm-applet & blueman-applet";
-            spotify_player = "$terminal --hold spotify_player";
-            fastfetch = "$terminal --hold fastfetch";
+            spotify_player = "kitty --hold spotify_player";
+            fastfetch = "kitty --hold fastfetch";
           in
           [
           applets
