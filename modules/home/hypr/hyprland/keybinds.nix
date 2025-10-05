@@ -24,8 +24,9 @@ in
       "$mainMod, backspace, exec, hyprlock"
       "$mainMod SHIFT, K, exec, ${switchKanata}"
 
-      #dwindle
       "$mainMod, P, togglesplit,"
+      "$mainMod, T, togglegroup,"
+      "$mainMod, E, changegroupactive,"
 
       #the special workspace
       "$mainMod, M, togglespecialworkspace, magic"

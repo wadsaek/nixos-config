@@ -120,6 +120,9 @@
         windowrule = [
           "suppressevent maximize, class:.*"
         ];
+        workspace = [
+          "2, on-created-empty:firefox"
+        ];
       } // import ./keybinds.nix { inherit pkgs config lib; };
       extraConfig = ''
         source = /etc/hyprland/monitorSettings
