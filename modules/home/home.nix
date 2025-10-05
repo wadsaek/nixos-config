@@ -46,10 +46,12 @@
       (callPackage ./donut.nix { })
 
       #cli
+      ripgrep-all
       ripgrep
       mprocs
       asciiquarium
       cmatrix
+      wiki-tui
 
       obsidian
       (callPackage (
@@ -88,6 +90,7 @@
       zapzap
       whatsapp-for-linux
       telegram-desktop
+      element-desktop
 
       qbittorrent
 

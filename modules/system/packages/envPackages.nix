@@ -31,6 +31,10 @@
       pkgs.neovim
 
       pkgs.file
+      pkgs.dust
+      pkgs.dua
+      pkgs.fd
+      (lib.hiPrio pkgs.uutils-coreutils-noprefix)
       pkgs.speedtest-rs
     ]
     ++ lib.optionals config.steam.enable [

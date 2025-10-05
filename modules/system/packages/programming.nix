@@ -15,6 +15,8 @@
 
       #version control
       lazygit
+      gitui
+      rusty-man
       gh
     ])
     ++ lib.optionals config.packages.graphical [
