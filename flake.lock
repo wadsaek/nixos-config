@@ -1005,11 +1005,11 @@
         "roslyn-bugfix": "roslyn-bugfix"
       },
       "locked": {
-        "lastModified": 1759844456,
-        "narHash": "sha256-U/VyVjSTOikHTnNq27lEAPRAg2fPxiegT3mRjM3303k=",
+        "lastModified": 1759846183,
+        "narHash": "sha256-vR8i8fTIT1hV8BA3SsdkLOVlscnUusR3UVqQB/sImMc=",
         "owner": "wadsaek",
         "repo": "nixvim",
-        "rev": "9d025a71a4778b5c0174fb7a75b4885cb4c4bcf7",
+        "rev": "d9ad34732b0b9572bd49063187cf23b3635cd428",
         "type": "github"
       },
       "original": {
