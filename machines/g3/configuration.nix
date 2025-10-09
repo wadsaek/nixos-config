@@ -16,7 +16,7 @@
     hyprland.enable = true;
   };
 
-  postgres.enable = true;
+  services.postgresql.enable = true;
 
   environment.etc."hyprland/monitorConfiguration".text = ''
     eDP-1, 1920x1080@60,auto, 1

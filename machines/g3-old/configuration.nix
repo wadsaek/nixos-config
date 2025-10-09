@@ -17,7 +17,7 @@
   };
   packages.graphical = true;
 
-  postgres.enable = true;
+  services.postgresql.enable = true;
 
   services.logind.lidSwitch = "ignore";
   environment.etc."hyprland/monitorSettings".text = ''

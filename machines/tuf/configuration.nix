@@ -38,7 +38,7 @@
     hyprland.enable = true;
   };
 
-  postgres.enable = true;
+  services.postgresql.enable = true;
   virtualisation.waydroid.enable = true;
   # services.cosmos.enable = false;
 
