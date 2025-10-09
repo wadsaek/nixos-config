@@ -16,6 +16,7 @@
     ./general-options.nix
     ./qoa
     ./display
+    ./security
     ./steam.nix
     ./fonts.nix
     ./documentation.nix
