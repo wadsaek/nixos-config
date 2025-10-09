@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }:
 {
@@ -11,6 +10,5 @@
 
   config.programs.rofi = lib.mkIf config.home.rofi.enable {
     enable = true;
-    package = pkgs.rofi-wayland;
   };
 }
