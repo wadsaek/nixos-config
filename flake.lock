@@ -867,6 +867,21 @@
         "type": "github"
       }
     },
+    "nixpkgs-master": {
+      "locked": {
+        "lastModified": 1760036653,
+        "narHash": "sha256-FJOwW7YMxtnMi3R+MxwiVsUsrOtm3ubIBo8Jdc1nH6w=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "b6bae5b8d26ef00d8df42206ac24d0665640286b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1759632233,
@@ -1001,15 +1016,15 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "nixvim": "nixvim_2",
-        "roslyn-bugfix": "roslyn-bugfix"
+        "nixpkgs-master": "nixpkgs-master",
+        "nixvim": "nixvim_2"
       },
       "locked": {
-        "lastModified": 1759850908,
-        "narHash": "sha256-pgcWXnh2IhI3hWdzDT4Sb5EHlilrXKgeD8rDv/ZYWv4=",
+        "lastModified": 1760111752,
+        "narHash": "sha256-KGduwejdIdpWxwNBMLRfw7sDwRpr+EacpTJ3BBsnbII=",
         "owner": "wadsaek",
         "repo": "nixvim",
-        "rev": "08933e178091cef5d81bf2a9d16791bf5aabe7b4",
+        "rev": "9da6ae6c66e7bc709d8d2ec44cf4aeb6b56c46a3",
         "type": "github"
       },
       "original": {
@@ -1026,11 +1041,11 @@
         "systems": "systems_4"
       },
       "locked": {
-        "lastModified": 1759792642,
-        "narHash": "sha256-BPZK3jHFFXWuQFDbR6wG8uIksmStODfwWp2TQEC1NEA=",
+        "lastModified": 1759927289,
+        "narHash": "sha256-EWdwR9l+JG466rPuNmjjzDPvQAuh37lmhgWa2xeaMdk=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "9bdedc05109b44f97cdf757b3910fda8f86bc28d",
+        "rev": "57006a3ace4a3c889ab61b70fd5d8b197de8314e",
         "type": "github"
       },
       "original": {
@@ -1144,22 +1159,6 @@
       "original": {
         "owner": "ndom91",
         "repo": "rose-pine-hyprcursor",
-        "type": "github"
-      }
-    },
-    "roslyn-bugfix": {
-      "locked": {
-        "lastModified": 1759780523,
-        "narHash": "sha256-GGhaza6P0wQ37FFDeeT7grOKKlLNOrU89Az3181l9aQ=",
-        "owner": "corngood",
-        "repo": "nixpkgs",
-        "rev": "ec95e68a73e1862997f5e23a6c9103378c3ebda2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "corngood",
-        "ref": "dotnet-crash-fix",
-        "repo": "nixpkgs",
         "type": "github"
       }
     },
