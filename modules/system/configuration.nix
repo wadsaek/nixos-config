@@ -42,12 +42,6 @@
     LC_TIME = "en_IL";
   };
 
-  services.xserver.resolutions = [
-    {
-      x = 1920;
-      y = 1080;
-    }
-  ];
   xdg.portal.enable = true;
 
   services.xserver = {
@@ -147,11 +141,6 @@
     22000
   ];
   networking.firewall.allowedUDPPorts = [
-    22
-    5173
-    8081
-    7062
-    5298
     21027
     22000
   ];
