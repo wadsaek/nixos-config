@@ -29,5 +29,12 @@
       };
     };
 
+    icons = {
+      enable = true;
+      dark = "rose-pine-icons";
+      light = "rose-pine-dawn-icons";
+      package = pkgs.rose-pine-icon-theme;
+    };
+
   };
 }
