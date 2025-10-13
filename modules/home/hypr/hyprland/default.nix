@@ -25,11 +25,11 @@
             fastfetch = "kitty --hold fastfetch";
           in
           [
-          applets
-          "waybar"
-          spotify_player
-          fastfetch
-          "${pkgs.hyprland-per-window-layout}/bin/hyprland-per-window-layout"
+            applets
+            "waybar"
+            spotify_player
+            fastfetch
+            "${pkgs.hyprland-per-window-layout}/bin/hyprland-per-window-layout"
           ];
 
         env = [
@@ -120,7 +120,8 @@
         workspace = [
           "2, on-created-empty:firefox"
         ];
-      } // import ./keybinds.nix { inherit pkgs config lib; };
+      }
+      // import ./keybinds.nix { inherit pkgs config lib; };
       extraConfig = ''
         source = /etc/hyprland/monitorSettings
       '';

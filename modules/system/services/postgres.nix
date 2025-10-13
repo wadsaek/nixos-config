@@ -9,7 +9,7 @@ let
 in
 {
   config.services.postgresql = {
-  package = pkgs.postgresql_18_jit;
+    package = pkgs.postgresql_18_jit;
     enableJIT = true;
 
     ensureDatabases = [ "wadsaek" ];
