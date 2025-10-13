@@ -76,8 +76,23 @@
     plugdev.members = [ "wadsaek" ];
   };
 
-  programs.zsh.enable = true;
-  programs.zsh.autosuggestions.enable = true;
+  programs.zsh = {
+    enable = true;
+    autosuggestions.enable = true;
+  };
+
+  bash = {
+    enable = true;
+    completion.enable = true;
+    shellInit = ''
+      set -o vi
+      shopt -s dirspell autocd cdspell
+      shopt -s nullglob globstar
+      shopt -s lithist
+      shopt -s nocaseglob
+    '';
+  };
+
   users.defaultUserShell = pkgs.zsh;
 
   nixpkgs = import ../../nixpkgs.nix { inherit inputs system; };
