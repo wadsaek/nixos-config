@@ -6,5 +6,6 @@
     ./network/network.nix
     ./kernel.nix
     ./fwupd.nix
+    ./nix.nix
   ];
 }

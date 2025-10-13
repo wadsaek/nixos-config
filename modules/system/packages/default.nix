@@ -1,0 +1,6 @@
+{
+  imports = [
+    ./envPackages.nix
+    ./shells
+  ];
+}

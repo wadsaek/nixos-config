@@ -18,47 +18,46 @@
       default = config.packages.full;
     };
   };
-  config.environment.systemPackages =
-    [
-      #dependencies
-      pkgs.glibc
-      pkgs.libnotify
+  config.environment.systemPackages = [
+    #dependencies
+    pkgs.glibc
+    pkgs.libnotify
 
-      #nixos
-      pkgs.home-manager
+    #nixos
+    pkgs.home-manager
 
-      #neovim
-      pkgs.neovim
+    #neovim
+    pkgs.neovim
 
-      pkgs.file
-      pkgs.dust
-      pkgs.dua
-      pkgs.fd
-      (lib.hiPrio pkgs.uutils-coreutils-noprefix)
-      pkgs.speedtest-rs
-    ]
-    ++ lib.optionals config.steam.enable [
-      pkgs.protonup
-    ]
-    ++ lib.optionals config.packages.full [
-      pkgs.playerctl
-      pkgs.mpd
-      pkgs.blueman
-      pkgs.brightnessctl
-      pkgs.htop-vim
-      pkgs.btop
-      pkgs.wineWow64Packages.stagingFull
-    ]
-    ++ lib.optionals config.packages.graphical [
-      pkgs.waybar
-      pkgs.kdePackages.dolphin
-      pkgs.kdePackages.partitionmanager
-      pkgs.rose-pine-cursor
-      pkgs.networkmanagerapplet
-    ]
-    ++ lib.optionals (with config.packages; (graphical && full)) [
-      pkgs.libreoffice-qt
-      pkgs.alacritty
-      # inputs.cosmos.packages.${pkgs.system}.default
-    ];
+    pkgs.file
+    pkgs.dust
+    pkgs.dua
+    pkgs.fd
+    (lib.hiPrio pkgs.uutils-coreutils-noprefix)
+    pkgs.speedtest-rs
+  ]
+  ++ lib.optionals config.steam.enable [
+    pkgs.protonup
+  ]
+  ++ lib.optionals config.packages.full [
+    pkgs.playerctl
+    pkgs.mpd
+    pkgs.blueman
+    pkgs.brightnessctl
+    pkgs.htop-vim
+    pkgs.btop
+    pkgs.wineWow64Packages.stagingFull
+  ]
+  ++ lib.optionals config.packages.graphical [
+    pkgs.waybar
+    pkgs.kdePackages.dolphin
+    pkgs.kdePackages.partitionmanager
+    pkgs.rose-pine-cursor
+    pkgs.networkmanagerapplet
+  ]
+  ++ lib.optionals (with config.packages; (graphical && full)) [
+    pkgs.libreoffice-qt
+    pkgs.alacritty
+    # inputs.cosmos.packages.${pkgs.system}.default
+  ];
 }
