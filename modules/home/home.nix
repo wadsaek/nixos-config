@@ -103,7 +103,8 @@
       davinci-resolve
       inkscape
       gimp
-    ];
+    ]
+    ++ import ./scripts { inherit pkgs; };
 
   home.file = {
   };
