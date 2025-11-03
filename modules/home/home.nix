@@ -33,6 +33,7 @@
       nix-output-monitor
       porsmo
       drawio
+      jq
 
       walker
 
@@ -54,28 +55,7 @@
       wiki-tui
 
       obsidian
-      (callPackage (
-        { appimageTools, fetchurl }:
-        let
-          pname = "musescore-appimage";
-          version = "4.5.1";
-          src = fetchurl {
-            url = "https://cdn.jsdelivr.net/musescore/v${version}/MuseScore-Studio-${version}.250800846-x86_64.AppImage";
-            sha256 = "a986c2b15ecf2bbe397117a3c4addf56a9b08c88f6e9cecfceacfbc0ec404799";
-          };
-          appimageContents = appimageTools.extractType2 { inherit pname version src; };
-        in
-        appimageTools.wrapType2 {
-          inherit pname version src;
-
-          extraInstallCommands = ''
-            install -Dm444 ${appimageContents}/share/applications/org.musescore.MuseScore4portable.desktop -t $out/share/applications
-            substituteInPlace $out/share/applications/org.musescore.MuseScore4portable.desktop \
-              --replace-fail 'Exec=mscore4portable %U' 'Exec=${pname}'
-            cp -r ${appimageContents}/share/icons $out/share
-          '';
-        }
-      ) { })
+      musescore
 
       grim
       oculante
@@ -88,13 +68,13 @@
       discord
       betterdiscordctl
       zapzap
-      whatsapp-for-linux
+      wasistlos
       telegram-desktop
       element-desktop
 
       qbittorrent
 
-      inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+      inputs.rose-pine-hyprcursor.packages.${pkgs.stdenv.hostPlatform.system}.default
     ]
     ++ lib.optionals config.home.mediaEditing.enable [
       krita
@@ -126,13 +106,13 @@
   #};
 
   programs.git = {
-    userEmail = "wadsaek@gmail.com";
-    userName = "wadsaek";
     package = pkgs.gitFull;
     enable = true;
-    signing.format = "ssh";
-    signing.key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID3zJ6C52f/ykyhNC65t590I/AwNbHIIXCWlVoX2ORp4 wadsaek@gmail.com";
-    extraConfig = {
+    settings = {
+      user.email = "wadsaek@gmail.com";
+      user.name = "wadsaek";
+      signing.format = "ssh";
+      signing.key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID3zJ6C52f/ykyhNC65t590I/AwNbHIIXCWlVoX2ORp4 wadsaek@gmail.com";
       gpg = {
         ssh.allowedSignersFile = "${config.home.homeDirectory}/.config/git/allowed_signers";
       };

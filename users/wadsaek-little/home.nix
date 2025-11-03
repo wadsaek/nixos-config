@@ -7,7 +7,7 @@
 
   home.packages =
     let
-      nixvim = inputs.nixvim.packages.${pkgs.system}.minimal.extend {
+      nixvim = inputs.nixvim.packages.${pkgs.stdenv.hostPlatform.system}.minimal.extend {
         nixpkgs.pkgs = pkgs;
         nix.enable = true;
       };

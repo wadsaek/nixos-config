@@ -37,7 +37,7 @@
     pkgs.speedtest-rs
   ]
   ++ lib.optionals config.steam.enable [
-    pkgs.protonup
+    pkgs.protonup-ng
   ]
   ++ lib.optionals config.packages.full [
     pkgs.playerctl
@@ -57,7 +57,6 @@
   ]
   ++ lib.optionals (with config.packages; (graphical && full)) [
     pkgs.libreoffice-qt
-    pkgs.alacritty
-    # inputs.cosmos.packages.${pkgs.system}.default
+    pkgs.ghostty
   ];
 }

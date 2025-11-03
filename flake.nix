@@ -15,7 +15,7 @@
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-unstable-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
-    nixos-unstable-pinned.url = "github:nixos/nixpkgs/d89fc19e405cb2d55ce7cc114356846a0ee5e956";
+    nixos-unstable-pinned.url = "github:nixos/nixpkgs/94fc102d2c15d9c1a861e59de550807c65358e1b";
 
     home-manager = {
       url = "github:nix-community/home-manager/";
