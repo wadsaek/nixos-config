@@ -3,7 +3,7 @@
     ./shells
     ./wl_clipboard.nix
     ./nixvim.nix
-    ./alacritty.nix
+    ./ghostty.nix
     ./bat.nix
     ./fzf.nix
     ./zellij.nix
