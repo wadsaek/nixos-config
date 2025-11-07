@@ -71,6 +71,7 @@
       wasistlos
       telegram-desktop
       element-desktop
+      signal-desktop
 
       qbittorrent
 
@@ -87,10 +88,6 @@
     ++ import ./scripts { inherit pkgs; };
 
   home.file = {
-  };
-
-  home.sessionVariables = {
-    FLAKE = "git+ssh://git@github.com:wadsaek/nixos-config.git";
   };
 
   programs.home-manager.enable = true;
@@ -111,11 +108,13 @@
     settings = {
       user.email = "wadsaek@gmail.com";
       user.name = "wadsaek";
-      signing.format = "ssh";
-      signing.key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID3zJ6C52f/ykyhNC65t590I/AwNbHIIXCWlVoX2ORp4 wadsaek@gmail.com";
       gpg = {
         ssh.allowedSignersFile = "${config.home.homeDirectory}/.config/git/allowed_signers";
       };
+    };
+    signing = {
+      format = "ssh";
+      key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID3zJ6C52f/ykyhNC65t590I/AwNbHIIXCWlVoX2ORp4 wadsaek@gmail.com";
     };
     ignores = [
       ".envrc"
