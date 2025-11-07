@@ -10,13 +10,35 @@
           blur_size = 8;
         }
       ];
-      #input-field = [
-      #  {
-      #    size = "200, 50";
-      #    position = "0, -80";
-      #    fade_on_empty = false;
-      #  }
-      #];
+      label =
+        let
+          mkLabel =
+            attr:
+            {
+              monitor = "";
+              font_family = "Aileron";
+            }
+            // attr;
+        in
+        lib.map mkLabel [
+          {
+            position = "0, -80";
+            text = "$LAYOUT";
+            font_size = 20;
+          }
+          {
+            position = "0, -80";
+            text = "$DESC";
+            valign = "top";
+            font_size = 36;
+          }
+          {
+            position = "0, -160";
+            text = "$TIME";
+            font_size = 60;
+            valign = "top";
+          }
+        ];
     };
   };
 }

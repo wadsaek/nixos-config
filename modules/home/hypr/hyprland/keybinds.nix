@@ -6,7 +6,7 @@
 let
   switchKanataText = builtins.readFile ./scripts/kanata.py;
   switchKanata = toString (
-    pkgs.writers.writePython3 "waybar-wttr-py" {
+    pkgs.writers.writePython3 "switchKanata" {
     } switchKanataText
   );
   dispatchChangeVolume = arg: "exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ ${arg}";

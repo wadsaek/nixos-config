@@ -9,9 +9,10 @@
     "modules-left": [
         "clock",
         "custom/weather",
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "niri/workspaces"
     ],
-    "modules-center": ["hyprland/window"],
+    "modules-center": ["hyprland/window","niri/window"],
     "modules-right": [
         "tray",
         "custom/walker",
@@ -26,6 +27,26 @@
         "format": "{}"
     },
     "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+            "10": []
+        }
+    },
+    "niri/window": {
+        "format": "{}"
+    },
+    "niri/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "on-click": "activate",

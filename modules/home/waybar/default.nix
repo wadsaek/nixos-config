@@ -42,7 +42,7 @@ in
         ''
                 * {
                   border: none;
-          	border-radius: 0;
+                  border-radius: 0;
                   min-height: 0;
                 }
                 window#waybar {
