@@ -35,6 +35,7 @@
     sddm.enable = true;
     plasma.enable = true;
     hyprland.enable = true;
+    niri.enable = true;
   };
 
   services.postgresql.enable = true;
