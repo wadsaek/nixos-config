@@ -116,7 +116,19 @@
         "$mainMod" = "SUPER";
         windowrule = [
           "suppressevent maximize, class:.*"
-        ];
+        ]
+        ++ (
+          let
+            param = "class:showmethekey-gtk";
+            width = 500;
+            height = 64;
+          in
+          [
+            "pin, ${param}"
+            "float, ${param}"
+            "size ${builtins.toString width} ${builtins.toString height}, ${param}"
+          ]
+        );
         workspace = [
           "2, on-created-empty:firefox"
         ];
