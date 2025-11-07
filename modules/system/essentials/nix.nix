@@ -5,6 +5,7 @@
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
+    "pipe-operators"
   ];
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
   programs.nix-ld = {
