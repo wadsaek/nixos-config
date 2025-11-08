@@ -1,6 +1,6 @@
 { inputs, system, ... }:
 {
-  nixpkgs = import ../../../nixpkgs.nix { inherit inputs system; };
+  nixpkgs = import ../../../nixpkgs { inherit inputs system; };
 
   nix.settings.experimental-features = [
     "nix-command"

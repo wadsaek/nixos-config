@@ -52,7 +52,7 @@
       system:
       let
         pkgs = import nixpkgs (
-          import ./nixpkgs.nix {
+          import ./nixpkgs {
             inherit inputs system;
           }
         );

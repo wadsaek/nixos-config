@@ -4,11 +4,6 @@
   lib,
 }:
 let
-  switchKanataText = builtins.readFile ./scripts/kanata.py;
-  switchKanata = toString (
-    pkgs.writers.writePython3 "switchKanata" {
-    } switchKanataText
-  );
   dispatchChangeVolume = arg: "exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ ${arg}";
   dispatchPrevSong = "exec, playerctl previous";
   dispatchNextSong = "exec, playerctl next";
@@ -24,7 +19,7 @@ in
     "$mainMod SHIFT, S, exec, $screenshotCommand"
     ",Print, exec, $screenshotScreen"
     "$mainMod, backspace, exec, hyprlock"
-    "$mainMod SHIFT, K, exec, ${switchKanata}"
+    "$mainMod SHIFT, K, exec, ${pkgs.switchKanata}"
 
     "$mainMod, P, togglesplit,"
     "$mainMod, T, togglegroup,"

@@ -76,6 +76,7 @@ nixpkgs_options
         });
         inherit (unstable-pinned) libreoffice-qt davinci-resolve;
       })
+      (import ./utils.nix)
 
     ];
 }
