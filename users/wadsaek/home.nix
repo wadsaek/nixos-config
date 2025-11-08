@@ -6,6 +6,7 @@
   ];
 
   home.hypr.enable = true;
+  home.niri.enable = true;
   nixvim.enable = true;
   mangohud.enable = true;
   services.xremap = {

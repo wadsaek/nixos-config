@@ -14,6 +14,7 @@
     ./options.nix
 
     ./hypr
+    ./niri
     ./waybar
     ./eww
     # ./cosmosConfig.nix
