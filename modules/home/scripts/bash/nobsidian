@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+NOTES="${NOTES:-$HOME/Documents/}"
+nobsidian () {
+    cd "$NOTES"
+    nvim
+}
+nobsidian

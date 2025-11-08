@@ -86,7 +86,7 @@
       inkscape
       gimp
     ]
-    ++ import ./scripts { inherit pkgs; };
+    ++ import ./scripts { inherit pkgs lib; };
 
   home.file = {
   };
