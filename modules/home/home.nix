@@ -60,6 +60,7 @@
 
       grim
       oculante
+      ffmpeg
       mpv
 
       firefox
