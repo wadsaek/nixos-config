@@ -57,7 +57,7 @@
       }
 
       // Uncomment this to make the mouse warp to the center of newly focused windows.
-      warp-mouse-to-focus
+      // warp-mouse-to-focus
 
       // Focus windows and outputs automatically when moving the mouse into them.
       // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
@@ -329,8 +329,8 @@
 
       // Example volume keys mappings for PipeWire & WirePlumber.
       // The allow-when-locked=true property makes them work even when the session is locked.
-      XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
-      XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
+      XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
+      XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
       XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
       XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 
@@ -341,29 +341,22 @@
       Mod+W { toggle-column-tabbed-display; }
 
       Mod+Left  { focus-column-left; }
-      Mod+Down  { focus-window-down; }
-      Mod+Up    { focus-window-up; }
+      Mod+Down  { focus-window-or-workspace-down; }
+      Mod+Up    { focus-window-or-workspace-up; }
       Mod+Right { focus-column-right; }
       Mod+H     { focus-column-left; }
-      Mod+J     { focus-window-down; }
-      Mod+K     { focus-window-up; }
+      Mod+J     { focus-window-or-workspace-down; }
+      Mod+K     { focus-window-or-workspace-up; }
       Mod+L     { focus-column-right; }
 
       Mod+Shift+Left  { move-column-left; }
-      Mod+Shift+Down  { move-window-down; }
-      Mod+Shift+Up    { move-window-up; }
+      Mod+Shift+Down  { move-window-down-or-to-workspace-down; }
+      Mod+Shift+Up    { move-window-up-or-to-workspace-up; }
       Mod+Shift+Right { move-column-right; }
       Mod+Shift+H     { move-column-left; }
-      Mod+Shift+J     { move-window-down; }
-      Mod+Shift+K     { move-window-up; }
+      Mod+Shift+J     { move-window-down-or-to-workspace-down; }
+      Mod+Shift+K     { move-window-up-or-to-workspace-up; }
       Mod+Shift+L     { move-column-right; }
-
-      // Alternative commands that move across workspaces when reaching
-      // the first or last window in a column.
-      // Mod+J     { focus-window-or-workspace-down; }
-      // Mod+K     { focus-window-or-workspace-up; }
-      // Mod+Ctrl+J     { move-window-down-or-to-workspace-down; }
-      // Mod+Ctrl+K     { move-window-up-or-to-workspace-up; }
 
       Mod+Home { focus-column-first; }
       Mod+End  { focus-column-last; }
@@ -477,7 +470,7 @@
       // Mod+Ctrl+1 { move-window-to-workspace 1; }
 
       // Switches focus between the current and the previous workspace.
-      // Mod+Tab { focus-workspace-previous; }
+      Mod+Tab { focus-workspace-previous; }
 
       // Consume one window from the right into the focused column.
       Mod+Comma  { consume-window-into-column; }
