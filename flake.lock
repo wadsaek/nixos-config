@@ -1023,11 +1023,11 @@
         "nixvim": "nixvim_2"
       },
       "locked": {
-        "lastModified": 1763924452,
-        "narHash": "sha256-nOaq3maTAR+4RuqyUhLWVSFFwoQF2PQqSnic08PAauU=",
+        "lastModified": 1763932475,
+        "narHash": "sha256-WyfJmNAKOMRm9uXBoGLh9LQaAXhXR2p4yB2niZhfiR4=",
         "owner": "wadsaek",
         "repo": "nixvim",
-        "rev": "16a4e6fc80299a0ba5c8ed5e0adc4f094be935fe",
+        "rev": "a424b8b22dfe2694eb3eb0b5e79956a09d08c42e",
         "type": "github"
       },
       "original": {
