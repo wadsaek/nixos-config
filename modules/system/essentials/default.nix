@@ -7,5 +7,6 @@
     ./kernel.nix
     ./fwupd.nix
     ./nix.nix
+    ./earlyoom.nix
   ];
 }
