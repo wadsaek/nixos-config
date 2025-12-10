@@ -14,6 +14,7 @@
   // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
   input {
       keyboard {
+          track-layout "window"
           xkb {
               // You can set rules, model, layout, variant and options.
               // For more information, see xkeyboard-config(7).

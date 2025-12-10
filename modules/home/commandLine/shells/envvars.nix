@@ -14,6 +14,7 @@ in
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "${home}/.steam/root/compatibilitytools.d";
     QT_QPA_PLATFORM = "wayland";
     XCURSOR_SIZE = lib.mkForce (toString config.stylix.cursor.size);
+    MANPAGER = "nvim +Man!";
   };
   programs.nushell.environmentVariables = (
     lib.attrsets.filterAttrs (n: v: n != "XDG_CONFIG_DIRS") config.home.sessionVariables

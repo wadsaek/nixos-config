@@ -1,7 +1,6 @@
 unsetopt beep
 
-_dotnet_zsh_complete()
-{
+_dotnet_zsh_complete() {
   local completions=("$(dotnet complete "$words")")
 
   # If the completion list is empty, just continue with filename selection
@@ -16,3 +15,11 @@ _dotnet_zsh_complete()
 }
 
 compdef _dotnet_zsh_complete dotnet
+
+todo() {
+  local dir="${NOTES:-$HOME/Documents/}/fleeting"
+  mkdir -p "$dir"
+  cd "$dir"
+  ${EDITOR-nano} todo.md
+  cd -
+}
