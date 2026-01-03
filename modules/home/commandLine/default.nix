@@ -2,7 +2,6 @@
   imports = [
     ./shells
     ./wl_clipboard.nix
-    ./nixvim.nix
     ./ghostty.nix
     ./bat.nix
     ./fzf.nix

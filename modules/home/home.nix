@@ -11,6 +11,7 @@
     ./entertainment
     ./qoa
     ./services
+    ./programming
     ./options.nix
 
     ./hypr

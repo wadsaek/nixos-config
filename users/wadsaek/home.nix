@@ -8,6 +8,7 @@
   home.hypr.enable = true;
   home.niri.enable = true;
   nixvim.enable = true;
+  rider.enable = true;
   mangohud.enable = true;
   services.xremap = {
     enable = false; # wow this actually sucks so much wtf
