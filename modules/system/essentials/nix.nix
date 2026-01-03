@@ -1,4 +1,9 @@
-{ inputs, system, ... }:
+{
+  inputs,
+  system,
+  pkgs,
+  ...
+}:
 {
   nixpkgs = import ../../../nixpkgs { inherit inputs system; };
 
@@ -10,6 +15,10 @@
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
   programs.nix-ld = {
     enable = true;
+    libraries = [
+      pkgs.gtk3
+      pkgs.libnotify
+    ];
   };
 
   environment.sessionVariables = {
