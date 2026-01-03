@@ -23,10 +23,10 @@
     pkgs.glibc
     pkgs.libnotify
 
-    #nixos
+    #NixOS
     pkgs.home-manager
 
-    #neovim
+    #Neovim
     pkgs.neovim
 
     pkgs.file
@@ -54,9 +54,11 @@
     pkgs.kdePackages.partitionmanager
     pkgs.rose-pine-cursor
     pkgs.networkmanagerapplet
+    pkgs.thunderbird
   ]
   ++ lib.optionals (with config.packages; (graphical && full)) [
     pkgs.libreoffice-qt
+    pkgs.onlyoffice-desktopeditors
     pkgs.ghostty
   ];
 }
