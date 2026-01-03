@@ -36,7 +36,7 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    stylix.url = "github:danth/stylix";
+    stylix.url = "github:nix-community/stylix";
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
     xremap-flake.url = "github:xremap/nix-flake";
   };
