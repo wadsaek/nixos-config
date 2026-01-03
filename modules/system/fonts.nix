@@ -29,7 +29,6 @@
         comic-relief
         times-newer-roman
         alegreya
-        manrope
         tenderness
         fira-math
         linja-sike
