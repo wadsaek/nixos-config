@@ -576,22 +576,6 @@
         "type": "github"
       }
     },
-    "oculante-fix": {
-      "locked": {
-        "lastModified": 1767444057,
-        "narHash": "sha256-tYz+lTR/pWaeghPwFMyFHhjA5EQvy/Nv6y/ku9DCIRg=",
-        "owner": "clakoclast",
-        "repo": "nixpkgs",
-        "rev": "985c22a89a04522e19abf0e1e1a21d637078e38b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "clakoclast",
-        "ref": "oculante_libaom-sys-build-fix",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "cosmos": "cosmos",
@@ -601,7 +585,6 @@
         "nixos-unstable-small": "nixos-unstable-small",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
-        "oculante-fix": "oculante-fix",
         "rose-pine-hyprcursor": "rose-pine-hyprcursor",
         "spicetify-nix": "spicetify-nix",
         "stylix": "stylix",
