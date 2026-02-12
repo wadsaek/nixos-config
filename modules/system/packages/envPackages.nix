@@ -60,6 +60,13 @@
   ]
   ++ lib.optionals (with config.packages; (graphical && full)) [
     pkgs.libreoffice-qt
+    pkgs.hunspell
+    pkgs.hunspellDicts.he-il
+    pkgs.hunspellDicts.uk-ua
+    pkgs.hunspellDicts.en-us
+    pkgs.hunspellDicts.en-us-large
+    pkgs.hyphenDicts.en-us
+
     pkgs.onlyoffice-desktopeditors
     pkgs.ghostty
   ];
