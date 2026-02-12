@@ -18,6 +18,7 @@
       gitui
       rusty-man
       gh
+      csharprepl
     ])
     ++ lib.optionals config.packages.graphical [
       pkgs.github-desktop

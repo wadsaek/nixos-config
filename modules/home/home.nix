@@ -56,6 +56,7 @@
       cmatrix
       wiki-tui
 
+      typst
       obsidian
       musescore
 
