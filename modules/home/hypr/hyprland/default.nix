@@ -115,20 +115,26 @@
 
         "$mainMod" = "SUPER";
         windowrule = [
-          "suppressevent maximize, class:.*"
-        ]
-        ++ (
-          let
-            param = "class:showmethekey-gtk";
-            width = 500;
-            height = 64;
-          in
-          [
-            "pin, ${param}"
-            "float, ${param}"
-            "size ${builtins.toString width} ${builtins.toString height}, ${param}"
-          ]
-        );
+          {
+            name = "maximize";
+            suppress_event = "maximize";
+            "match:class" = ".*";
+          }
+          (
+            let
+              param = "class:showmethekey-gtk";
+              width = 500;
+              height = 64;
+            in
+            {
+              name = param;
+              pin = "on";
+              float = "on";
+              size = "${toString width} ${toString height}, ${param}";
+              "match:class" = param;
+            }
+          )
+        ];
         workspace = [
           "2, on-created-empty:firefox"
         ];
