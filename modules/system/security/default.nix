@@ -1,3 +1,6 @@
 {
-  imports = [ ./polkit.nix ];
+  imports = [
+    ./polkit.nix
+    ./yubikey.nix
+  ];
 }

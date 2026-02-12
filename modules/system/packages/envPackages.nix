@@ -33,6 +33,8 @@
     pkgs.dust
     pkgs.dua
     pkgs.fd
+    pkgs.gnupg
+    pkgs.openssl
     (lib.hiPrio pkgs.uutils-coreutils-noprefix)
     pkgs.speedtest-rs
   ]
