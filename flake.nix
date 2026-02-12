@@ -95,7 +95,7 @@
           wadsaek-little = mkHomeConfiguration [ ./users/wadsaek-little/home.nix ];
         };
 
-        formatter.${system} = pkgs.nixfmt-rfc-style;
+        formatter.${system} = pkgs.nixfmt;
       }
     );
 }
