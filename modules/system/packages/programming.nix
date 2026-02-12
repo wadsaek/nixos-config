@@ -16,8 +16,11 @@
       #version control
       lazygit
       gitui
-      rusty-man
       gh
+
+      # broken: https://github.com/nixpkgs/nixos/issues/476789
+      # rusty-man
+
       csharprepl
     ])
     ++ lib.optionals config.packages.graphical [
