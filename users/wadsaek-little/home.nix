@@ -1,4 +1,9 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
+}:
 {
   imports = [
     ./../../modules/home/home.nix
@@ -8,7 +13,7 @@
   home.packages =
     let
       nixvim = inputs.nixvim.packages.${pkgs.stdenv.hostPlatform.system}.minimal.extend {
-        nixpkgs.pkgs = pkgs;
+        nixpkgs = lib.mkForce { inherit pkgs; };
         nix.enable = true;
       };
     in

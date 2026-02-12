@@ -70,7 +70,7 @@
           };
 
         nixvim = inputs.nixvim.packages.${system}.full.extend {
-          nixpkgs.pkgs = pkgs;
+          nixpkgs = { inherit pkgs; config = nixpkgs.lib.mkForce {}; };
         };
         mkHomeConfiguration =
           modules:
