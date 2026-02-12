@@ -6,6 +6,7 @@ let
   inherit (inputs)
     nixos-unstable-pinned
     nixos-unstable-small
+    nixpkgs-master
     ;
   nixpkgs_options = {
     inherit system;
@@ -23,6 +24,7 @@ nixpkgs_options
 // {
   overlays =
     let
+      master = import nixpkgs-master nixpkgs_options;
       unstable-small = import nixos-unstable-small nixpkgs_options;
       unstable-pinned = import nixos-unstable-pinned nixpkgs_options;
     in
@@ -75,6 +77,7 @@ nixpkgs_options
           '';
         });
         inherit (unstable-pinned) libreoffice-qt davinci-resolve;
+        inherit (master) oculante;
       })
       (import ./utils.nix)
 
