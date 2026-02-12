@@ -10,6 +10,7 @@
     programs.zsh = {
       enable = true;
       initContent = (builtins.readFile ./.zshrc);
+      dotDir = "${config.xdg.configHome}/zsh";
 
       autocd = true;
       defaultKeymap = "viins";
