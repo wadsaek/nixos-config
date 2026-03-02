@@ -10,7 +10,9 @@
         "clock",
         "custom/weather",
         "hyprland/workspaces",
-        "niri/workspaces"
+        "niri/workspaces",
+        "hyprland/language",
+        "niri/language"
     ],
     "modules-center": ["hyprland/window","niri/window"],
     "modules-right": [
