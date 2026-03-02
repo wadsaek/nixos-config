@@ -36,6 +36,7 @@
     pkgs.gnupg
     pkgs.openssl
     (lib.hiPrio pkgs.uutils-coreutils-noprefix)
+    pkgs.xxd
     pkgs.speedtest-rs
   ]
   ++ lib.optionals config.steam.enable [
