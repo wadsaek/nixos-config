@@ -16,7 +16,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-unstable-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
     nixos-unstable-pinned.url = "github:nixos/nixpkgs/94fc102d2c15d9c1a861e59de550807c65358e1b";
-    nixpkgs-master.url = "github:nixos/nixpkgs/master";
 
     home-manager = {
       url = "github:nix-community/home-manager/";
@@ -30,6 +29,10 @@
 
     cosmos = {
       url = "git+https://codeberg.org/ext0l/cosmos.git";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    walker = {
+      url = "github:abenz1267/walker";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -72,6 +75,7 @@
 
         nixvim = inputs.nixvim.packages.${system}.full.extend {
           nixpkgs = { inherit pkgs; config = nixpkgs.lib.mkForce {}; };
+          plugins.treesitter.indent.enable = nixpkgs.lib.mkForce false;
         };
         mkHomeConfiguration =
           modules:
@@ -83,6 +87,7 @@
             modules = modules ++ [
               inputs.spicetify-nix.homeManagerModules.spicetify
               inputs.stylix.homeModules.stylix
+              inputs.walker.homeManagerModules.walker
             ];
           };
       in

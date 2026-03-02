@@ -17,6 +17,7 @@
     ./hypr
     ./niri
     ./waybar
+    ./walker
     ./eww
     # ./cosmosConfig.nix
 
@@ -36,8 +37,6 @@
       porsmo
       drawio
       jq
-
-      walker
 
       #fun
       lolcat

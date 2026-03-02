@@ -456,22 +456,6 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1771768398,
-        "narHash": "sha256-lzKoWpFRdqOKPZFYp6HQjdKBNmHmmF3malUoaxP7VA4=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "9ac1e84040764ad128cf2cf70da83a86cbbd0ec3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "master",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-master_2": {
-      "locked": {
         "lastModified": 1771724586,
         "narHash": "sha256-The//BXCIdGDkYK23LZOZKDt7xGrUogp8jxbyIlX6Bg=",
         "owner": "nixos",
@@ -555,7 +539,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "nixpkgs-master": "nixpkgs-master_2",
+        "nixpkgs-master": "nixpkgs-master",
         "nixvim": "nixvim_2"
       },
       "locked": {
@@ -625,7 +609,6 @@
         "nixos-unstable-pinned": "nixos-unstable-pinned",
         "nixos-unstable-small": "nixos-unstable-small",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-master": "nixpkgs-master",
         "nixvim": "nixvim",
         "rose-pine-hyprcursor": "rose-pine-hyprcursor",
         "spicetify-nix": "spicetify-nix",
