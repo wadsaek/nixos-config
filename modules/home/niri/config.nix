@@ -71,7 +71,7 @@
   // Find more information on the wiki:
   // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
   // Remember to uncomment the node by removing "/-"!
-  /-output "eDP-1" {
+  output "eDP-1" {
       // Uncomment this line to disable this output.
       // off
 
@@ -81,14 +81,11 @@
       // for the resolution.
       // If the mode is omitted altogether or is invalid, niri will pick one automatically.
       // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-      mode "1920x1080@120.030"
-
-      // You can use integer or fractional scale, for example use 1.5 for 150% scale.
-      scale 2
+      mode "1920x1200@144.004"
 
       // Transform allows to rotate the output counter-clockwise, valid values are:
       // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
-      transform "normal"
+      // transform "normal"
 
       // Position of the output in the global coordinate space.
       // This affects directional monitor actions like "focus-monitor-left", and cursor movement.
@@ -99,7 +96,7 @@
       // so to put another output directly adjacent to it on the right, set its x to 1920.
       // If the position is unset or results in an overlap, the output is instead placed
       // automatically.
-      position x=1280 y=0
+      // position x=1280 y=0
   }
 
   // Settings that influence how windows are positioned and sized.
@@ -277,12 +274,12 @@
   window-rule {
       match is-active=true
       exclude is-floating=true
-      opacity 0.99
+      opacity 0.93
   }
   window-rule {
       match is-active=false
       exclude is-floating=true
-      opacity 0.95
+      opacity 0.85
   }
 
   // Example: block out two password managers from screen capture.
@@ -322,6 +319,7 @@
       // Suggested binds for running programs: terminal, app launcher, screen locker.
       Mod+Q { spawn "kitty"; }
       Mod+R { spawn "walker"; }
+      Mod+Shift+T {spawn "eww" "open" "--toggle" "todos"; }
       ${lib.optionalString config.programs.hyprlock.enable ''Super+Backspace { spawn "hyprlock"; }''}
 
       // You can also use a shell. Do this if you need pipes, multiple commands, etc.
