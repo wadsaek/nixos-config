@@ -24,6 +24,8 @@
     "kvm"
     "kvm_amd"
   ];
+  boot.plymouth.enable = true;
+
 
   hostName = "Esther-tuf";
   resolution = {
