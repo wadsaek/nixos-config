@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+function daemonize(){
+    echo "$@" "&" | sh >/dev/null 2>&1
+}
+
+daemonize "$@"
