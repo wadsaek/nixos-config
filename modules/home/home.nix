@@ -125,6 +125,7 @@
       "_start.sh" # custom start-scripts
       ".direnv"
       "tmux-session.nu" # tmux scripts
+      "tmp-files"
     ];
   };
 
