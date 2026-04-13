@@ -36,7 +36,11 @@ nixpkgs_options
         };
         inherit (unstable-pinned) libreoffice-qt davinci-resolve;
       })
+      (final: prev: {
+        niri = prev.niri.overrideAttrs {
+          patches = (prev.niri.patches or [ ]) ++ [ ./patches/mru-no-mouse.patch ];
+        };
+      })
       (import ./utils.nix)
-
     ];
 }

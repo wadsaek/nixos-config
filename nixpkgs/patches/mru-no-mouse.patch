@@ -1,0 +1,22 @@
+diff --git a/src/ui/mru.rs b/src/ui/mru.rs
+--- a/src/ui/mru.rs
++++ b/src/ui/mru.rs
+@@ -1023,17 +1023,7 @@
+     }
+ 
+     pub fn pointer_motion(&mut self, pos_within_output: Point<f64, Logical>) -> Option<MappedId> {
+-        let UiState::Open(inner) = &mut self.state else {
+-            return None;
+-        };
+-
+-        inner.freeze_view = true;
+-
+-        let id = inner.thumbnail_under(pos_within_output);
+-        if let Some(id) = id {
+-            inner.wmru.set_current(id);
+-        }
+-        id
++        None
+     }
+ 
+     pub fn first(&mut self) {
