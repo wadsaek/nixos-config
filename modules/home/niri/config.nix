@@ -207,6 +207,10 @@
           // bottom 64
       }
   }
+  cursor {
+      xcursor-size 32
+      hide-after-inactive-ms 1000
+  }
 
   // Add lines like this to spawn processes at startup.
   // Note that running niri as a session supports xdg-desktop-autostart,
