@@ -58,6 +58,7 @@
       typst
       obsidian
       musescore
+      neovide
 
       grim
       oculante
@@ -65,6 +66,7 @@
       mpv
 
       firefox
+      chromium
       ddgr
 
       tg

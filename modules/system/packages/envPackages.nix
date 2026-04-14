@@ -38,6 +38,7 @@
     (lib.hiPrio pkgs.uutils-coreutils-noprefix)
     pkgs.xxd
     pkgs.speedtest-rs
+    pkgs.sshfs
   ]
   ++ lib.optionals config.steam.enable [
     pkgs.protonup-ng
@@ -70,5 +71,7 @@
 
     pkgs.onlyoffice-desktopeditors
     pkgs.ghostty
+
+    pkgs.scrcpy
   ];
 }
