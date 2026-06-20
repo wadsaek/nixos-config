@@ -152,7 +152,7 @@
           off
 
           // How many logical pixels the ring extends out from the windows.
-          width 4
+          width 2
 
           // Colors can be set in a variety of ways:
           // - CSS named colors: "red"
@@ -263,6 +263,9 @@
   window-rule{
       geometry-corner-radius 16
       clip-to-geometry true
+      background-effect {
+          blur true
+      }
   }
   window-rule {
       match is-floating=true
@@ -528,8 +531,15 @@
       // moving the mouse or pressing any other key.
       Mod+Shift+P { power-off-monitors; }
   }
+  recent-windows {
+      disable-mouse
+  }
 
   workspace "main"
   workspace "browser"
   workspace "chat"
+  blur {
+      passes 2
+      offset 5
+  }
 ''

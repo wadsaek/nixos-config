@@ -38,7 +38,12 @@ nixpkgs_options
       })
       (final: prev: {
         niri = prev.niri.overrideAttrs {
-          patches = (prev.niri.patches or [ ]) ++ [ ./patches/mru-no-mouse.patch ];
+          src = final.fetchFromGitHub {
+            owner = "wadsaek";
+            repo = "niri";
+            rev = "78de30afddfbebcba597719231b3cfaf2028e76b";
+            hash = "sha256-k1OAK1akgQHud0YvKrpuzlyM6KcEMaNEU4Yw/G/8Cyw=";
+          };
         };
       })
       (import ./utils.nix)
