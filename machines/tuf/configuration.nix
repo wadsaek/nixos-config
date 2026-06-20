@@ -12,10 +12,8 @@
 
   services.supergfxd.enable = true;
   systemd.services.supergfxd.path = [ pkgs.pciutils ];
-  services.asusd = {
-    enable = true;
-    enableUserService = true;
-  };
+  services.asusd.enable = true;
+
   boot.kernelModules = [
     "asus-wmi"
     "asus-armoury"
