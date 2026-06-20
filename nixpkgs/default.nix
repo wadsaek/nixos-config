@@ -29,10 +29,12 @@ nixpkgs_options
     [
       (final: prev: {
         blahaj = prev.blahaj.overrideAttrs {
-          owner = "GeopJr";
-          repo = "BLAHAJ";
-          rev = "6e5ba24f471b31080ca35cabcf7bb16a0d56e846";
-          hash = "sha256-8AM2yVqLx3JmDyyu+46hy7d9pD9hC/0aeqqmtpYhbB0=";
+          src = final.fetchFromGitHub {
+            owner = "GeopJr";
+            repo = "BLAHAJ";
+            rev = "6e5ba24f471b31080ca35cabcf7bb16a0d56e846";
+            hash = "sha256-8AM2yVqLx3JmDyyu+46hy7d9pD9hC/0aeqqmtpYhbB0=";
+          };
         };
         inherit (unstable-pinned) libreoffice-qt davinci-resolve;
       })
