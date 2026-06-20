@@ -37,6 +37,7 @@ nixpkgs_options
           };
         };
         inherit (unstable-pinned) libreoffice-qt davinci-resolve;
+        inherit (unstable-small) linuxKernel;
       })
       (final: prev: {
         niri = prev.niri.overrideAttrs {

@@ -1,4 +1,4 @@
 { pkgs, lib, ... }:
 {
-  boot.kernelPackages = lib.mkDefault pkgs.linuxKernel.packages.linux_zen;
+  boot.kernelPackages = lib.mkDefault pkgs.linuxKernel.packages.linux_7_0;
 }
