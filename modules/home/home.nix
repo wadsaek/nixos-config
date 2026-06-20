@@ -73,7 +73,7 @@
       discord
       betterdiscordctl
       zapzap
-      wasistlos
+      karere
       telegram-desktop
       element-desktop
       signal-desktop
